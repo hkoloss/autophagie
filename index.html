@@ -22,12 +22,20 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
 body{min-height:100dvh}
 #top{position:sticky;top:0;z-index:20;background:var(--panel);
  border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top) + 6px) 12px 6px}
-#clockRow{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#clockRow{display:flex;align-items:flex-start;gap:10px}
+#clockCol{flex:0 0 auto}
+#statusMsg{flex:1;font-size:11.5px;line-height:1.4;display:flex;align-items:flex-start;
+ color:var(--txt);padding-top:2px}
+#statusMsg.warn{color:var(--acc2)}
+#statusMsg::before{content:"";width:3px;align-self:stretch;background:var(--acc);
+ border-radius:2px;margin-right:8px;flex:0 0 3px}
+#statusMsg.warn::before{background:var(--acc2)}
+.selRow{display:flex;gap:8px;margin-top:8px}
+.selRow select{font-size:13px;padding:8px 26px 8px 10px}
+#planNote{font-size:11px;color:var(--train);padding:6px 2px 0;display:none}
 #clock{font-size:26px;font-weight:650;letter-spacing:-.5px;font-variant-numeric:tabular-nums;
  line-height:1.1}
 #clock small{font-size:13px;font-weight:400;color:var(--dim);margin-left:2px}
-#tissueTag{font-size:11px;color:var(--dim);background:var(--panel2);padding:3px 8px;
- border-radius:20px;border:1px solid var(--line);white-space:nowrap}
 #collapseBtn{background:var(--panel2);border:1px solid var(--line);color:var(--dim);
  width:34px;height:30px;border-radius:9px;font-size:15px;line-height:1;cursor:pointer;
  flex:0 0 34px;transition:.15s}
@@ -36,13 +44,6 @@ body{min-height:100dvh}
 #miniVal{font-size:11px;color:var(--acc);display:none;font-variant-numeric:tabular-nums}
 #top.collapsed #miniVal{display:block}
 svg{width:100%;height:auto;display:block;touch-action:pan-y}
-#status{padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line)}
-#statusMsg{font-size:14.5px;display:flex;align-items:center}
-#statusMsg.warn{color:var(--acc2)}
-#statusMsg::before{content:"";width:3px;align-self:stretch;background:var(--acc);
- border-radius:2px;margin-right:10px;flex:0 0 3px}
-#statusMsg.warn::before{background:var(--acc2)}
-#planNote{font-size:11.5px;color:var(--train);margin-top:7px;padding-left:13px;display:none}
 #ctrl{padding:12px 12px calc(env(safe-area-inset-bottom) + 64px)}
 .sec{background:var(--panel);border:1px solid var(--line);border-radius:14px;
  padding:12px 13px;margin-bottom:10px}
@@ -89,10 +90,6 @@ select.fut{border-color:#31446b;color:var(--train)}
  text-align:center;cursor:pointer;transition:.12s}
 .chip.on{background:var(--acc);border-color:var(--acc);color:#06231c;font-weight:600}
 .chip small{display:block;font-size:10px;opacity:.72;margin-top:2px;font-weight:400}
-.presets{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.pbtn{background:var(--panel2);border:1px solid var(--line);color:var(--txt);
- border-radius:11px;padding:11px 8px;font-size:13px;font-family:inherit;cursor:pointer}
-.pbtn.on{border-color:var(--acc);color:var(--acc)}
 details{border-top:1px solid var(--line);padding-top:10px;margin-top:12px}
 details summary{font-size:12.5px;color:var(--dim);cursor:pointer;list-style:none;
  display:flex;align-items:center;gap:6px}
@@ -139,15 +136,26 @@ details .inner{padding-top:12px}
 
 <div id="top">
   <div id="clockRow">
-    <div>
+    <div id="clockCol">
       <div id="clock">–<small>h</small></div>
       <div id="miniVal"></div>
     </div>
-    <div id="tissueTag">Leber</div>
+    <div id="statusMsg"></div>
     <button id="collapseBtn" title="Diagramm ein-/ausklappen">▲</button>
+  </div>
+  <div class="selRow">
+    <select id="tissueSel">
+      <option value="liver">Leber</option>
+      <option value="muscle">Skelettmuskel</option>
+    </select>
+    <select id="xSel">
+      <option value="hours">X: Fastenstunden</option>
+      <option value="clock">X: Datum / Uhrzeit</option>
+    </select>
   </div>
   <div id="chartZone">
     <svg id="chart" viewBox="0 0 360 176" preserveAspectRatio="none"></svg>
+    <div id="planNote"></div>
     <div id="deltaWrap" style="display:none">
       <div style="font-size:10px;color:var(--train);padding:4px 2px 1px;
         display:flex;justify-content:space-between">
@@ -158,28 +166,11 @@ details .inner{padding-top:12px}
   </div>
 </div>
 
-<div id="status">
-  <div id="statusMsg"></div>
-  <div id="planNote"></div>
-</div>
-
 <div id="ctrl">
-
-  <div class="sec" id="secPreset">
-    <h2>Presets<span class="sp"></span><button class="ib">i</button></h2>
-    <div class="presets" id="presets"></div>
-    <div class="expl note">Presets setzen alle Regler auf einmal. Sobald du danach
-      etwas änderst, wird die Auswahl aufgehoben — deine Einstellungen bleiben aber
-      erhalten und werden gespeichert.</div>
-  </div>
 
   <div class="sec" id="secStart">
     <h2><span class="dot g"></span>Fastenstart<span class="sp"></span><button class="ib">i</button></h2>
     <div class="row"><input type="datetime-local" id="startIn"></div>
-    <div class="row">
-      <div class="lbl"><span>X-Achse im Diagramm</span></div>
-      <div class="chips" id="xChips"></div>
-    </div>
     <div class="note" id="circNote"></div>
     <div class="expl note">Der Startzeitpunkt wird gespeichert und läuft weiter, auch
       wenn du die App schließt. Die Uhrzeit fließt zusätzlich ins Modell ein: Die
@@ -188,7 +179,20 @@ details .inner{padding-top:12px}
       Belegt ist der zirkadiane Insulineffekt; die Größe des Offsets ist gesetzt.</div>
   </div>
 
-  <div class="sec" id="secMeal">
+    <div class="sec" id="secPreset">
+    <h2>Preset<span class="sp"></span><button class="ib">i</button></h2>
+    <div style="display:flex;gap:7px">
+      <select id="presetSel"></select>
+      <button class="mini" id="applyPreset"
+        style="width:auto;white-space:nowrap;padding:0 14px;flex:0 0 auto">Überschreiben</button>
+    </div>
+    <div class="expl note">Das Preset wird erst übernommen, wenn du auf
+      <b>Überschreiben</b> tippst — dann werden alle Regler ersetzt. Der Fastenstart
+      bleibt dabei erhalten. Änderst du danach etwas, springt die Auswahl auf
+      „eigene Einstellung".</div>
+  </div>
+
+<div class="sec" id="secMeal">
     <h2><span class="dot g"></span>Letzte Mahlzeit<span class="sp"></span><button class="ib">i</button></h2>
     <div class="row">
       <div class="lbl"><span>Kohlenhydrate</span><span class="val" id="vCarb"></span></div>
@@ -306,8 +310,7 @@ details .inner{padding-top:12px}
 
   <div class="sec" id="secTis">
     <h2><span class="dot y"></span>Gewebe<span class="sp"></span><button class="ib">i</button></h2>
-    <div class="chips" id="tisChips"></div>
-    <div class="note" id="storeNote"></div>
+    <div class="note" id="storeNote" style="margin-top:0"></div>
     <div class="expl note"><b>ZNS fehlt bewusst:</b> In GFP-LC3-Mäusen zeigte das Gehirn
       selbst nach 48 h Fasten kaum Autophagie-Induktion (Mizushima 2004). Neuronen sind
       durch Ketone und die Blut-Hirn-Schranke abgeschirmt und laufen basal ohnehin hoch,
@@ -753,7 +756,6 @@ function draw(){
   const hh=Math.floor(now), mm=Math.floor((now-hh)*60);
   document.getElementById('clock').innerHTML=
     `${hh}<small>h</small> ${String(mm).padStart(2,'0')}<small>m</small>`;
-  document.getElementById('tissueTag').textContent=S.tissue==='liver'?'Leber':'Skelettmuskel';
   const sen=sentence(now), el=document.getElementById('statusMsg');
   el.textContent=sen.s; el.className=sen.warn?'warn':'';
   document.getElementById('miniVal').textContent=
@@ -817,35 +819,22 @@ document.querySelectorAll('.ib').forEach(b=>{
 document.getElementById('collapseBtn').onclick=()=>
   document.getElementById('top').classList.toggle('collapsed');
 
-function markCustom(){
-  [...document.querySelectorAll('#presets .pbtn')].forEach(b=>b.classList.remove('on'));
-  activePreset=null;
-}
-const pc=document.getElementById('presets');
-Object.keys(PRESETS).forEach(name=>{
-  const b=document.createElement('button');
-  b.className='pbtn'; b.textContent=name; b.dataset.name=name;
-  b.onclick=()=>{loadPreset(name);syncAll();update();
-    [...pc.children].forEach(x=>x.classList.toggle('on',x.dataset.name===name));};
-  pc.appendChild(b);
-});
+function markCustom(){ activePreset=null; if(psel) psel.value=''; }
+const psel=document.getElementById('presetSel');
+psel.innerHTML='<option value="">eigene Einstellung</option>'
+  +Object.keys(PRESETS).map(n=>`<option value="${n}">${n}</option>`).join('');
+document.getElementById('applyPreset').onclick=()=>{
+  const n=psel.value;
+  if(!n){ return; }
+  loadPreset(n); syncAll(); update();
+};
 const fc=document.getElementById('fitChips');
 FIT.forEach((f,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=f;
   b.onclick=()=>{S.fitness=i;syncChips();markCustom();update();};fc.appendChild(b);});
-const tc=document.getElementById('tisChips');
-[['liver','Leber'],['muscle','Skelettmuskel']].forEach(([k,n])=>{
-  const b=document.createElement('button');b.className='chip';b.textContent=n;
-  b.onclick=()=>{S.tissue=k;syncChips();markCustom();renderTr();update();};tc.appendChild(b);});
-function syncChips(){
-  [...fc.children].forEach((b,i)=>b.classList.toggle('on',i===S.fitness));
-  [...tc.children].forEach((b,i)=>b.classList.toggle('on',(i===0?'liver':'muscle')===S.tissue));
-  [...xc.children].forEach(b=>b.classList.toggle('on',b.dataset.k===(S.xMode||'hours')));
-}
-const xc=document.getElementById('xChips');
-[['hours','Fastenstunden'],['clock','Datum / Uhrzeit']].forEach(([k,n])=>{
-  const b=document.createElement('button');b.className='chip';b.textContent=n;b.dataset.k=k;
-  b.onclick=()=>{S.xMode=k;syncChips();update();};xc.appendChild(b);});
-
+const tsel=document.getElementById('tissueSel');
+tsel.onchange=()=>{S.tissue=tsel.value;markCustom();renderTr();update();};
+const xsel=document.getElementById('xSel');
+xsel.onchange=()=>{S.xMode=xsel.value;markCustom();update();};
 const pt=document.getElementById('prevTog');
 pt.onclick=()=>{S.usePrev=!S.usePrev;syncPrev();markCustom();update();};
 function syncPrev(){
@@ -860,7 +849,6 @@ si.addEventListener('change',()=>{const d=new Date(si.value);if(!isNaN(d))S.star
 document.getElementById('resetBtn').onclick=async()=>{
   S.start=defaultStart(); loadPreset('Ich (Standardtag)');
   si.value=toLocal(S.start); syncAll(); update();
-  [...pc.children].forEach(x=>x.classList.toggle('on',x.dataset.name==='Ich (Standardtag)'));
 };
 document.getElementById('saveBtn').onclick=()=>{clearTimeout(saveTimer);doSave();};
 document.getElementById('loadBtn').onclick=async()=>{
@@ -1021,7 +1009,6 @@ function syncAll(){
   set('musclePct',S.musclePct,'vMus',musTxt());
   set('age',S.age,'vAge',S.age+' J.');
   bt.classList.toggle('on',S.showBump!==false);
-  [...pc.children].forEach(x=>x.classList.toggle('on',x.dataset.name===activePreset));
   syncChips(); syncPrev(); renderTr();
 }
 bindSlider('carbsLast','carbsLast',v=>v+' g','vCarb');
