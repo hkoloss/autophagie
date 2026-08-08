@@ -43,7 +43,16 @@ body{min-height:100dvh}
 #top.collapsed #chartZone{display:none}
 #miniVal{font-size:11px;color:var(--acc);display:none;font-variant-numeric:tabular-nums}
 #top.collapsed #miniVal{display:block}
-svg{width:100%;height:auto;display:block;touch-action:pan-y}
+/* preserveAspectRatio="none" verwirft das Seitenverhaeltnis der viewBox —
+   height:auto ergibt in WebKit dann 0 px. Feste Box per padding-bottom,
+   SVG absolut darin. Bewusst OHNE @supports/aspect-ratio: die Zuruecksetzung
+   des Paddings waere unspezifischer und wuerde nicht greifen, wodurch sich
+   beide Hoehen addieren. */
+.svgbox{position:relative;width:100%;display:block;touch-action:pan-y;
+ height:0;overflow:hidden}
+.svgbox>svg{position:absolute;top:0;left:0;width:100%;height:100%;display:block}
+.svgbox.main{padding-bottom:48.89%}   /* 176/360 */
+.svgbox.delta{padding-bottom:11.11%}  /* 40/360 */
 #ctrl{padding:12px 12px calc(env(safe-area-inset-bottom) + 64px)}
 .sec{background:var(--panel);border:1px solid var(--line);border-radius:14px;
  padding:12px 13px;margin-bottom:10px}
@@ -56,6 +65,13 @@ svg{width:100%;height:auto;display:block;touch-action:pan-y}
 .ib:hover,.sec.open .ib{border-color:var(--acc);color:var(--acc)}
 .expl{display:none}
 .sec.open .expl{display:block}
+.cb{background:transparent;border:1px solid var(--line);color:var(--dim2);
+ width:22px;height:22px;border-radius:6px;font-size:10px;line-height:1;cursor:pointer;
+ flex:0 0 22px;padding:0;transition:.15s}
+.sec.exp .cb{border-color:var(--acc);color:var(--acc);transform:rotate(180deg)}
+.sec.coll .secBody{display:none}
+.sec.coll.exp .secBody{display:block}
+#startIn{max-width:240px;margin:0 auto;display:block;text-align:center}
 .dot{width:7px;height:7px;border-radius:50%;flex:0 0 7px}
 .dot.g{background:var(--ev-g)}.dot.y{background:var(--ev-y)}.dot.x{background:var(--ev-x)}
 .row{margin-bottom:14px}.row:last-child{margin-bottom:0}
@@ -154,13 +170,15 @@ details .inner{padding-top:12px}
     </select>
   </div>
   <div id="chartZone">
-    <svg id="chart" viewBox="0 0 360 176" preserveAspectRatio="none"></svg>
+    <div class="svgbox main"><svg id="chart" viewBox="0 0 360 176"
+      preserveAspectRatio="none"></svg></div>
     <div id="planNote"></div>
     <div id="deltaWrap" style="display:none">
       <div style="font-size:10px;color:var(--train);padding:4px 2px 1px;
         display:flex;justify-content:space-between">
         <span>Δ durch geplantes Training</span><span id="deltaMax"></span></div>
-      <svg id="delta" viewBox="0 0 360 40" preserveAspectRatio="none" style="height:34px"></svg>
+      <div class="svgbox delta"><svg id="delta" viewBox="0 0 360 40"
+        preserveAspectRatio="none"></svg></div>
     </div>
     <div class="legend" id="legend"></div>
   </div>
@@ -280,22 +298,24 @@ details .inner{padding-top:12px}
       Gluconeogenese-Bedarf): im Modell 15 % statt 85 % des verbrannten Glykogens.</div>
   </div>
 
-  <div class="sec" id="secIns">
-    <h2><span class="dot y"></span>Insulinsensitivität<span class="sp"></span><button class="ib">i</button></h2>
-    <div class="row">
-      <div class="lbl"><span>Bauchumfang</span><span class="val" id="vWaist"></span></div>
-      <input type="range" id="waist" min="70" max="140" step="1">
-      <div class="note" id="waistNote"></div>
-    </div>
-    <div class="row">
-      <div class="lbl"><span>Trainingsfitness</span></div>
-      <div class="chips" id="fitChips"></div>
-    </div>
-    <div class="row">
-      <div class="lbl"><span>Schlaf letzte Nacht</span><span class="val" id="vSleep"></span></div>
-      <input type="range" id="sleep" min="3" max="10" step="0.5">
-      <div class="note" id="sleepNote"></div>
-    </div>
+    <div class="sec coll" id="secIns">
+    <h2><span class="dot y"></span>Insulinsensitivität<span class="sp"></span>
+      <button class="ib">i</button><button class="cb">▾</button></h2>
+    <div class="secBody">
+      <div class="row">
+        <div class="lbl"><span>Bauchumfang</span><span class="val" id="vWaist"></span></div>
+        <input type="range" id="waist" min="70" max="140" step="1">
+        <div class="note" id="waistNote"></div>
+      </div>
+      <div class="row">
+        <div class="lbl"><span>Trainingsfitness</span></div>
+        <div class="chips" id="fitChips"></div>
+      </div>
+      <div class="row">
+        <div class="lbl"><span>Schlaf letzte Nacht</span><span class="val" id="vSleep"></span></div>
+        <input type="range" id="sleep" min="3" max="10" step="0.5">
+        <div class="note" id="sleepNote"></div>
+      </div>
     <div class="expl note">Alle drei wirken auf dieselbe Größe: die Steilheit über den
       Insulinabfall.<br><br>
       <b>Bauchumfang</b> statt BMI, weil viszerales Fett stärker mit Insulinresistenz
@@ -305,10 +325,11 @@ details .inner{padding-top:12px}
       <b>Schlaf:</b> Donga et al. (JCEM 2010) fanden bereits nach einer Nacht partiellen
       Schlafentzugs messbar reduzierte hepatische und periphere Insulinsensitivität.<br><br>
       Bewusst getrennt, weil sie dissoziieren: dicker Bauch bei guter Fitness ist ein
-      anderer Fall als schlank und untrainiert.</div>
+      anderer Fall als schlank und untrainiert.    </div>
+</div>
   </div>
 
-  <div class="sec" id="secTis">
+<div class="sec" id="secTis">
     <h2><span class="dot y"></span>Gewebe<span class="sp"></span><button class="ib">i</button></h2>
     <div class="note" id="storeNote" style="margin-top:0"></div>
     <div class="expl note"><b>ZNS fehlt bewusst:</b> In GFP-LC3-Mäusen zeigte das Gehirn
@@ -319,25 +340,23 @@ details .inner{padding-top:12px}
       Die Hierarchie Leber ≫ Skelettmuskel > Herz ≫ ZNS stammt aus GFP-LC3-Mausdaten.</div>
   </div>
 
-  <div class="sec" id="secBody">
-    <h2><span class="dot x"></span>Körperdaten<span class="sp"></span><button class="ib">i</button></h2>
-    <details>
-      <summary>Anzeigen / ändern</summary>
-      <div class="inner">
-        <div class="row">
-          <div class="lbl"><span>Gewicht</span><span class="val" id="vWeight"></span></div>
-          <input type="range" id="weight" min="45" max="160" step="1">
-        </div>
-        <div class="row">
-          <div class="lbl"><span>Fettfreie Masse (Bioimpedanz)</span><span class="val" id="vMus"></span></div>
-          <input type="range" id="musclePct" min="40" max="85" step="0.1">
-        </div>
-        <div class="row">
-          <div class="lbl"><span>Alter</span><span class="val" id="vAge"></span></div>
-          <input type="range" id="age" min="18" max="90" step="1">
-        </div>
+    <div class="sec coll" id="secBody">
+    <h2><span class="dot x"></span>Körperdaten<span class="sp"></span>
+      <button class="ib">i</button><button class="cb">▾</button></h2>
+    <div class="secBody">
+      <div class="row">
+        <div class="lbl"><span>Gewicht</span><span class="val" id="vWeight"></span></div>
+        <input type="range" id="weight" min="45" max="160" step="1">
       </div>
-    </details>
+      <div class="row">
+        <div class="lbl"><span>Fettfreie Masse (Bioimpedanz)</span><span class="val" id="vMus"></span></div>
+        <input type="range" id="musclePct" min="40" max="85" step="0.1">
+      </div>
+      <div class="row">
+        <div class="lbl"><span>Alter</span><span class="val" id="vAge"></span></div>
+        <input type="range" id="age" min="18" max="90" step="1">
+      </div>
+    </div>
     <div class="expl note">Bioimpedanz misst fettfreie Weichgewebsmasse, nicht
       Skelettmuskel. Skelettmuskel ist davon ~55 %, und beim Training arbeitet davon
       wieder nur gut die Hälfte mit. Der nutzbare Glykogenspeicher ist also deutlich
@@ -348,7 +367,7 @@ details .inner{padding-top:12px}
       die HRmax-Berechnung ein.</div>
   </div>
 
-  <div class="sec" id="secLim">
+<div class="sec" id="secLim">
     <h2>Grenzen des Modells<span class="sp"></span><button class="ib">i</button></h2>
     <div class="expl note" style="margin-top:0">
       Es gibt <b>keine validierte In-vivo-Messung des Autophagie-Flux beim Menschen.</b>
@@ -375,8 +394,9 @@ details .inner{padding-top:12px}
     </div>
   </div>
 
-  <div class="sec">
-    <h2>Daten &amp; Speicher<span class="sp"></span><button class="ib">i</button></h2>
+  <div class="sec coll">
+    <h2>Daten &amp; Speicher<span class="sp"></span><button class="ib">i</button><button class="cb">▾</button></h2>
+    <div class="secBody">
     <div style="display:flex;gap:7px;margin-bottom:8px">
       <button class="mini" id="saveBtn">Jetzt speichern</button>
       <button class="mini" id="loadBtn">Jetzt laden</button>
@@ -399,6 +419,7 @@ details .inner{padding-top:12px}
         <button class="mini" id="impBtn">Wiederherstellen</button>
       </div>
       <div id="codeMsg" style="font-size:10.5px;color:var(--dim2);margin-top:6px"></div>
+    </div>
     </div>
     <div class="expl note">Einstellungen und Fastenstart werden automatisch gespeichert
       und beim Öffnen wiederhergestellt. Die Fastenuhr läuft weiter, auch wenn die App
@@ -814,7 +835,14 @@ const update=()=>{draw();scheduleSave();};
 
 /* ===== UI ===== */
 document.querySelectorAll('.ib').forEach(b=>{
-  b.onclick=e=>{e.stopPropagation();b.closest('.sec').classList.toggle('open');};
+  b.onclick=e=>{e.stopPropagation();
+    const sec=b.closest('.sec');
+    sec.classList.toggle('open');
+    if(sec.classList.contains('open')) sec.classList.add('exp');  // eingeklappte mit aufklappen
+  };
+});
+document.querySelectorAll('.cb').forEach(b=>{
+  b.onclick=e=>{e.stopPropagation();b.closest('.sec').classList.toggle('exp');};
 });
 document.getElementById('collapseBtn').onclick=()=>
   document.getElementById('top').classList.toggle('collapsed');
@@ -835,6 +863,13 @@ const tsel=document.getElementById('tissueSel');
 tsel.onchange=()=>{S.tissue=tsel.value;markCustom();renderTr();update();};
 const xsel=document.getElementById('xSel');
 xsel.onchange=()=>{S.xMode=xsel.value;markCustom();update();};
+
+function syncChips(){
+  [...fc.children].forEach((b,i)=>b.classList.toggle('on',i===S.fitness));
+  tsel.value=S.tissue;
+  xsel.value=S.xMode||'hours';
+  psel.value=(activePreset&&PRESETS[activePreset])?activePreset:'';
+}
 const pt=document.getElementById('prevTog');
 pt.onclick=()=>{S.usePrev=!S.usePrev;syncPrev();markCustom();update();};
 function syncPrev(){
