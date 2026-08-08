@@ -76,6 +76,13 @@ input[type=datetime-local],input[type=number]{width:100%;background:var(--panel2
  border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:9px 10px;
  font-size:15px;font-family:inherit}
 input[type=number]{-moz-appearance:textfield}
+select{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+ border-radius:9px;padding:10px;font-size:15px;font-family:inherit;-webkit-appearance:none;
+ appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
+ linear-gradient(135deg,var(--dim) 50%,transparent 50%);
+ background-position:calc(100% - 16px) 52%,calc(100% - 11px) 52%;
+ background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+select.fut{border-color:#31446b;color:var(--train)}
 .chips{display:flex;gap:6px;flex-wrap:wrap}
 .chip{flex:1 1 auto;min-width:0;background:var(--panel2);border:1px solid var(--line);
  color:var(--dim);border-radius:9px;padding:8px 6px;font-size:12.5px;font-family:inherit;
@@ -169,6 +176,10 @@ details .inner{padding-top:12px}
   <div class="sec" id="secStart">
     <h2><span class="dot g"></span>Fastenstart<span class="sp"></span><button class="ib">i</button></h2>
     <div class="row"><input type="datetime-local" id="startIn"></div>
+    <div class="row">
+      <div class="lbl"><span>X-Achse im Diagramm</span></div>
+      <div class="chips" id="xChips"></div>
+    </div>
     <div class="note" id="circNote"></div>
     <div class="expl note">Der Startzeitpunkt wird gespeichert und läuft weiter, auch
       wenn du die App schließt. Die Uhrzeit fließt zusätzlich ins Modell ein: Die
@@ -419,7 +430,7 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 
 const BODY={waist:102,fitness:1,sleep:6,weight:97,musclePct:68.7,age:43};
 const mk=o=>Object.assign({carbsLast:110,proteinLast:30,carbsPrev:90,usePrev:false,
-  activeKcal:450,tissue:'liver',showBump:true,trainings:[]},BODY,o);
+  activeKcal:450,tissue:'liver',showBump:true,xMode:'hours',trainings:[]},BODY,o);
 const PRESETS={
  'Ich (Standardtag)':mk({}),
  'Ich + Training':mk({activeKcal:900,trainings:[{hoursAgo:3,int:2,kcal:450,strength:false}]}),
@@ -434,7 +445,7 @@ const defaultStart=()=>{const d=new Date();d.setHours(d.getHours()-14);d.setMinu
 const toLocal=d=>{const p=n=>String(n).padStart(2,'0');
   return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;};
 function loadPreset(name){const st=S.start;S=JSON.parse(JSON.stringify(PRESETS[name]));
-  S.start=st||defaultStart();activePreset=name;}
+  S.start=st||defaultStart();activePreset=name;normTrainings();}
 S.start=defaultStart(); loadPreset('Ich (Standardtag)');
 
 /* ===== Persistenz ===== */
@@ -449,7 +460,7 @@ function serialize(){
   return JSON.stringify({
     ...S,
     start:S.start.toISOString(),
-    trainings:S.trainings.map(({hoursAgo,int,kcal,strength})=>({hoursAgo,int,kcal,strength})),
+    trainings:S.trainings.map(({at,int,kcal,strength})=>({at,int,kcal,strength})),
     preset:activePreset
   });
 }
@@ -516,6 +527,7 @@ async function restore(){
     S=Object.assign(mk({}),o);
     S.start=st;
     S.trainings=(o.trainings||[]).map(t=>Object.assign({},t));
+    normTrainings();
     DIAG.api='bereit'; DIAG.lastLoad='ok aus '+src; DIAG.bytes=raw.length;
     setSaveState('Wiederhergestellt · Start '+st.toLocaleString('de-DE',
       {day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}));
@@ -527,9 +539,27 @@ async function restore(){
 }
 
 const nowH=()=>Math.max(0,(Date.now()-S.start.getTime())/3600000);
-const isFuture=t=>t.hoursAgo<0;
+/* Trainings speichern einen absoluten Zeitstempel (at, ms).
+   Vorher war es ein Offset zu "jetzt" — dadurch wanderte ein absolviertes
+   Training mit der Uhr mit, statt an seiner Fastenstunde zu bleiben. */
+function normTrainings(){
+  const nowMs=Date.now();
+  S.trainings.forEach(t=>{
+    if(t.at===undefined||t.at===null){
+      t.at = nowMs - (t.hoursAgo||0)*3600000;
+    }
+    delete t.hoursAgo;
+  });
+}
+const isFuture=t=>t.at>Date.now();
 const trainDur=t=>Math.max(0.1,(+t.kcal||0)/(t.strength?400:INT[t.int].kph));
-const trainStart=t=>Math.max(0,nowH()-t.hoursAgo);
+const trainStart=t=>Math.max(0,(t.at-S.start.getTime())/3600000);
+const WD=['So','Mo','Di','Mi','Do','Fr','Sa'];
+const fmtAt=ms=>{const d=new Date(ms);
+  return WD[d.getDay()]+' '+String(d.getDate()).padStart(2,'0')+'.'
+    +String(d.getMonth()+1).padStart(2,'0')+'. '+String(d.getHours()).padStart(2,'0')+':00';};
+const relTxt=ms=>{const h=(Date.now()-ms)/3600000;
+  return h>=0?`vor ${h.toFixed(0)} h`:`in ${(-h).toFixed(0)} h`;};
 const pastKcal=()=>S.trainings.filter(t=>!isFuture(t)).reduce((a,t)=>a+(+t.kcal||0),0);
 
 /* ===== Modell ===== */
@@ -630,10 +660,26 @@ function draw(){
   const past=S.trainings.filter(t=>!isFuture(t));
   const future=S.trainings.filter(isFuture);
   let g='';
+  const clockMode = S.xMode==='clock';
+  if(clockMode){
+    // Mitternachtslinien als Tagesgrenzen
+    const d0=new Date(S.start.getTime()); d0.setHours(24,0,0,0);
+    for(let ms=d0.getTime(); ms<=S.start.getTime()+TMAX*3600000; ms+=86400000){
+      const t=(ms-S.start.getTime())/3600000;
+      if(t<1||t>TMAX-1) continue;
+      g+=`<line x1="${sx(t)}" y1="${PT}" x2="${sx(t)}" y2="${H-PB}" stroke="#2b3547"
+          stroke-dasharray="1 3"/>`;
+    }
+  }
   [6,12,24,48,72,96].forEach(t=>{
     g+=`<line x1="${sx(t)}" y1="${PT}" x2="${sx(t)}" y2="${H-PB}" stroke="#1e2735"/>`;
+    let lab=t+'h';
+    if(clockMode){
+      const d=new Date(S.start.getTime()+t*3600000);
+      lab=WD[d.getDay()]+' '+String(d.getHours()).padStart(2,'0');
+    }
     g+=`<text x="${sx(t)}" y="${H-7}" fill="#5d6b7d" font-size="8.5" text-anchor="middle"
-        font-family="sans-serif">${t}h</text>`;
+        font-family="sans-serif">${lab}</text>`;
   });
   g+=`<line x1="${PL}" y1="${H-PB}" x2="${W-PR}" y2="${H-PB}" stroke="#26303f"/>`;
 
@@ -793,7 +839,13 @@ const tc=document.getElementById('tisChips');
 function syncChips(){
   [...fc.children].forEach((b,i)=>b.classList.toggle('on',i===S.fitness));
   [...tc.children].forEach((b,i)=>b.classList.toggle('on',(i===0?'liver':'muscle')===S.tissue));
+  [...xc.children].forEach(b=>b.classList.toggle('on',b.dataset.k===(S.xMode||'hours')));
 }
+const xc=document.getElementById('xChips');
+[['hours','Fastenstunden'],['clock','Datum / Uhrzeit']].forEach(([k,n])=>{
+  const b=document.createElement('button');b.className='chip';b.textContent=n;b.dataset.k=k;
+  b.onclick=()=>{S.xMode=k;syncChips();update();};xc.appendChild(b);});
+
 const pt=document.getElementById('prevTog');
 pt.onclick=()=>{S.usePrev=!S.usePrev;syncPrev();markCustom();update();};
 function syncPrev(){
@@ -838,6 +890,7 @@ document.getElementById('impBtn').onclick=()=>{
     S=Object.assign(mk({}),o);
     S.start=st;
     S.trainings=(o.trainings||[]).map(x=>Object.assign({},x));
+    normTrainings();
     syncAll(); draw();
     cm('Wiederhergestellt · Start '+st.toLocaleString('de-DE'));
   }catch(e){ cm('Code unlesbar: '+(e&&e.message?e.message:e)); }
@@ -851,7 +904,22 @@ document.addEventListener('visibilitychange',()=>{
 /* ---- Trainings ---- */
 const hrMax=()=>Math.round(208-0.7*S.age);
 const hrRange=i=>`${Math.round(hrMax()*INT[i].r[0])}–${Math.round(hrMax()*INT[i].r[1])}`;
-const when=h=>h>=0?`vor ${h} h`:`in ${-h} h`;
+/* Stuendliche Auswahl: von Fastenstart bis jetzt+72 h, als echte Zeitpunkte */
+function timeOptions(sel){
+  const st=S.start.getTime(), nowMs=Date.now();
+  const from=0, to=Math.ceil((nowMs-st)/3600000)+72;
+  let o='', seen=false;
+  for(let h=from;h<=to;h++){
+    const ms=st+h*3600000;
+    const v=Math.round(ms/3600000);
+    if(v===sel) seen=true;
+    const fut=ms>nowMs;
+    o+=`<option value="${v}" ${v===sel?'selected':''}>`
+      +`${fmtAt(ms)} · ${relTxt(ms)}${fut?' · geplant':''}</option>`;
+  }
+  if(!seen) o=`<option value="${sel}" selected>${fmtAt(sel*3600000)} · ${relTxt(sel*3600000)}</option>`+o;
+  return o;
+}
 
 function renderTr(){
   const L=document.getElementById('trList'); L.innerHTML='';
@@ -862,12 +930,13 @@ function renderTr(){
   S.trainings.forEach((t,idx)=>{
     const fut=isFuture(t), dur=trainDur(t), lbl=t.strength?'Kraft':INT[t.int].n;
     const adv=advance(t,P);
+    const selH=Math.round(t.at/3600000);
     const d=document.createElement('div');
     d.className='tr'+(t._open?' open':'')+(fut?' future':'');
     d.innerHTML=`
       <div class="tr-head">
         <span>${t.strength?'🏋️':'🏃'}</span>
-        <span class="txt">${when(t.hoursAgo)} · ${lbl} · ${t.kcal} kcal
+        <span class="txt">${fmtAt(t.at)} · ${lbl} · ${t.kcal} kcal
           <em>(~${dur<1?Math.round(dur*60)+' min':dur.toFixed(1)+' h'})</em></span>
         ${fut?'<span class="badge">geplant</span>':''}
         <span class="del">×</span>
@@ -876,8 +945,9 @@ function renderTr(){
         <div class="gain">Zeitvorsprung auf der ${S.tissue==='liver'?'Leber':'Muskel'}-Uhr:
           <b>${adv.toFixed(1)} h</b> — bleibt danach konstant.</div>
         <div class="row">
-          <div class="lbl"><span>Zeitpunkt</span><span class="val">${when(t.hoursAgo)}</span></div>
-          <input type="range" class="ta ${fut?'fut':''}" min="-24" max="72" step="0.5" value="${t.hoursAgo}">
+          <div class="lbl"><span>Zeitpunkt</span>
+            <span class="val">Fastenstunde ${trainStart(t).toFixed(0)}</span></div>
+          <select class="ta ${fut?'fut':''}">${timeOptions(selH)}</select>
         </div>
         <div class="row">
           <div class="lbl"><span>Krafttraining</span></div>
@@ -908,8 +978,8 @@ function renderTr(){
         S.trainings.splice(idx,1);markCustom();renderTr();update();return;}
       t._open=!t._open; renderTr();
     };
-    d.querySelector('.ta').addEventListener('input',e=>{
-      t.hoursAgo=parseFloat(e.target.value); t._open=true;
+    d.querySelector('.ta').addEventListener('change',e=>{
+      t.at=parseInt(e.target.value)*3600000; t._open=true;
       markCustom(); renderTr(); update();
     });
     d.querySelector('.ts').onclick=()=>{t.strength=!t.strength;markCustom();renderTr();update();};
@@ -923,7 +993,8 @@ function renderTr(){
 }
 document.getElementById('addTr').onclick=()=>{
   if(S.trainings.length>=MAXTR) return;
-  S.trainings.push({hoursAgo:-2,int:1,kcal:350,strength:false,_open:true});
+  const at=Math.round((Date.now()+2*3600000)/3600000)*3600000;
+  S.trainings.push({at,int:1,kcal:350,strength:false,_open:true});
   markCustom(); renderTr(); update();
 };
 
