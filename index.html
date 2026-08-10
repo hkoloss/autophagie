@@ -2,24 +2,19 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
-<title>Autophagie</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Autophagie">
-<meta name="theme-color" content="#0b0e13">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEIklEQVR4nO3dO04cQRhF4cIis+TEIWtgCwSkDolJSFmPUxLHDkkJ2ILX4H04aGnUnp7br6mq/9Hny2yBhcTR7eoeBt98/fa9AJd8sf4C4BdxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSLfWXwCaePx8O/ubj4eXrf8IcUQ1/fZXRxzedYhAIQ5fDFOYIg5LrlKYIo6unNdwhjiaixXEGHE0ETeIMeKoKUcTJ8RRgcMmdjzymiKO/cybqFLADOLYo3MWrSNQiGODDk1YdXARcazSLgtXNZwhjjnVm/CcwtRR4vj788f4j3ev74ufUrGMWE2c3KT/3ednWYxdTKRWE0GDGMscx0wWY+NEriwjQRBjaeNYWcbg7vWdLKaOcuaYt7uMlE2c5FyOTbMxeL5/2vTxubMYsBzbHKGJk4TLsWM2BvPjcagsBizHsgNmMeBNTQsOW0ZhOWYcOYsBy3EZZZSUB9Jy3a0sWZywHP+hjLGcy1E2jsfz/RNZTLEcpTAYQto41j8OX/OzHceU+VZ26OPXn9/qA8hiXs4zx/RV1rNEOGSskTCONa+/U8Ya2c4clFFRqjgoo648cVBGdUniMH/bakpJ4liD2dgqQxxcUBoJHwdltBM7DspoKnAcj59vi994yrhG4DjK0nJQxpWixsG9awch4+Co0Ue8ODhqdBMvjsJRo5dgcZBFT5HiWLygrLniYL1IcRSWo68wcSzeoVBGdWHimEEWjWSIg6NGIzHi4KhhIkYcClk0FSCOmdngFZamvMfBTYoh73HAkOs4mA1bruOYQRYd+H2vLLNhjuWA5DQO7lE98BgHFxQnPMYBJ9zFwWz44S6OGWTRma9bWWbDFZYDkqM4uH31xkscXFAc8hIH33uHXMQxzMZMH6RjwkUcpZTHz7eLVxayMGR/K8tpwy0vy6FQhiHjOHjPgWfelwOGLOPgqZdzfpeDa4o5sziYDf+cLgez4YFNHMxGCB6Xg9lwwiAOZiOK3nHwsDyQrnHwK3hi8bUcpONKvzg4aoTj6G6F2fCmUxycQyNysRyU4VOPODhtBNU8Di4ocbWNgwcboRkvB+l41jAOsoiu1VsT+D/6EmiyHJSRQ/04KCONynFw45pJtTPH+idd9BHF7b5P2/3QkzIC6fraCmXE0i8OyginUxyUEVGPOCgjqOZxUEZcbeOgjNB23souIosEai7HEMTHwwtl5GD/C+PglosfMIZPxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckP4BCyElb9ZgDCIAAAAASUVORK5CYII=">
-<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEIklEQVR4nO3dO04cQRhF4cIis+TEIWtgCwSkDolJSFmPUxLHDkkJ2ILX4H04aGnUnp7br6mq/9Hny2yBhcTR7eoeBt98/fa9AJd8sf4C4BdxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSLfWXwCaePx8O/ubj4eXrf8IcUQ1/fZXRxzedYhAIQ5fDFOYIg5LrlKYIo6unNdwhjiaixXEGHE0ETeIMeKoKUcTJ8RRgcMmdjzymiKO/cybqFLADOLYo3MWrSNQiGODDk1YdXARcazSLgtXNZwhjjnVm/CcwtRR4vj788f4j3ev74ufUrGMWE2c3KT/3ednWYxdTKRWE0GDGMscx0wWY+NEriwjQRBjaeNYWcbg7vWdLKaOcuaYt7uMlE2c5FyOTbMxeL5/2vTxubMYsBzbHKGJk4TLsWM2BvPjcagsBizHsgNmMeBNTQsOW0ZhOWYcOYsBy3EZZZSUB9Jy3a0sWZywHP+hjLGcy1E2jsfz/RNZTLEcpTAYQto41j8OX/OzHceU+VZ26OPXn9/qA8hiXs4zx/RV1rNEOGSskTCONa+/U8Ya2c4clFFRqjgoo648cVBGdUniMH/bakpJ4liD2dgqQxxcUBoJHwdltBM7DspoKnAcj59vi994yrhG4DjK0nJQxpWixsG9awch4+Co0Ue8ODhqdBMvjsJRo5dgcZBFT5HiWLygrLniYL1IcRSWo68wcSzeoVBGdWHimEEWjWSIg6NGIzHi4KhhIkYcClk0FSCOmdngFZamvMfBTYoh73HAkOs4mA1bruOYQRYd+H2vLLNhjuWA5DQO7lE98BgHFxQnPMYBJ9zFwWz44S6OGWTRma9bWWbDFZYDkqM4uH31xkscXFAc8hIH33uHXMQxzMZMH6RjwkUcpZTHz7eLVxayMGR/K8tpwy0vy6FQhiHjOHjPgWfelwOGLOPgqZdzfpeDa4o5sziYDf+cLgez4YFNHMxGCB6Xg9lwwiAOZiOK3nHwsDyQrnHwK3hi8bUcpONKvzg4aoTj6G6F2fCmUxycQyNysRyU4VOPODhtBNU8Di4ocbWNgwcboRkvB+l41jAOsoiu1VsT+D/6EmiyHJSRQ/04KCONynFw45pJtTPH+idd9BHF7b5P2/3QkzIC6fraCmXE0i8OyginUxyUEVGPOCgjqOZxUEZcbeOgjNB23souIosEai7HEMTHwwtl5GD/C+PglosfMIZPxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckP4BCyElb9ZgDCIAAAAASUVORK5CYII=">
+<title>Autophagie</title>
 <style>
 :root{--bg:#0b0e13;--panel:#141922;--panel2:#1b2230;--line:#26303f;--txt:#e6edf3;
  --dim:#8b98a9;--dim2:#5d6b7d;--acc:#4dd0b1;--acc2:#f0a35e;--train:#7aa2f7;
+ --meal:#e06c75;--cap:#bb9af7;--cum:#9ece6a;
  --ev-g:#3fb950;--ev-y:#d29922;--ev-x:#6e7681}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
- font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;
- font-size:15px;line-height:1.45}
-body{min-height:100dvh}
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+ font-size:15px;line-height:1.45;-webkit-text-size-adjust:100%}
 #top{position:sticky;top:0;z-index:20;background:var(--panel);
  border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top) + 6px) 12px 6px}
 #clockRow{display:flex;align-items:flex-start;gap:10px}
@@ -32,46 +27,41 @@ body{min-height:100dvh}
 #statusMsg.warn::before{background:var(--acc2)}
 .selRow{display:flex;gap:8px;margin-top:8px}
 .selRow select{font-size:13px;padding:8px 26px 8px 10px}
-#planNote{font-size:11px;color:var(--train);padding:6px 2px 0;display:none}
 #clock{font-size:26px;font-weight:650;letter-spacing:-.5px;font-variant-numeric:tabular-nums;
- line-height:1.1}
+ line-height:1.05}
 #clock small{font-size:13px;font-weight:400;color:var(--dim);margin-left:2px}
+#clockLbl{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim2)}
+#pinClear{display:none;background:var(--panel2);border:1px solid var(--line);
+ color:var(--txt);border-radius:8px;width:30px;height:30px;font-size:13px;cursor:pointer;
+ flex:0 0 30px;align-self:flex-start}
 #collapseBtn{background:var(--panel2);border:1px solid var(--line);color:var(--dim);
- width:34px;height:30px;border-radius:9px;font-size:15px;line-height:1;cursor:pointer;
- flex:0 0 34px;transition:.15s}
+ border-radius:8px;width:30px;height:30px;font-size:13px;cursor:pointer;flex:0 0 30px;
+ transition:transform .18s}
 #top.collapsed #collapseBtn{transform:rotate(180deg)}
 #top.collapsed #chartZone{display:none}
 #miniVal{font-size:11px;color:var(--acc);display:none;font-variant-numeric:tabular-nums}
 #top.collapsed #miniVal{display:block}
-/* preserveAspectRatio="none" verwirft das Seitenverhaeltnis der viewBox —
-   height:auto ergibt in WebKit dann 0 px. Feste Box per padding-bottom,
-   SVG absolut darin. Bewusst OHNE @supports/aspect-ratio: die Zuruecksetzung
-   des Paddings waere unspezifischer und wuerde nicht greifen, wodurch sich
-   beide Hoehen addieren. */
-.svgbox{position:relative;width:100%;display:block;touch-action:pan-y;
- height:0;overflow:hidden}
+.svgbox{position:relative;width:100%;display:block;touch-action:pan-y;cursor:crosshair;
+ margin-top:6px}
 .svgbox>svg{position:absolute;top:0;left:0;width:100%;height:100%;display:block}
-.svgbox.main{padding-bottom:48.89%}   /* 176/360 */
-.svgbox.delta{padding-bottom:11.11%}  /* 40/360 */
+.svgbox.main{padding-bottom:48.89%}
 #ctrl{padding:12px 12px calc(env(safe-area-inset-bottom) + 64px)}
 .sec{background:var(--panel);border:1px solid var(--line);border-radius:14px;
- padding:12px 13px;margin-bottom:10px}
+ padding:13px;margin-bottom:11px}
 .sec h2{margin:0 0 10px;font-size:11px;font-weight:600;letter-spacing:.09em;
  text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:7px}
 .sec h2 .sp{flex:1}
 .ib{background:transparent;border:1px solid var(--line);color:var(--dim2);
- width:22px;height:22px;border-radius:50%;font-size:11px;font-family:Georgia,serif;
- font-style:italic;line-height:1;cursor:pointer;flex:0 0 22px;padding:0;transition:.15s}
+ border-radius:6px;width:22px;height:22px;font-size:11px;cursor:pointer;flex:0 0 22px}
 .ib:hover,.sec.open .ib{border-color:var(--acc);color:var(--acc)}
 .expl{display:none}
 .sec.open .expl{display:block}
 .cb{background:transparent;border:1px solid var(--line);color:var(--dim2);
- width:22px;height:22px;border-radius:6px;font-size:10px;line-height:1;cursor:pointer;
- flex:0 0 22px;padding:0;transition:.15s}
+ border-radius:6px;width:22px;height:22px;font-size:10px;cursor:pointer;flex:0 0 22px;
+ transition:transform .18s}
 .sec.exp .cb{border-color:var(--acc);color:var(--acc);transform:rotate(180deg)}
 .sec.coll .secBody{display:none}
 .sec.coll.exp .secBody{display:block}
-#startIn{max-width:240px;margin:0 auto;display:block;text-align:center}
 .dot{width:7px;height:7px;border-radius:50%;flex:0 0 7px}
 .dot.g{background:var(--ev-g)}.dot.y{background:var(--ev-y)}.dot.x{background:var(--ev-x)}
 .row{margin-bottom:14px}.row:last-child{margin-bottom:0}
@@ -79,73 +69,111 @@ body{min-height:100dvh}
  margin-bottom:7px;gap:8px}
 .lbl span:first-child{color:var(--dim)}
 .val{font-variant-numeric:tabular-nums;font-weight:600;color:var(--acc);font-size:14px}
-input[type=range]{-webkit-appearance:none;width:100%;height:26px;background:transparent;margin:0}
-input[type=range]::-webkit-slider-runnable-track{height:5px;background:var(--panel2);
- border-radius:3px;border:1px solid var(--line)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;
- border-radius:50%;background:var(--txt);margin-top:-11px;box-shadow:0 1px 4px rgba(0,0,0,.5)}
-input[type=range]::-moz-range-track{height:5px;background:var(--panel2);border-radius:3px}
-input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;
- background:var(--txt);border:none}
-input[type=range].fut::-webkit-slider-thumb{background:var(--train)}
-input[type=range].fut::-moz-range-thumb{background:var(--train)}
-input[type=datetime-local],input[type=number]{width:100%;background:var(--panel2);
- border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:9px 10px;
- font-size:15px;font-family:inherit}
-input[type=number]{-moz-appearance:textfield}
+/* Zahlenfelder statt Slider: auf dem Handy treffsicherer und exakt. */
+.nin{display:flex;align-items:center;background:var(--panel2);border:1px solid var(--line);
+ border-radius:9px;padding-right:11px;overflow:hidden}
+.nin:focus-within{border-color:var(--acc)}
+.nin input{flex:1;min-width:0;background:transparent;border:none;color:var(--txt);
+ font-size:16px;font-family:inherit;padding:10px 11px;font-weight:600;
+ font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.nin input:focus{outline:none}
+.nin input::-webkit-outer-spin-button,.nin input::-webkit-inner-spin-button{
+ -webkit-appearance:none;margin:0}
+.nin input.fut{color:var(--train)}
+.nin .unit{font-size:11.5px;color:var(--dim2);flex:0 0 auto;padding-left:6px}
+.nin.bad{border-color:var(--meal)}
+.duo{display:flex;gap:8px}.duo>div{flex:1;min-width:0}
+.duo .lbl{font-size:12px}
 select{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
- border-radius:9px;padding:10px;font-size:15px;font-family:inherit;-webkit-appearance:none;
+ border-radius:9px;padding:9px 28px 9px 10px;font-size:14px;font-family:inherit;
  appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
  linear-gradient(135deg,var(--dim) 50%,transparent 50%);
- background-position:calc(100% - 16px) 52%,calc(100% - 11px) 52%;
+ background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;
  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
 select.fut{border-color:#31446b;color:var(--train)}
 .chips{display:flex;gap:6px;flex-wrap:wrap}
 .chip{flex:1 1 auto;min-width:0;background:var(--panel2);border:1px solid var(--line);
  color:var(--dim);border-radius:9px;padding:8px 6px;font-size:12.5px;font-family:inherit;
- text-align:center;cursor:pointer;transition:.12s}
+ cursor:pointer;text-align:center}
 .chip.on{background:var(--acc);border-color:var(--acc);color:#06231c;font-weight:600}
 .chip small{display:block;font-size:10px;opacity:.72;margin-top:2px;font-weight:400}
 details{border-top:1px solid var(--line);padding-top:10px;margin-top:12px}
 details summary{font-size:12.5px;color:var(--dim);cursor:pointer;list-style:none;
- display:flex;align-items:center;gap:6px}
+ display:flex;align-items:center;gap:6px;font-weight:600;letter-spacing:.03em}
 details summary::-webkit-details-marker{display:none}
-details summary::before{content:"›";display:inline-block;transition:.15s;font-size:16px}
-details[open] summary::before{transform:rotate(90deg)}
+details summary::before{content:"▸";color:var(--dim2);font-size:10px}
+details[open] summary::before{content:"▾"}
 details .inner{padding-top:12px}
 .note{font-size:11.5px;color:var(--dim2);line-height:1.5;margin-top:9px}
 .note b{color:var(--dim);font-weight:600}
-.tr{background:var(--panel2);border:1px solid var(--line);border-radius:11px;
+.itm{background:var(--panel2);border:1px solid var(--line);border-radius:11px;
  margin-bottom:7px;overflow:hidden}
-.tr.future{border-color:#31446b}
-.tr-head{display:flex;align-items:center;gap:8px;padding:10px 11px;cursor:pointer}
-.tr-head .txt{flex:1;font-size:13px;font-variant-numeric:tabular-nums}
-.tr-head .txt em{font-style:normal;color:var(--dim)}
-.tr-head .badge{font-size:10px;color:var(--train);border:1px solid #31446b;
- border-radius:5px;padding:1px 5px}
-.tr-head .del{color:var(--dim2);font-size:19px;padding:0 4px;line-height:1}
-.tr-body{padding:0 11px 12px;border-top:1px solid var(--line);display:none}
-.tr.open .tr-body{display:block}
-.tr-body .row{margin-top:12px}
-.gain{background:var(--bg);border:1px solid #31446b;border-radius:8px;padding:7px 9px;
- font-size:11.5px;color:var(--train);margin-top:10px}
+.itm.future{border-color:#31446b}
+.itm-head{display:flex;align-items:center;gap:8px;padding:10px 11px;cursor:pointer}
+.itm-head .txt{flex:1;font-size:13px;font-variant-numeric:tabular-nums;min-width:0}
+.itm-head .txt em{font-style:normal;color:var(--dim)}
+.itm-head .badge{font-size:10px;color:var(--train);border:1px solid #31446b;
+ border-radius:5px;padding:1px 5px;flex:0 0 auto}
+.itm-head .del{color:var(--dim2);font-size:19px;padding:0 4px;line-height:1;flex:0 0 auto}
+.itm-body{padding:0 11px 12px;border-top:1px solid var(--line);display:none}
+.itm.open .itm-body{display:block}
+.itm-body .row{margin-top:12px}
+.itm-body select{font-size:12.5px;padding:8px 26px 8px 9px;
+ text-overflow:ellipsis;white-space:nowrap}
+.macro{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:7px 9px;
+ font-size:11.5px;color:var(--dim);margin-top:10px;font-variant-numeric:tabular-nums}
+.macro b{color:var(--txt)}
 .addbtn{width:100%;background:transparent;border:1px dashed var(--line);color:var(--dim);
  border-radius:11px;padding:11px;font-size:13px;font-family:inherit;cursor:pointer}
 .addbtn:disabled{opacity:.35}
 .toggle{display:flex;align-items:center;justify-content:space-between;background:var(--bg);
- border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:13px;cursor:pointer}
+ border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:13px;cursor:pointer;
+ gap:10px}
 .toggle .sw{width:42px;height:24px;border-radius:13px;background:var(--line);
  position:relative;transition:.16s;flex:0 0 42px}
 .toggle .sw::after{content:"";position:absolute;top:2px;left:2px;width:20px;height:20px;
  border-radius:50%;background:var(--txt);transition:.16s}
 .toggle.on .sw{background:var(--acc2)}
 .toggle.on .sw::after{left:20px;background:#1a1208}
-.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:10.5px;color:var(--dim2);padding:4px 2px}
-.legend i{width:9px;height:2.5px;display:inline-block;vertical-align:middle;margin-right:4px}
+.legend{display:flex;gap:9px;flex-wrap:wrap;font-size:10px;color:var(--dim2);padding:5px 2px 0}
+.legend i{width:10px;height:2.5px;display:inline-block;vertical-align:middle;margin-right:4px}
 .foot{font-size:11px;color:var(--dim2);text-align:center;padding:6px 10px 0;line-height:1.55}
 #saveState{font-size:10px;color:var(--dim2);text-align:center;padding:8px 0 0}
 .mini{background:var(--panel2);border:1px solid var(--line);color:var(--dim);
  border-radius:9px;padding:8px;font-size:12px;font-family:inherit;cursor:pointer;width:100%}
+#fullBtn{background:var(--panel2);border:1px solid var(--line);color:var(--dim);
+ border-radius:9px;padding:8px 11px;font-size:13px;font-family:inherit;cursor:pointer;
+ flex:0 0 auto}
+#full{display:none;position:fixed;inset:0;z-index:200;background:var(--bg)}
+#full.on{display:block}
+#fstage{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+ width:100vw;height:100vh;display:flex;flex-direction:column;padding:14px;gap:8px}
+@media (orientation:portrait){
+  #fstage{width:100vh;height:100vw;transform:translate(-50%,-50%) rotate(90deg)}
+}
+#fhead{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+#fhead .ftxt{flex:1;min-width:0;font-size:14px;line-height:1.35;color:var(--txt)}
+#fhead .ftxt b{color:var(--acc)}
+#fbtns{display:flex;gap:8px;flex:0 0 auto}
+#fbtns button{background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+ border-radius:9px;width:38px;height:38px;font-size:15px;cursor:pointer}
+#fwrap{flex:1;min-height:0;position:relative}
+#fchart{position:absolute;inset:0;width:100%;height:100%}
+#flegend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--dim);
+ flex:0 0 auto;padding-bottom:2px}
+#flegend i{width:16px;height:3px;display:inline-block;vertical-align:middle;margin-right:6px}
+#fkey{display:none;position:absolute;inset:0;background:rgba(11,14,19,.97);
+ border-radius:12px;padding:16px;overflow-y:auto;font-size:14px;line-height:1.55}
+#fkey.on{display:block}
+#fkey h3{margin:0 0 12px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+ color:var(--dim)}
+#fkey .k{display:flex;gap:11px;margin-bottom:13px;align-items:flex-start}
+#fkey .k i{width:20px;height:4px;border-radius:2px;flex:0 0 20px;margin-top:8px}
+#fkey .k div{flex:1}
+#fkey .k b{display:block;color:var(--txt);font-size:14px;margin-bottom:2px}
+#fkey .k span{color:var(--dim);font-size:13px}
+.warnbox{background:#2a1a12;border:1px solid #5c3a1e;border-radius:9px;padding:9px 11px;
+ font-size:11.5px;color:var(--acc2);margin-top:10px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -154,671 +182,833 @@ details .inner{padding-top:12px}
   <div id="clockRow">
     <div id="clockCol">
       <div id="clock">–<small>h</small></div>
+      <div id="clockLbl">seit letzter Mahlzeit</div>
       <div id="miniVal"></div>
     </div>
+    <button id="pinClear" title="Marker entfernen">✕</button>
     <div id="statusMsg"></div>
     <button id="collapseBtn" title="Diagramm ein-/ausklappen">▲</button>
   </div>
-  <div class="selRow">
-    <select id="tissueSel">
-      <option value="liver">Leber</option>
-      <option value="muscle">Skelettmuskel</option>
-    </select>
-    <select id="xSel">
-      <option value="hours">X: Fastenstunden</option>
-      <option value="clock">X: Datum / Uhrzeit</option>
-    </select>
-  </div>
   <div id="chartZone">
+    <div class="selRow">
+      <select id="daysSel"></select>
+      <select id="tissueSel">
+        <option value="liver">Leber</option>
+        <option value="muscle">Skelettmuskel</option>
+      </select>
+      <select id="xSel">
+        <option value="hours">X: Stunden</option>
+        <option value="clock">X: Datum</option>
+      </select>
+      <button id="fullBtn" title="Vollbild">⤢</button>
+    </div>
     <div class="svgbox main"><svg id="chart" viewBox="0 0 360 176"
       preserveAspectRatio="none"></svg></div>
-    <div id="planNote"></div>
-    <div id="deltaWrap" style="display:none">
-      <div style="font-size:10px;color:var(--train);padding:4px 2px 1px;
-        display:flex;justify-content:space-between">
-        <span>Δ durch geplantes Training</span><span id="deltaMax"></span></div>
-      <div class="svgbox delta"><svg id="delta" viewBox="0 0 360 40"
-        preserveAspectRatio="none"></svg></div>
-    </div>
     <div class="legend" id="legend"></div>
+  </div>
+</div>
+
+<div id="full">
+  <div id="fstage">
+    <div id="fhead">
+      <div class="ftxt" id="ftxt"></div>
+      <div id="fbtns">
+        <button id="fkeyBtn" title="Was zeigen die Linien?">i</button>
+        <button id="fpinClear" title="Marker entfernen">✕</button>
+        <button id="fclose" title="Schließen">⤡</button>
+      </div>
+    </div>
+    <div id="fwrap">
+      <svg id="fchart" viewBox="0 0 680 330" preserveAspectRatio="none"></svg>
+      <div id="fkey"></div>
+    </div>
+    <div id="flegend"></div>
   </div>
 </div>
 
 <div id="ctrl">
 
-  <div class="sec" id="secStart">
-    <h2><span class="dot g"></span>Fastenstart<span class="sp"></span><button class="ib">i</button></h2>
-    <div class="row"><input type="datetime-local" id="startIn"></div>
-    <div class="note" id="circNote"></div>
-    <div class="expl note">Der Startzeitpunkt wird gespeichert und läuft weiter, auch
-      wenn du die App schließt. Die Uhrzeit fließt zusätzlich ins Modell ein: Die
-      Glukosetoleranz ist abends physiologisch schlechter, Insulin bleibt nach einer
-      späten Mahlzeit länger oben. Ein Start ab 21 Uhr bekommt +1,5 h Offset.
-      Belegt ist der zirkadiane Insulineffekt; die Größe des Offsets ist gesetzt.</div>
-  </div>
+  <div class="sec" id="secMeals">
+    <h2><span class="dot g"></span>Mahlzeiten <span style="color:var(--dim2);font-weight:400"
+      id="mCount"></span><span class="sp"></span><button class="ib">i</button></h2>
+    <div id="mList"></div>
+    <button class="addbtn" id="addMeal">+ Mahlzeit hinzufügen</button>
+    <div id="mealWarn"></div>
 
-    <div class="sec" id="secPreset">
-    <h2>Preset<span class="sp"></span><button class="ib">i</button></h2>
-    <div style="display:flex;gap:7px">
-      <select id="presetSel"></select>
-      <button class="mini" id="applyPreset"
-        style="width:auto;white-space:nowrap;padding:0 14px;flex:0 0 auto">Überschreiben</button>
-    </div>
-    <div class="expl note">Das Preset wird erst übernommen, wenn du auf
-      <b>Überschreiben</b> tippst — dann werden alle Regler ersetzt. Der Fastenstart
-      bleibt dabei erhalten. Änderst du danach etwas, springt die Auswahl auf
-      „eigene Einstellung".</div>
-  </div>
-
-<div class="sec" id="secMeal">
-    <h2><span class="dot g"></span>Letzte Mahlzeit<span class="sp"></span><button class="ib">i</button></h2>
-    <div class="row">
-      <div class="lbl"><span>Kohlenhydrate</span><span class="val" id="vCarb"></span></div>
-      <input type="range" id="carbsLast" min="0" max="250" step="5">
-    </div>
-    <div class="row">
-      <div class="lbl"><span>Protein</span><span class="val" id="vProt"></span></div>
-      <input type="range" id="proteinLast" min="0" max="80" step="2">
-    </div>
-    <div class="expl note"><b>Warum Gramm statt kcal:</b> 1.200 kcal Fett füllen kein
-      Glykogen, 600 kcal Pasta schon. Kalorien sind hier der falsche Proxy.<br><br>
-      <b>Protein wirkt separat:</b> Aminosäuren, vor allem Leucin, aktivieren mTORC1
-      über Sestrin2/GATOR2 — insulinunabhängig. Etwa 2–3 g Leucin (≈ 25–30 g Molkenprotein)
-      lösen die maximale mTORC1-Antwort aus, Peak nach 30–60 min. Die Schwelle für
-      Autophagie-Hemmung ist beim Menschen nicht bekannt.</div>
-    <details>
-      <summary>Mahlzeit ~12 h davor</summary>
-      <div class="inner">
-        <div class="toggle" id="prevTog"><span>Berücksichtigen</span><span class="sw"></span></div>
-        <div class="row" id="prevRow" style="margin-top:12px">
-          <div class="lbl"><span>Kohlenhydrate</span><span class="val" id="vCarbP"></span></div>
-          <input type="range" id="carbsPrev" min="0" max="250" step="5">
-        </div>
-        <div class="note">Leberglykogen-Resynthese läuft über ~4–8 h. Was 12 h vorher
-          gegessen wurde, zählt mit halbem Gewicht; was 24 h vorher war, kaum.</div>
-      </div>
-    </details>
-  </div>
-
-  <div class="sec" id="secAct">
-    <h2><span class="dot y"></span>Aktivität (Apple Watch)<span class="sp"></span><button class="ib">i</button></h2>
-    <div class="row">
-      <div class="lbl"><span>Aktive kcal gesamt</span><span class="val" id="vKcal"></span></div>
-      <input type="range" id="activeKcal" min="0" max="2500" step="25">
-    </div>
-    <div class="note" id="kcalSplit"></div>
-    <div class="expl note">Alltagsaktivität wirkt über das Energiedefizit — langsame
-      Glykogenzehrung, träge und kumulativ. Absolvierte Trainings werden abgezogen,
-      damit nichts doppelt zählt.<br><br>
-      <b>Achtung:</b> Watch-Kalorien haben real ±20–30 % Fehler, bei Krafttraining
-      deutlich mehr, weil die HR-basierte Schätzung bei intermittierender Belastung
-      versagt.</div>
+    <div class="expl note"><b>Mahlzeiten sind jetzt der Kern des Modells.</b> Die Kurve
+      wird nicht mehr aus „Fastenstunden" gerechnet, sondern aus dem Zustand, den deine
+      Mahlzeiten hinterlassen. Deshalb ist die Mahlzeit <b>vor</b> dem Fasten die
+      wichtigste Eingabe — sie legt fest, wie voll die Glykogenspeicher sind, wenn das
+      Fasten beginnt.<br><br>
+      <b>Warum kcal + Prozente:</b> Für die Signalwege zählen Gramm, nicht Kalorien.
+      Kohlenhydrate füllen Glykogen und treiben Insulin; Protein wirkt über Leucin
+      insulinunabhängig auf mTORC1; Fett tut fast nichts davon, verzögert aber die
+      Magenentleerung und zieht damit die Wirkung der anderen beiden in die Länge.
+      Fett wird als Rest berechnet.<br><br>
+      <b>Was daraus folgt:</b> Eine kleine Proteinmahlzeit ohne Kohlenhydrate drückt die
+      Autophagie kurz und deutlich, lässt sie aber innerhalb weniger Stunden
+      zurückkommen — die Glykogenspeicher bleiben leer. Eine große Kohlenhydratmahlzeit
+      füllt die Speicher wieder auf und setzt die Uhr weitgehend zurück. Genau dieser
+      Unterschied ist der Grund für die Umstellung.</div>
   </div>
 
   <div class="sec" id="secTrain">
     <h2><span class="dot y"></span>Trainings <span style="color:var(--dim2);font-weight:400"
-      id="trCount"></span><span class="sp"></span><button class="ib">i</button></h2>
-    <div id="trList"></div>
+      id="tCount"></span><span class="sp"></span><button class="ib">i</button></h2>
+    <div id="tList"></div>
     <button class="addbtn" id="addTr">+ Training hinzufügen</button>
-    <div class="toggle on" id="bumpTog" style="margin-top:9px">
-      <span style="font-size:12.5px;color:var(--dim)">Akuten AMPK-Puls anzeigen</span>
-      <span class="sw"></span></div>
 
-    <div class="expl note"><b>Training verschiebt die Kurve nach links — es hebt sie
-      nicht an.</b> Verbranntes Glykogen bringt dich auf der Entleerungs-Uhr weiter
-      nach vorn. Der Zeitvorsprung in Stunden bleibt danach konstant. Was schwankt, ist
-      wie stark sich das im Wert zeigt: am Fastenanfang ist die Kurve flach, dort sieht
-      man wenig davon; im steilen Mittelteil um t50 schlägt derselbe Vorsprung am größten
-      durch; am Plateau wieder kaum. Die Verschiebung wirkt nur ab dem Trainingszeitpunkt —
-      der Teil davor kann sich nicht bewegen. Optisch ist das eine <b>Stufe</b>,
-      keine verschobene Gesamtkurve.</div>
-
-    <div class="expl note"><b>Was ist der AMPK-Puls?</b> AMPK ist der Energiesensor der
-      Zelle. Bei Belastung wird ATP verbraucht, AMP steigt, bindet an die γ-Untereinheit,
-      LKB1 phosphoryliert AMPK an Thr172. Bei Muskelkontraktion kommt ein zweiter Weg dazu:
-      Calcium → CaMKK2 → AMPK, unabhängig vom Energiestatus — deshalb wirkt Intensität
-      stärker als reine kcal.<br><br>
-      Aktives AMPK tut zwei Dinge gleichzeitig: Es phosphoryliert ULK1 an Ser317/Ser777
-      und startet die Autophagie direkt. Und es hemmt mTORC1 über TSC2 und Raptor —
-      mTORC1 blockiert ULK1 sonst an Ser757, genau an der Stelle, die AMPK braucht.
-      Gas geben und Handbremse lösen in einem Schritt.<br><br>
-      <b>Warum der Puls vergeht:</b> Das AMP/ATP-Verhältnis normalisiert sich nach
-      Belastungsende in Minuten bis wenigen Stunden, Phosphatasen entfernen die
-      Thr172-Phosphorylierung. Halbwertszeit im Modell 2,5 h. Der Zeitvorsprung
-      darunter bleibt — zwei Effekte, ein Bild. Der Schalter oben blendet den Puls aus
-      und isoliert die reine Zeitverschiebung.<br><br>
-      <b>Evidenz:</b> Die Signalkaskade ist gut belegt. Dass daraus beim Menschen ein
-      messbarer Autophagie-Puls wird, nicht — He et al. (Nature 2012) zeigten es an
-      Mäusen über einen weiteren Weg (BCL2-Phosphorylierung löst Beclin-1).
-      Höhe und Zeitkonstanten sind von mir gesetzt.</div>
-
-    <div class="expl note"><b>Warum Leber &lt; Muskel:</b> Training entleert primär
-      Muskelglykogen, und das kann den Blutzucker nicht speisen — dem Muskel fehlt die
-      Glukose-6-Phosphatase. Die Leber wird nur indirekt belastet (Cori-Zyklus,
-      Gluconeogenese-Bedarf): im Modell 15 % statt 85 % des verbrannten Glykogens.</div>
+    <div class="expl note"><b>Training wirkt über zwei getrennte Wege</b>, und das Modell
+      trennt sie jetzt sauber:<br><br>
+      <b>1. Glykogen-Abfluss</b> — verbrannte Kohlenhydrate leeren die Speicher. Das ist
+      ein <i>bleibender</i> Effekt: die Speicher sind danach leerer und bleiben es. Vom
+      verbrannten Glykogen gehen 85 % auf das Muskelkonto, 15 % auf die Leber — dem Muskel
+      fehlt die Glukose-6-Phosphatase, er kann den Blutzucker nicht speisen.<br><br>
+      <b>2. Kontraktions-AMPK</b> — Calcium → CaMKK2 → AMPK, unabhängig vom
+      Energiestatus. Muskelspezifisch: die Leber kontrahiert nicht.<br><br>
+      <b>3. Myokin-Weg</b> — der arbeitende Muskel schüttet Fibronektin (FN1) ins Blut aus.
+      Das aktiviert in <i>anderen</i> Organen α5β1-Integrin → IKK → JNK1, was BCL2
+      phosphoryliert und Beclin-1 aus der Bindung löst. So erreicht Training auch die
+      Leber, obwohl sie sich nicht bewegt. He et al. (<i>Nature</i> 2012) fanden
+      Trainings-Autophagie in Muskel, Herz, <b>Leber</b>, Pankreas und Fettgewebe; der
+      FN1-Integrin-Weg wurde 2023 in <i>Cell Metabolism</i> aufgeklärt.<br><br>
+      <b>Warum das zählt:</b> Dieser Weg hängt <b>nicht</b> am Glykogen. Eine frühere
+      Version dieser App kannte ihn nicht — dort war Training ab etwa 16 h Fastenzeit
+      rechnerisch wirkungslos, weil die Speicher leer waren. Das war falsch. Jetzt wirkt
+      Training zu jedem Zeitpunkt: am Muskel stark, an der Leber schwächer.<br><br>
+      <b>Alles Mausdaten.</b> Dass daraus beim Menschen ein messbarer Autophagie-Puls wird,
+      ist nicht gezeigt. Die Amplituden sind gesetzt.<br><br>
+      <b>Achtung:</b> Watch-Kalorien haben real ±20–30 % Fehler, bei Krafttraining
+      deutlich mehr.</div>
   </div>
 
-    <div class="sec coll" id="secIns">
-    <h2><span class="dot y"></span>Insulinsensitivität<span class="sp"></span>
-      <button class="ib">i</button><button class="cb">▾</button></h2>
+  <div class="sec coll" id="secSet">
+    <h2><span class="dot x"></span>Einstellungen &amp; Annahmen<span class="sp"></span>
+      <button class="cb">▾</button></h2>
     <div class="secBody">
-      <div class="row">
-        <div class="lbl"><span>Bauchumfang</span><span class="val" id="vWaist"></span></div>
-        <input type="range" id="waist" min="70" max="140" step="1">
-        <div class="note" id="waistNote"></div>
-      </div>
-      <div class="row">
-        <div class="lbl"><span>Trainingsfitness</span></div>
-        <div class="chips" id="fitChips"></div>
-      </div>
-      <div class="row">
-        <div class="lbl"><span>Schlaf letzte Nacht</span><span class="val" id="vSleep"></span></div>
-        <input type="range" id="sleep" min="3" max="10" step="0.5">
-        <div class="note" id="sleepNote"></div>
-      </div>
-    <div class="expl note">Alle drei wirken auf dieselbe Größe: die Steilheit über den
-      Insulinabfall.<br><br>
-      <b>Bauchumfang</b> statt BMI, weil viszerales Fett stärker mit Insulinresistenz
-      korreliert als Gesamtfettmasse (Després 2012). Schwellen nach IDF/WHO für Männer.<br>
-      <b>Fitness</b> wirkt über metabolische Flexibilität — höhere Mitochondriendichte
-      und CPT-1-Kapazität bedeuten schnelleren Umschalt auf Fettoxidation.<br>
-      <b>Schlaf:</b> Donga et al. (JCEM 2010) fanden bereits nach einer Nacht partiellen
-      Schlafentzugs messbar reduzierte hepatische und periphere Insulinsensitivität.<br><br>
-      Bewusst getrennt, weil sie dissoziieren: dicker Bauch bei guter Fitness ist ein
-      anderer Fall als schlank und untrainiert.    </div>
-</div>
+
+      <details>
+        <summary>Anzeige</summary>
+        <div class="inner">
+          <div class="row">
+            <div class="lbl"><span>Kumulative Linie</span></div>
+            <select id="cumSel">
+              <option value="stock">Reinigungsgrad (0–100 %, mit Zerfall)</option>
+              <option value="total">Total (Tage bei Maximalfluss)</option>
+              <option value="off">aus</option>
+            </select>
+            <div class="note" id="cumNote"></div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Aktivität</summary>
+        <div class="inner">
+          <div class="row">
+            <div class="lbl"><span>Normaler Tag</span></div>
+            <div class="nin"><input type="number" id="activeKcal" min="0" max="1600" step="25"
+              inputmode="numeric"><span class="unit">aktive kcal</span></div>
+          </div>
+          <div class="note">Alltagsbewegung ohne Training — Schritte, Treppen, Hausarbeit.
+            Sie erhöht den Grundumsatz der Leber und leert den Zuckerspeicher schneller.
+            Trainings zählen separat und werden hier <b>nicht</b> mitgerechnet.</div>
+          <div style="margin-top:14px">
+            <div class="lbl"><span>Abweichende Tage <span id="aCount"
+              style="color:var(--dim2)"></span></span></div>
+            <div id="aList"></div>
+            <button class="addbtn" id="addAct">+ Tag mit anderer Aktivität</button>
+          </div>
+          <div class="note" id="storeNote"></div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Ausgangszustand</summary>
+        <div class="inner">
+          <div class="note" id="startNote" style="margin-top:0"></div>
+          <div class="row" style="margin-top:14px">
+            <div class="lbl"><span>Glykogen zu Beginn</span></div>
+            <div class="nin"><input type="number" id="gly0" min="0" max="100" step="5"
+              inputmode="numeric"><span class="unit">%</span></div>
+          </div>
+          <div class="note"><b>Wie voll war der Zuckerspeicher, bevor die erste
+            eingetragene Mahlzeit kam?</b> Vorher weiß das Modell nichts, also braucht es
+            einen Startwert. 60–70 % heißt „normal gegessen, aber nicht vollgeladen".<br><br>
+            Nach etwa einem Tag verliert der Wert an Bedeutung, weil ihn die eingetragenen
+            Mahlzeiten überschreiben. Für kurze Fenster ist er dagegen entscheidend.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Körperdaten</summary>
+        <div class="inner">
+          <div class="row">
+            <div class="lbl"><span>Gewicht</span></div>
+            <div class="nin"><input type="number" id="weight" min="45" max="160" step="1"
+              inputmode="numeric"><span class="unit">kg</span></div>
+          </div>
+          <div class="row">
+            <div class="lbl"><span>Muskelmasse-Anteil</span></div>
+            <div class="nin"><input type="number" id="musclePct" min="45" max="90" step="0.1"
+              inputmode="decimal"><span class="unit">% fettfrei</span></div>
+            <div class="note" id="vMus"></div>
+          </div>
+          <div class="note"><b>Der Muskelanteil wirkt nur in der Muskel-Ansicht.</b> In der
+            Leber-Ansicht ändert er gar nichts — er bemisst allein den Muskelspeicher.<br><br>
+            Beides bestimmt nur eins: wie groß die Zuckerspeicher sind.
+            Das Gewicht skaliert die Leber, der Muskelanteil den Muskelspeicher. Der
+            Muskelanteil ist der Waagen- oder Uhrenwert für fettfreie Masse; daraus werden
+            Skelettmuskel (55 %) und davon arbeitende Muskulatur (55 %) geschätzt — zwei
+            grobe Konventionen.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Insulinsensitivität</summary>
+        <div class="inner">
+          <div class="note" style="margin-top:0">Diese drei entscheiden, <b>wohin</b> die
+            gegessenen Kohlenhydrate wandern. Bei Insulinresistenz nimmt der Muskel deutlich
+            weniger auf — bei Adipösen war die Muskelglykogen-Synthese unter Clamp um rund
+            70 % reduziert (Petersen et al. 1998) — und die Glukose wird in die Leber
+            umgeleitet (Shulman 2016). Vollere Leber heißt: Autophagie startet später.<br><br>
+            <b>Ehrliche Größenordnung:</b> Über den gesamten Eingabebereich macht das bei
+            drei Mahlzeiten pro Tag etwa <b>2 Prozentpunkte</b> aus. Spürbar, aber weit
+            weniger als die Frage, <i>wann</i> und <i>was</i> du isst.</div>
+          <div class="row" style="margin-top:14px">
+            <div class="lbl"><span>Bauchumfang</span></div>
+            <div class="nin"><input type="number" id="waist" min="70" max="140" step="1"
+              inputmode="numeric"><span class="unit">cm</span></div>
+            <div class="note" id="waistNote"></div>
+          </div>
+          <div class="row">
+            <div class="lbl"><span>Trainingsfitness</span></div>
+            <div class="chips" id="fitChips"></div>
+          </div>
+          <div class="row">
+            <div class="lbl"><span>Typischer Schlaf</span></div>
+            <div class="nin"><input type="number" id="sleep" min="3" max="10" step="0.5"
+              inputmode="decimal"><span class="unit">h / Nacht</span></div>
+            <div class="note" id="sleepNote"></div>
+          </div>
+          <div class="note"><b>Bauchumfang</b> statt BMI, weil Bauchfett stärker mit
+            Insulinresistenz zusammenhängt als Gesamtfett (Després 2012). Schwellen nach
+            IDF/WHO für Männer.<br>
+            <b>Fitness</b> wirkt über metabolische Flexibilität — trainierte Muskeln
+            schalten schneller auf Fettverbrennung um.<br>
+            <b>Schlaf:</b> Donga et al. (JCEM 2010) fanden schon nach einer einzigen
+            kurzen Nacht messbar schlechtere Insulinwirkung. Das Modell rechnet mit einem
+            typischen Wert für den ganzen Zeitraum, nicht Nacht für Nacht.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Modellparameter</summary>
+        <div class="inner">
+          <div class="row">
+            <div class="lbl"><span>Verzögerung Maschinenbau</span></div>
+            <div class="nin"><input type="number" id="tauCap" min="0" max="6" step="0.25"
+              inputmode="decimal"><span class="unit">h</span></div>
+          </div>
+          <div class="note">Fällt mTORC1 ab, wandert TFEB in den Zellkern und lässt neue
+            Abräum-Maschinerie bauen. Bis daraus fertige Proteine geworden sind, vergeht
+            Zeit. Der Standardwert 2 h ist aus Teilschritten zusammengesetzt — Kernimport,
+            Transkription, Übersetzung in Protein. <b>Beim Menschen ist die
+            Gesamtverzögerung nicht gemessen</b>, deshalb ein Feld und keine feste
+            Zahl.</div>
+          <div class="row" style="margin-top:14px">
+            <div class="lbl"><span>Rückkopplung Leber</span></div>
+            <div class="nin"><input type="number" id="fbLiver" min="0" max="95" step="5"
+              inputmode="numeric"><span class="unit">%</span></div>
+          </div>
+          <div class="note">Der Abbau liefert Aminosäuren zurück, die den Bauleiter
+            mTORC1 <b>teilweise wieder anschalten</b> — die Autophagie bremst sich also
+            selbst aus. In GFP-LC3-Mäusen (Mizushima 2004) stieg die Leber-Autophagie in
+            den ersten 24 h Fasten und fiel in den nächsten 24 h fast auf Basalniveau
+            zurück; im Muskel blieb sie erhöht. Dazu passt, dass mTORC1 in der Leber nach
+            langem Fasten wieder aktiv wird, im Muskel nicht.<br><br>
+            <b>Deshalb hat die Leberkurve einen Gipfel und fällt danach.</b> Wie stark,
+            ist beim Menschen offen: die Mauszeitachse auf uns zu übertragen ist eine
+            Annahme. Auf 0 gestellt steigt die Kurve wie früher monoton — das war
+            nachweislich falsch. Der Muskel hat diese Rückkopplung nicht.</div>
+          <div class="row" style="margin-top:14px">
+            <div class="lbl"><span>Halbwertszeit Sauberkeit</span></div>
+            <div class="nin"><input type="number" id="tauDec" min="1" max="28" step="1"
+              inputmode="numeric"><span class="unit">Tage</span></div>
+          </div>
+          <div class="note">Nur für den Reinigungsgrad: wie schnell sich neue Schäden
+            wieder ansammeln — das Leck im Akku. Beim Menschen unbekannt; die
+            Größenordnung stammt aus Mitochondrien-Lebensdauern (Tage bis Wochen, je nach
+            Gewebe). Reine Setzung — dreh daran und sieh, wie stark die Aussage davon
+            abhängt.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Wie das Modell rechnet</summary>
+        <div class="inner">
+          <div class="note" style="margin-top:0"><b>Die Zelle als Werkstatt.</b> Solange
+            Nachschub kommt, wird gebaut. Bleibt der Nachschub aus, wird abgerissen und
+            recycelt. Zwei Schalter entscheiden, was gerade läuft:<br><br>
+            <b>mTORC1</b> ist der Bauleiter. Er merkt an Insulin und Aminosäuren, dass
+            Nachschub da ist, und blockiert den Startknopf der Müllabfuhr (ULK1 an der
+            Stelle Ser757).<br>
+            <b>AMPK</b> ist die Tankuhr. Sie schlägt an, wenn der Zuckerspeicher zur Neige
+            geht, und drückt denselben Startknopf von der anderen Seite.<br><br>
+            <b>Beides muss stimmen.</b> Der Bauleiter muss loslassen <i>und</i> die Tankuhr
+            muss ziehen. Deshalb ist ein Nickerchen ohne Hunger keine Autophagie, und eine
+            Mahlzeit mitten im Fasten beendet sie sofort.</div>
+          <div class="note"><b>Was Schritt für Schritt passiert:</b><br>
+            <b>1.</b> Jede Mahlzeit füllt drei Darm-Töpfe: Kohlenhydrate, Protein, Fett.
+            Fett verzögert die Magenentleerung und zieht damit die Wirkung der anderen
+            beiden in die Länge.<br>
+            <b>2.</b> Ankommender Zucker erzeugt das Insulinsignal, ankommendes Protein
+            über Leucin ein zweites, insulinunabhängiges Signal. Beide laufen auf mTORC1
+            zusammen.<br>
+            <b>3.</b> Zucker wandert in die Speicher — Leber und Muskel getrennt. Die Leber
+            gibt laufend ab; je leerer sie wird, desto mehr übernimmt die Zuckerneubildung,
+            deshalb läuft der Speicher nie ganz auf null. Der Muskel gibt fast nur bei
+            Training ab, seine Reserve bleibt für ihn selbst.<br>
+            <b>4.</b> Voller Speicher hält AMPK ruhig. Erst deutliche Entleerung weckt sie
+            — kein sanfter Übergang, sondern eine Schwelle.<br>
+            <b>5.</b> Fluss = Startknopf × Fuhrpark. Ein Produkt, keine Summe: die
+            vorhandene Maschinerie räumt nichts ab, solange der Startknopf blockiert ist.<br>
+            <b>6.</b> Der Abbau bremst sich selbst: freigesetzte Aminosäuren schalten mTORC1
+            teilweise wieder an. Deshalb hat die Leberkurve einen Gipfel und fällt danach —
+            der Muskel hat diese Bremse nicht.</div>
+          <div class="note"><b>Kalibrierung.</b> Die Parameter sind nicht geraten, sondern
+            gefittet (RMSE 0,017) unter mehreren Bedingungen gleichzeitig:<br>
+            • Leberglykogen ~51 % nach 12 h, ~28 % nach 24 h, ~4 % nach 48 h — das deckt
+            sich mit ¹³C-MRS-Messungen am Menschen (Rothman et al., <i>Science</i> 1991:
+            ~24 % nach 23 h).<br>
+            • 30 g Protein pur: Erholung in 4,8 h. Reines Fett: keine Wirkung. Mahlzeit mit
+            900 kcal: 20 h. 375 g Kohlenhydrate: Leber füllt auf 78 %, Rate fällt auf 20 %,
+            volle Erholung erst nach 31 h.<br><br>
+            <b>Der schwache Anker:</b> Der Verlauf über die Fastenstunden selbst ist nicht
+            gemessen, sondern eine frühere Setzung dieser App. Der Fit erbt diese
+            Unsicherheit vollständig.</div>
+          <div class="note"><b>Der wackeligste Parameter.</b> Die AMPK-Schwelle liegt im
+            Fit bei ~62 % Leberglykogen, mit sehr steiler Kennlinie. Das Modell behauptet
+            damit: unterhalb von etwa 60 % Füllstand springt die Autophagie an. Diese Zahl
+            folgt <b>ausschließlich</b> daraus, dass sie die gesetzte Zielkurve trifft —
+            unabhängig belegt ist sie nicht. Der Mechanismus dahinter (Zucker im Speicher
+            hemmt AMPK direkt über die β-CBM-Domäne) ist real, die Schwelle nicht
+            gemessen.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Grenzen des Modells</summary>
+        <div class="inner">
+          <div class="note" style="margin-top:0"><b>Hier wird nichts gemessen, sondern
+            erschlossen.</b> Es gibt keine erprobte Methode, Autophagie im lebenden
+            Menschen zu messen. Der übliche Marker LC3-II zählt Müllsäcke — das kann hoher
+            Durchsatz sein <i>oder</i> ein Stau bei der Entsorgung. Ohne Zusatzversuch sind
+            die beiden nicht unterscheidbar (Klionsky et al., Autophagy-Guidelines). Alles
+            hier ist Kaskade plus Zeitkonstanten.</div>
+          <div class="note"><b>Mausdaten, Menschendauer.</b> Die Rangfolge der Gewebe und
+            die Anlaufzeiten stammen aus Mäusen. Mäuse verbrennen pro Gramm etwa siebenmal
+            so schnell — die Übertragung auf die menschliche Zeitachse ist eine Annahme,
+            keine Ableitung.</div>
+          <div class="note"><b>Essen ist kein Rückschritt.</b> Erst wenn mTORC1 wieder
+            hochfährt, baut die Zelle aus verbrauchten Müllverwertern neue Lysosomen (Yu
+            et al., <i>Nature</i> 2010). Ohne Refeed erschöpft sich die Entsorgungskapazität
+            selbst. Das Modell bildet diesen Schritt <b>nicht</b> ab und unterschätzt damit
+            den Wert des Essens.</div>
+          <div class="note"><b>Die Leberkurve hat einen Gipfel.</b> Dass Autophagie mit der
+            Fastendauer immer weiter steigt, ist falsch: in GFP-LC3-Mäusen kehrte die
+            Leber-Autophagie in der zweiten 24-h-Hälfte fast auf Basalniveau zurück, während
+            der Muskel erhöht blieb. Diese App bildete das bis vor Kurzem nicht ab. Wann der
+            Gipfel beim Menschen liegt und wie tief es danach geht, ist offen — deshalb der
+            Regler unter Modellparameter.</div>
+          <div class="note"><b>Wahllos abräumen kostet auch.</b> Bei Nährstoffmangel packt
+            die Zelle nicht nur Schrott ein, sondern auch Brauchbares. Die Kurve zeigt
+            Abbau, nicht Nutzen. Ein höherer Wert ist nicht automatisch besser, und es gibt
+            keine Humanstudie, die eine bestimmte Fastendauer über einen
+            Autophagie-Endpunkt rechtfertigt.</div>
+          <div class="note"><b>Das Gehirn fehlt bewusst.</b> Selbst nach 48 h Fasten zeigte
+            Mäusehirn kaum Induktion (Mizushima 2004): Neuronen sind durch Ketone und die
+            Blut-Hirn-Schranke abgeschirmt und räumen ohnehin ständig auf. Die Kurve wäre
+            fast flach.</div>
+          <div class="warnbox"><b>Sicherheit:</b> Ab etwa 48–72 h ohne Nahrung gehören
+            Elektrolyte und ärztliche Begleitung dazu. Beim Wiederessen nach langem Fasten
+            droht ein Refeeding-Syndrom — Phosphat, Kalium und Magnesium verschieben sich
+            schlagartig in die Zellen. Langsam steigern, keine große Kohlenhydratmenge als
+            erste Mahlzeit. Das gilt unabhängig davon, was diese Kurve zeigt.</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Daten &amp; Speicher</summary>
+        <div class="inner">
+          <div class="note" id="diagBox"></div>
+          <button class="mini" id="resetBtn" style="margin-top:10px">Alles zurücksetzen</button>
+          <div id="saveState"></div>
+        </div>
+      </details>
+
+    </div>
   </div>
 
-<div class="sec" id="secTis">
-    <h2><span class="dot y"></span>Gewebe<span class="sp"></span><button class="ib">i</button></h2>
-    <div class="note" id="storeNote" style="margin-top:0"></div>
-    <div class="expl note"><b>ZNS fehlt bewusst:</b> In GFP-LC3-Mäusen zeigte das Gehirn
-      selbst nach 48 h Fasten kaum Autophagie-Induktion (Mizushima 2004). Neuronen sind
-      durch Ketone und die Blut-Hirn-Schranke abgeschirmt und laufen basal ohnehin hoch,
-      weil sie postmitotisch sind — sie können beschädigte Proteine nicht durch Zellteilung
-      verdünnen. Die Kurve wäre fast flach, als Regler nutzlos.<br><br>
-      Die Hierarchie Leber ≫ Skelettmuskel > Herz ≫ ZNS stammt aus GFP-LC3-Mausdaten.</div>
-  </div>
-
-    <div class="sec coll" id="secBody">
-    <h2><span class="dot x"></span>Körperdaten<span class="sp"></span>
-      <button class="ib">i</button><button class="cb">▾</button></h2>
-    <div class="secBody">
-      <div class="row">
-        <div class="lbl"><span>Gewicht</span><span class="val" id="vWeight"></span></div>
-        <input type="range" id="weight" min="45" max="160" step="1">
-      </div>
-      <div class="row">
-        <div class="lbl"><span>Fettfreie Masse (Bioimpedanz)</span><span class="val" id="vMus"></span></div>
-        <input type="range" id="musclePct" min="40" max="85" step="0.1">
-      </div>
-      <div class="row">
-        <div class="lbl"><span>Alter</span><span class="val" id="vAge"></span></div>
-        <input type="range" id="age" min="18" max="90" step="1">
-      </div>
-    </div>
-    <div class="expl note">Bioimpedanz misst fettfreie Weichgewebsmasse, nicht
-      Skelettmuskel. Skelettmuskel ist davon ~55 %, und beim Training arbeitet davon
-      wieder nur gut die Hälfte mit. Der nutzbare Glykogenspeicher ist also deutlich
-      kleiner, als die Rohzahl suggeriert. Bioimpedanz hat zudem ±3–5 %-Punkte Fehler.<br><br>
-      <b>Alter wirkt nicht auf die Kurve.</b> Die Richtung — sinkende Autophagie-Kapazität
-      durch reduzierte ATG-Expression und verminderte TFEB-Aktivität (Rubinsztein 2011) —
-      ist plausibel, ein Effektkoeffizient beim Menschen existiert nicht. Es geht nur in
-      die HRmax-Berechnung ein.</div>
-  </div>
-
-<div class="sec" id="secLim">
-    <h2>Grenzen des Modells<span class="sp"></span><button class="ib">i</button></h2>
-    <div class="expl note" style="margin-top:0">
-      Es gibt <b>keine validierte In-vivo-Messung des Autophagie-Flux beim Menschen.</b>
-      LC3-II misst die Zahl der Autophagosomen, nicht deren Umsatz — ein Anstieg kann auch
-      blockierte Degradation bedeuten (Klionsky et al., Autophagy 2021).<br><br>
-      Diese Kurve zeigt die <b>vorgeschalteten Regulatoren</b> — Insulin, Glykogen, mTORC1,
-      AMPK, Ketone — die beim Menschen sauber gemessen sind, und unterstellt, dass
-      Autophagie ihnen mit Verzögerung folgt. Mechanistisch plausibel,
-      <b>beim Menschen nicht gezeigt.</b><br><br>
-      <b>Belegt:</b> Speichergrößen (~100 g Leber, ~15 g/kg Muskel), KH-Anteile je
-      Intensität (Brooks &amp; Mercier 1994), Glykogenverlauf beim Fasten (Rothman 1991),
-      Insulineffekt von Schlafmangel (Donga 2010) und Bauchumfang (Després 2012),
-      72-h-Befund am Skelettmuskel (Vendelbo 2014).<br>
-      <b>Von mir gesetzt:</b> die 15/85-Aufteilung Leber/Muskel, die Umrechnung
-      „volle Entleerung ≈ 2×t50 Vorsprung", alle Bump-Höhen und Zeitkonstanten,
-      sämtliche Regler-Koeffizienten.<br><br>
-      <b>Schwächste Stelle:</b> Die Muskelkurve. Ruhendes Muskelglykogen wird beim Fasten
-      kaum abgebaut — der Muskel spart es, weil er es nicht ans Blut abgeben kann. Die
-      Muskel-Basiskurve ist deshalb gar keine Glykogen-Uhr, sondern eine Insulin-/
-      mTORC1-Uhr. Trainingseffekt dort in Glykogen-Zeitgewinn umzurechnen vermischt zwei
-      Dinge. Für die Leberkurve ist die Logik sauberer.<br><br>
-      Y-Achse ohne Einheiten. Autophagie startet nie bei null — sie läuft konstitutiv
-      immer (Atg5-Knockouts sind neonatal letal, Kuma 2004).
-    </div>
-  </div>
-
-  <div class="sec coll">
-    <h2>Daten &amp; Speicher<span class="sp"></span><button class="ib">i</button><button class="cb">▾</button></h2>
-    <div class="secBody">
-    <div style="display:flex;gap:7px;margin-bottom:8px">
-      <button class="mini" id="saveBtn">Jetzt speichern</button>
-      <button class="mini" id="loadBtn">Jetzt laden</button>
-    </div>
-    <button class="mini" id="resetBtn">Alles zurücksetzen</button>
-    <div id="saveState">–</div>
-    <div id="diagBox" style="font-size:10px;color:var(--dim2);background:var(--bg);
-      border:1px solid var(--line);border-radius:8px;padding:8px;margin-top:8px;
-      line-height:1.6;font-variant-numeric:tabular-nums">–</div>
-
-    <div style="border-top:1px solid var(--line);margin-top:14px;padding-top:12px">
-      <div style="font-size:12px;color:var(--dim);margin-bottom:8px">
-        Sicherungs-Code — funktioniert immer, auch ohne Speicher-API</div>
-      <textarea id="codeBox" rows="3" placeholder="Code hier einfügen und Wiederherstellen drücken"
-        style="width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
-        border-radius:9px;padding:9px;font-size:11px;font-family:ui-monospace,monospace;
-        resize:vertical"></textarea>
-      <div style="display:flex;gap:7px;margin-top:7px">
-        <button class="mini" id="expBtn">Code erzeugen</button>
-        <button class="mini" id="impBtn">Wiederherstellen</button>
-      </div>
-      <div id="codeMsg" style="font-size:10.5px;color:var(--dim2);margin-top:6px"></div>
-    </div>
-    </div>
-    <div class="expl note">Einstellungen und Fastenstart werden automatisch gespeichert
-      und beim Öffnen wiederhergestellt. Die Fastenuhr läuft weiter, auch wenn die App
-      geschlossen war.<br><br>
-      <b>Diese Version läuft eigenständig</b> und nutzt localStorage mit IndexedDB als
-      Zweitschicht. Beides funktioniert nur über eine gehostete https-Adresse — als
-      lokal geöffnete Datei (file://) blockiert iOS den Speicher.<br><br>
-      <b>Safari-Eigenheit:</b> Skriptgeschriebener Speicher wird nach 7 Tagen ohne
-      Seitenbesuch gelöscht (Intelligent Tracking Prevention). Als Homescreen-App ist
-      das Risiko deutlich kleiner, aber nicht null. Deshalb den Sicherungs-Code
-      gelegentlich erzeugen und ablegen.</div>
-  </div>
-
-  <div class="foot">Kein medizinischer Rat. Längeres Fasten nur mit ärztlicher Begleitung.</div>
+  <div class="foot">Modell, keine Messung. Alle Zeitkonstanten sind gesetzt oder gefittet,
+    keine ist am Menschen validiert.</div>
 </div>
 
 <script>
 /* ===== Konstanten ===== */
 const INT=[
- {n:'Locker',  hr:'55–65 %',h:0.05,kph:350,r:[.55,.65],cf:0.35,
+ {n:'Locker',  hr:'55–65 %',h:0.05,kph:350,cf:0.35,
   d:'Überwiegend Fettoxidation, kaum Glykogenzehrung'},
- {n:'Moderat', hr:'65–75 %',h:0.12,kph:550,r:[.65,.75],cf:0.55,
+ {n:'Moderat', hr:'65–75 %',h:0.12,kph:550,cf:0.55,
   d:'Crossover-Punkt: KH werden dominanter Brennstoff (Brooks & Mercier 1994)'},
- {n:'Intensiv',hr:'75–85 %',h:0.22,kph:750,r:[.75,.85],cf:0.75,
+ {n:'Intensiv',hr:'75–85 %',h:0.22,kph:750,cf:0.75,
   d:'Deutliche Muskelglykogen-Entleerung, starke AMPK-Aktivierung'},
- {n:'Maximal', hr:'>85 %',  h:0.30,kph:900,r:[.85,.95],cf:0.85,
-  d:'Maximaler AMP/ATP-Anstieg → stärkste ULK1-Phosphorylierung, kurz durchhaltbar'}
+ {n:'Maximal', hr:'>85 %',  h:0.30,kph:900,cf:0.85,
+  d:'Maximaler AMP/ATP-Anstieg → stärkste ULK1-Phosphorylierung'}
 ];
 const FIT=['untrainiert','gelegentlich','regelm. Ausdauer','Ausdauer-trainiert'];
-const TMAX=96, MAXTR=10, FLOOR=0.15, KEY='autophagie-state';
+const MAXM=20, MAXT=20, KEY='autophagie-v2';
+const DAYOPT=[1,2,3,5,7,14,21,28];
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 
-const BODY={waist:102,fitness:1,sleep:6,weight:97,musclePct:68.7,age:43};
-const mk=o=>Object.assign({carbsLast:110,proteinLast:30,carbsPrev:90,usePrev:false,
-  activeKcal:450,tissue:'liver',showBump:true,xMode:'hours',trainings:[]},BODY,o);
-const PRESETS={
- 'Ich (Standardtag)':mk({}),
- 'Ich + Training':mk({activeKcal:900,trainings:[{hoursAgo:3,int:2,kcal:450,strength:false}]}),
- 'Ich plant Training':mk({trainings:[{hoursAgo:-2,int:2,kcal:450,strength:false}]}),
- 'Ich Low Carb':mk({carbsLast:25,proteinLast:35,carbsPrev:30,usePrev:true}),
- 'Ich Carb-Load':mk({carbsLast:210,proteinLast:25,carbsPrev:180,usePrev:true,activeKcal:300}),
- 'Neutral':mk({carbsLast:100,proteinLast:20,carbsPrev:100,activeKcal:400,
-   waist:94,fitness:2,sleep:7.5,weight:80,musclePct:60,age:40})
+/* Gefittete Modellkonstanten (siehe „Wie das Modell rechnet"). */
+const K={
+  TAU_C0:3.748, TAU_C_CARB:150, TAU_FAT:60, TAU_P0:4.000,
+  KM_INS:11.025, KM_LEU:32.000, INS_FROM_PROT:0.152,
+  HGP_PER_KG:0.5278, GLYC_FRAC:0.350, GLYC_EXP:0.545,
+  MUS_BASAL:5.07,       // war 2.0 — Muskelglykogen zehrte praktisch nicht
+  OXID:0.050, PRIO_L:0.950, LRATE:160, MRATE:286,
+  FLOOR:0.15, AMPK_BASE:0.400, AMPK_G50:0.4258, AMPK_HILL:2.01,
+  TAU_PULSE:2.5, PULSE_MUS:3.0, PULSE_LIV:0.30,
+  CAP_BASE:0.100, W_MID:0.688, W_SLOW:0.312, TAU_BUILD:11.36,
+  /* Rueckkopplung: der Abbau liefert Aminosaeuren zurueck, die mTORC1 lokal
+     wieder anschalten. Mizushima 2004 (GFP-LC3-Maus): Leber-Autophagie steigt
+     in den ersten 24 h und faellt in den naechsten 24 h fast auf Basal zurueck,
+     Muskel bleibt erhoeht. Dazu passt, dass mTORC1 in der Leber reaktiviert,
+     im Muskel nicht. Die Staerke ist einstellbar, weil die Uebertragung der
+     Mauszeitachse auf den Menschen unbelegt ist. */
+  TAU_AA:90.0, KM_AA:39.0, FB_MUSCLE:0.0,
+  /* Myokin-Weg: Kontraktion setzt FN1 frei, das ueber Integrin-IKK-JNK1 BECN1
+     auch in nicht-kontraktilen Geweben aus der BCL2-Bindung loest. Wirkt neben
+     mTORC1/AMPK — deshalb auch bei leeren Speichern. */
+  MYO_MUS:1.4, MYO_LIV:0.9, TAU_MYO:3.0,
+  MFAC_A:2.282, MFAC_B:0.717, LFAC_A:1.000, LFAC_B:0.451
 };
-let S={}, activePreset='Ich (Standardtag)';
-const defaultStart=()=>{const d=new Date();d.setHours(d.getHours()-14);d.setMinutes(0,0,0);return d;};
-const toLocal=d=>{const p=n=>String(n).padStart(2,'0');
-  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;};
-function loadPreset(name){const st=S.start;S=JSON.parse(JSON.stringify(PRESETS[name]));
-  S.start=st||defaultStart();activePreset=name;normTrainings();}
-S.start=defaultStart(); loadPreset('Ich (Standardtag)');
 
-/* ===== Persistenz ===== */
-let saveTimer=null, DIAG={api:'?',lastSave:'–',lastLoad:'–',bytes:0};
-function setSaveState(t){const e=document.getElementById('saveState');if(e)e.textContent=t;}
-function diag(){
-  const e=document.getElementById('diagBox'); if(!e) return;
-  e.innerHTML=`API: <b>${DIAG.api}</b><br>Speichern: ${DIAG.lastSave}<br>`
-    +`Laden: ${DIAG.lastLoad}<br>Key: ${KEY} · ${DIAG.bytes} B`;
-}
-function serialize(){
-  return JSON.stringify({
-    ...S,
-    start:S.start.toISOString(),
-    trainings:S.trainings.map(({at,int,kcal,strength})=>({at,int,kcal,strength})),
-    preset:activePreset
-  });
-}
-/* ===== Persistenz: localStorage + IndexedDB als Zweitschicht ===== */
-let idb=null;
-function openIDB(){
-  return new Promise(res=>{
-    try{
-      const rq=indexedDB.open('autophagie',1);
-      rq.onupgradeneeded=()=>rq.result.createObjectStore('kv');
-      rq.onsuccess=()=>res(rq.result);
-      rq.onerror=()=>res(null);
-    }catch(e){ res(null); }
-  });
-}
-function idbSet(k,v){
-  return new Promise(res=>{
-    if(!idb) return res(false);
-    try{ const tx=idb.transaction('kv','readwrite');
-      tx.objectStore('kv').put(v,k);
-      tx.oncomplete=()=>res(true); tx.onerror=()=>res(false);
-    }catch(e){ res(false); }
-  });
-}
-function idbGet(k){
-  return new Promise(res=>{
-    if(!idb) return res(null);
-    try{ const tx=idb.transaction('kv','readonly');
-      const rq=tx.objectStore('kv').get(k);
-      rq.onsuccess=()=>res(rq.result||null); rq.onerror=()=>res(null);
-    }catch(e){ res(null); }
-  });
-}
-async function doSave(){
-  const payload=serialize(); DIAG.bytes=payload.length;
-  let ls=false, ix=false;
-  try{ localStorage.setItem(KEY,payload); ls=true; }catch(e){}
-  ix=await idbSet(KEY,payload);
-  DIAG.api=(ls?'localStorage ok':'localStorage FEHLT')+' · '+(ix?'IndexedDB ok':'IndexedDB FEHLT');
-  if(ls||ix){
-    DIAG.lastSave=new Date().toLocaleTimeString('de-DE');
-    setSaveState('Gespeichert · '+new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}));
-    diag(); return true;
-  }
-  DIAG.lastSave='FEHLER: kein Speicher beschreibbar';
-  setSaveState('Speichern fehlgeschlagen — nutze den Sicherungs-Code');
-  diag(); return false;
-}
-function scheduleSave(){ clearTimeout(saveTimer); saveTimer=setTimeout(doSave,400); }
+/* ===== Zustand ===== */
+const DEF=()=>({
+  weight:97, musclePct:68.7, waist:102, fitness:1, sleep:6,
+  activeKcal:450, tissue:'liver', gly0:0.65,
+  tauCap:2.0, tauDecay:7, fbLiver:0.95, cumMode:'stock',
+  days:2, xMode:'hours',
+  meals:[], trainings:[], actDays:[]
+});
+let S=DEF();
+const defaultStart=()=>{const d=new Date();d.setHours(d.getHours()-18);d.setMinutes(0,0,0);return d;};
+S.start=defaultStart();
+S.meals=[{at:S.start.getTime(),kcal:700,pctC:45,pctP:20}];
 
-async function restore(){
-  idb=await openIDB();
-  let raw=null, src='';
-  try{ raw=localStorage.getItem(KEY); if(raw) src='localStorage'; }catch(e){}
-  if(!raw){ raw=await idbGet(KEY); if(raw) src='IndexedDB'; }
-  if(!raw){ DIAG.api='bereit'; DIAG.lastLoad='nichts gespeichert';
-    setSaveState('Noch nichts gespeichert'); diag(); return false; }
-  try{
-    const o=JSON.parse(raw);
-    const st=new Date(o.start);
-    if(isNaN(st.getTime())) throw new Error('Startdatum unlesbar');
-    activePreset=o.preset||null;
-    delete o.preset; delete o.start;
-    S=Object.assign(mk({}),o);
-    S.start=st;
-    S.trainings=(o.trainings||[]).map(t=>Object.assign({},t));
-    normTrainings();
-    DIAG.api='bereit'; DIAG.lastLoad='ok aus '+src; DIAG.bytes=raw.length;
-    setSaveState('Wiederhergestellt · Start '+st.toLocaleString('de-DE',
-      {day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}));
-    diag(); return true;
-  }catch(e){
-    DIAG.lastLoad='FEHLER: '+(e&&e.message?e.message:e);
-    setSaveState('Gespeicherte Daten unlesbar'); diag(); return false;
-  }
-}
-
-const nowH=()=>Math.max(0,(Date.now()-S.start.getTime())/3600000);
-/* Trainings speichern einen absoluten Zeitstempel (at, ms).
-   Vorher war es ein Offset zu "jetzt" — dadurch wanderte ein absolviertes
-   Training mit der Uhr mit, statt an seiner Fastenstunde zu bleiben. */
-function normTrainings(){
-  const nowMs=Date.now();
-  S.trainings.forEach(t=>{
-    if(t.at===undefined||t.at===null){
-      t.at = nowMs - (t.hoursAgo||0)*3600000;
-    }
-    delete t.hoursAgo;
-  });
-}
-const isFuture=t=>t.at>Date.now();
-const trainDur=t=>Math.max(0.1,(+t.kcal||0)/(t.strength?400:INT[t.int].kph));
-const trainStart=t=>Math.max(0,(t.at-S.start.getTime())/3600000);
 const WD=['So','Mo','Di','Mi','Do','Fr','Sa'];
 const fmtAt=ms=>{const d=new Date(ms);
   return WD[d.getDay()]+' '+String(d.getDate()).padStart(2,'0')+'.'
-    +String(d.getMonth()+1).padStart(2,'0')+'. '+String(d.getHours()).padStart(2,'0')+':00';};
+    +String(d.getMonth()+1).padStart(2,'0')+'. '+d.getHours();};
 const relTxt=ms=>{const h=(Date.now()-ms)/3600000;
-  return h>=0?`vor ${h.toFixed(0)} h`:`in ${(-h).toFixed(0)} h`;};
-const pastKcal=()=>S.trainings.filter(t=>!isFuture(t)).reduce((a,t)=>a+(+t.kcal||0),0);
+  const a=Math.abs(h), v=a>=48?(a/24).toFixed(0)+'d':a.toFixed(0)+'h';
+  return h>=0?`vor ${v}`:`in ${v}`;};
+const isFuture=x=>x.at>Date.now();
+const nowH=()=>Math.max(0,(Date.now()-S.start.getTime())/3600000);
+
+const relH=x=>(x.at-S.start.getTime())/3600000;
+/* Der Start ist keine Einstellung, sondern abgeleitet: die frueheste
+   eingetragene Mahlzeit (bzw. Training) ist der Nullpunkt. Liegt alles in der
+   Zukunft, ist es "jetzt". So kann nichts aus dem Fenster fallen. */
+function syncStart(){
+  const ev=S.meals.concat(S.trainings);
+  const first=ev.length?Math.min(Date.now(),...ev.map(x=>x.at)):Date.now()-18*3600000;
+  const d=new Date(first); d.setMinutes(0,0,0); S.start=d;
+}
+/* Gerechnet wird ab dem Nullpunkt bis zum letzten Ereignis bzw. jetzt.
+   Angezeigt wird davon ein gleitendes Fenster der gewaehlten Laenge, das
+   immer am rechten Rand endet — "jetzt" ist damit stets sichtbar. */
+function bounds(){ return {t0:0,t1:S.days*24}; }
+
+/* Tap-Marker: Stunden seit Start, oder null fuer "nur jetzt". */
+let PIN=null, FULL=false;
+const pinMs=()=>S.start.getTime()+PIN*3600000;
+
+/* ===== Persistenz ===== */
+let saveTimer=null, idb=null, DIAG={api:'?',lastSave:'–',lastLoad:'–',bytes:0};
+function setSaveState(t){const e=document.getElementById('saveState');if(e)e.textContent=t;}
+function diag(){const e=document.getElementById('diagBox'); if(!e) return;
+  e.innerHTML=`API: <b>${DIAG.api}</b><br>Speichern: ${DIAG.lastSave}<br>`
+    +`Laden: ${DIAG.lastLoad}<br>Key: ${KEY} · ${DIAG.bytes} B`;}
+function serialize(){
+  return JSON.stringify({...S,start:S.start.toISOString(),
+    meals:S.meals.map(({at,kcal,pctC,pctP})=>({at,kcal,pctC,pctP})),
+    actDays:S.actDays.map(({day,kcal})=>({day,kcal})),
+    trainings:S.trainings.map(({at,int,kcal,strength})=>({at,int,kcal,strength}))});
+}
+function openIDB(){return new Promise(res=>{try{
+  const rq=indexedDB.open('autophagie2',1);
+  rq.onupgradeneeded=()=>rq.result.createObjectStore('kv');
+  rq.onsuccess=()=>res(rq.result); rq.onerror=()=>res(null);
+}catch(e){res(null);}});}
+function idbSet(k,v){return new Promise(res=>{if(!idb)return res(false);try{
+  const tx=idb.transaction('kv','readwrite');tx.objectStore('kv').put(v,k);
+  tx.oncomplete=()=>res(true);tx.onerror=()=>res(false);}catch(e){res(false);}});}
+function idbGet(k){return new Promise(res=>{if(!idb)return res(null);try{
+  const rq=idb.transaction('kv','readonly').objectStore('kv').get(k);
+  rq.onsuccess=()=>res(rq.result||null);rq.onerror=()=>res(null);}catch(e){res(null);}});}
+async function doSave(){
+  const raw=serialize(); DIAG.bytes=raw.length;
+  let ok=false;
+  try{ localStorage.setItem(KEY,raw); ok=true; }catch(e){}
+  const ok2=await idbSet(KEY,raw);
+  DIAG.api='bereit'; DIAG.lastSave=(ok||ok2)?new Date().toLocaleTimeString('de-DE'):'FEHLER';
+  setSaveState((ok||ok2)?'Gespeichert '+new Date().toLocaleTimeString('de-DE'):'Speichern fehlgeschlagen');
+  diag();
+}
+function scheduleSave(){clearTimeout(saveTimer);saveTimer=setTimeout(doSave,400);}
+async function restore(){
+  idb=await openIDB();
+  let raw=null,src='';
+  try{raw=localStorage.getItem(KEY); if(raw)src='localStorage';}catch(e){}
+  if(!raw){raw=await idbGet(KEY); if(raw)src='IndexedDB';}
+  if(!raw){DIAG.api='bereit';DIAG.lastLoad='nichts gespeichert';
+    setSaveState('Noch nichts gespeichert');diag();return false;}
+  try{
+    const o=JSON.parse(raw), st=new Date(o.start);
+    if(isNaN(st.getTime())) throw new Error('Startdatum unlesbar');
+    delete o.start;
+    S=Object.assign(DEF(),o); S.start=st;
+    S.meals=(o.meals||[]).map(m=>Object.assign({},m));
+    S.trainings=(o.trainings||[]).map(t=>Object.assign({},t));
+    S.actDays=(o.actDays||[]).map(a=>Object.assign({},a));
+    syncStart();
+    DIAG.api='bereit';DIAG.lastLoad='ok aus '+src;DIAG.bytes=raw.length;
+    setSaveState('Wiederhergestellt · '+S.meals.length+' Mahlzeiten');
+    diag();return true;
+  }catch(e){
+    DIAG.lastLoad='FEHLER: '+(e&&e.message?e.message:e);
+    setSaveState('Gespeicherte Daten unlesbar');diag();return false;}
+}
 
 /* ===== Modell ===== */
-function params(){
-  const liver=S.tissue==='liver';
-  let t50=liver?16:26;
-  t50+=(S.carbsLast-100)*0.060;
-  if(S.usePrev) t50+=(S.carbsPrev-100)*0.020;
-  t50+=S.proteinLast*0.055;
-  t50+=liver?(S.weight-80)*0.030:0;
-  const alltag=Math.max(0,S.activeKcal-pastKcal());
-  t50-=alltag*0.0042;
-  const hr=S.start.getHours();
-  const circ=(hr>=21||hr<3)?1.5:(hr>=19?0.7:0);
-  t50+=circ;
-  let n=2.0;
-  n+=(S.fitness-1.5)*0.12;
-  n-=Math.max(0,S.waist-94)*0.012;
-  n-=Math.max(0,7.5-S.sleep)*0.060;
-  return {t50:clamp(t50,4,60),n:clamp(n,1.15,3.2),A:liver?1.0:0.78,circ,alltag};
-}
 function stores(){
   const lean=S.weight*S.musclePct/100, skel=lean*0.55, active=skel*0.55;
   return {liver:400*(S.weight/80), muscle:active*60, lean, skel, active};
 }
-function advance(tr,P){
-  const cf=tr.strength?0.80:INT[tr.int].cf;
-  const gly=(+tr.kcal||0)*cf;
-  const St=stores(), liver=S.tissue==='liver';
-  const share=liver?0.15:0.85;
-  const store=liver?St.liver:St.muscle;
-  return clamp(gly*share/store,0,0.9)*2*P.t50;
+function insSens(){
+  let s=1.0;
+  s+=Math.max(0,S.waist-94)*0.006;
+  s-=(S.fitness-1.5)*0.05;
+  s+=Math.max(0,7.5-S.sleep)*0.030;
+  return clamp(s,0.75,1.45);
 }
-function tau(t,P,list){
-  let a=0;
-  (list||S.trainings).forEach(tr=>{
-    const tS=trainStart(tr);
-    if(t<=tS) return;
-    a+=advance(tr,P)*Math.min(1,(t-tS)/trainDur(tr));
-  });
-  return t+a;
+const macros=m=>({
+  c:Math.max(0,m.kcal*(m.pctC/100)/4),
+  p:Math.max(0,m.kcal*(m.pctP/100)/4),
+  f:Math.max(0,m.kcal*Math.max(0,100-m.pctC-m.pctP)/100/9)
+});
+
+function simulate(){
+  const hours=bounds().t1, dt=hours<=168?0.1:0.2, N=Math.round(hours/dt);
+  const St=stores(), Glmax=St.liver, Gmmax=St.muscle, sens=insSens();
+  const M=S.meals.map(m=>Object.assign({t:relH(m)},macros(m))).sort((a,b)=>a.t-b.t);
+  /* Trainings wirken über ihre Dauer, nicht als Sprung: Glykogen fließt
+     kontinuierlich ab, der AMPK-Puls baut sich während der Einheit auf. */
+  const T=S.trainings.map(x=>{
+    const I0=INT[clamp(x.int|0,0,3)];
+    const dur=Math.max(0.1,(+x.kcal||0)/(x.strength?400:I0.kph));
+    const ck=(+x.kcal||0)*(x.strength?0.70:I0.cf);
+    return {t0:relH(x), t1:relH(x)+dur, dur,
+            mR:ck*0.85/dur, lR:ck*0.15/dur,
+            pR:(x.strength?0.14:I0.h)*Math.min(1,dur/0.75)/dur};
+  }).sort((a,b)=>a.t0-b.t0);
+  const tauDec=S.tauDecay*24;
+
+  let Ag=0,Ap=0,Af=0, Gl=Glmax*S.gly0, Gm=Gmmax*S.gly0;
+  let pulse=0, myo=0, AA=0, C1=0, C2=0, Sc=0, mi=0;
+  const mFac=clamp(K.MFAC_A-K.MFAC_B*sens,0.30,1.25);
+  const lFac=clamp(K.LFAC_A+K.LFAC_B*(sens-0.75)/0.70,0.80,1.20);
+  /* Aktivitaet kann tageweise ueberschrieben werden. Zeit laeuft monoton,
+     deshalb reicht ein mitwandernder Tageszeiger statt einer Suche je Schritt. */
+  const OV={}; S.actDays.forEach(a=>{OV[a.day]=a.kcal;});
+  const d0=new Date(S.start.getTime()); d0.setHours(0,0,0,0);
+  let dayMs=d0.getTime();
+  const actOf=()=>OV[dayMs]!=null?OV[dayMs]:S.activeKcal;
+  let alltag=1+(actOf()-400)/2000;
+  const o={dt,t:[],rate:[],cum:[],cap:[],Gl:[],Gm:[],mTOR:[],AMPK:[],aa:[]};
+
+  for(let i=0;i<=N;i++){
+    const t=i*dt;
+    /* Tageszeiger nachziehen — Zeit laeuft monoton, also kein Suchen noetig. */
+    const absMs=S.start.getTime()+t*3600000;
+    while(absMs>=dayMs+86400000){dayMs+=86400000;alltag=1+(actOf()-400)/2000;}
+    while(mi<M.length && M[mi].t<=t){Ag+=M[mi].c;Ap+=M[mi].p;Af+=M[mi].f;mi++;}
+    for(let k=0;k<T.length;k++){
+      const tr=T[k]; if(t<tr.t0||t>=tr.t1) continue;
+      Gm=Math.max(0,Gm-tr.mR*dt); Gl=Math.max(0,Gl-tr.lR*dt);
+      pulse+=tr.pR*dt; myo+=tr.pR*dt;
+    }
+    const tauC=K.TAU_C0+Ag/K.TAU_C_CARB+Af/K.TAU_FAT;
+    const tauP=K.TAU_P0+Af/K.TAU_FAT;
+    const Ra=Ag/tauC, Rp=Ap/tauP;
+    Ag-=Ra*dt; Ap-=Rp*dt; Af-=Af/2.5*dt;
+
+    const insDrive=(Ra+K.INS_FROM_PROT*Rp)*sens;
+    const I=insDrive/(insDrive+K.KM_INS);
+    const L=(Rp*Rp)/(Rp*Rp+K.KM_LEU*K.KM_LEU);
+    const fb=(S.tissue==='muscle'?K.FB_MUSCLE:S.fbLiver)*AA/(AA+K.KM_AA);
+    const mTOR=clamp(1-(1-I)*(1-L)*(1-fb),0,1);
+
+    const HGP=K.HGP_PER_KG*S.weight*alltag;
+    const drainL=HGP*K.GLYC_FRAC*Math.pow(clamp(Gl/Glmax,0,1),K.GLYC_EXP);
+    const drainM=K.MUS_BASAL*alltag*clamp(Gm/Gmmax,0,1);
+    /* Was die Leber nicht aufnimmt, geht in den Muskel statt verloren.
+       Beide mit Obergrenze — Glykogensynthese braucht Stunden. */
+    const avail=Ra*4*(1-K.OXID);
+    const wL=1-clamp(Gl/Glmax,0,1), wM=1-clamp(Gm/Gmmax,0,1);
+    const fillL=Math.min(avail*K.PRIO_L,K.LRATE*lFac)*wL;
+    const fillM=Math.min(Math.max(0,avail-fillL),K.MRATE*mFac)*wM;
+    Gl=clamp(Gl+(fillL-drainL)*dt,0,Glmax);
+    Gm=clamp(Gm+(fillM-drainM)*dt,0,Gmmax);
+
+    pulse=Math.max(0,pulse-pulse/K.TAU_PULSE*dt);
+    const gFrac=S.tissue==='liver'?Gl/Glmax:Gm/Gmmax;
+    const AMPKgly=1/(1+Math.pow(Math.max(1e-6,gFrac)/K.AMPK_G50,K.AMPK_HILL));
+    const pEff=pulse*(S.tissue==='muscle'?K.PULSE_MUS:K.PULSE_LIV);
+    const AMPK=clamp(AMPKgly+pEff,0,1);
+
+    /* Initiation und Kapazität sind ein PRODUKT, keine Summe: ohne
+       ULK1-Aktivierung entstehen keine Autophagosomen, egal wie viel
+       Maschinerie vorhanden ist. */
+    myo=Math.max(0,myo-myo/K.TAU_MYO*dt);
+    const myoEff=clamp(myo*(S.tissue==='muscle'?K.MYO_MUS:K.MYO_LIV),0,0.85);
+    const ULKr=(1-mTOR)*(K.AMPK_BASE+AMPK*(1-K.AMPK_BASE));
+    const ULK=1-(1-ULKr)*(1-myoEff);   // parallel, nicht multiplikativ
+    /* Schrittfaktor auf 1 begrenzen, sonst divergiert Euler bei kleinem tau.
+       Gedeckelt heißt tau -> 0 schlicht "folgt sofort". */
+    C1+=((1-mTOR)-C1)*Math.min(1,dt/Math.max(1e-6,S.tauCap));
+    C2+=(C1-C2)*Math.min(1,dt/K.TAU_BUILD);
+    const capF=K.CAP_BASE+(1-K.CAP_BASE)*(K.W_MID*C1+K.W_SLOW*C2)/(K.W_MID+K.W_SLOW);
+    const rate=clamp(K.FLOOR+(1-K.FLOOR)*ULK*capF,0.02,1.3);
+
+    const exc=Math.max(0,rate-K.FLOOR)/(1-K.FLOOR);
+    AA+=(exc*100-AA)*Math.min(1,dt/K.TAU_AA);   // Recycling-Pool
+    if(S.cumMode==='total') Sc+=exc/24*dt;
+    else Sc=Math.max(0,Sc+(exc*100-Sc)*Math.min(1,dt/tauDec));
+
+    o.t.push(t);o.rate.push(rate);o.cum.push(Sc);o.cap.push(C1);
+    o.Gl.push(Gl/Glmax);o.Gm.push(Gm/Gmmax);o.mTOR.push(mTOR);o.AMPK.push(AMPK);o.aa.push(AA);
+  }
+  return o;
 }
-function base(t,P,list){
-  const te=tau(t,P,list);
-  if(te<=0) return FLOOR;
-  const h=Math.pow(te,P.n)/(Math.pow(P.t50,P.n)+Math.pow(te,P.n));
-  return FLOOR+(P.A-FLOOR)*h;
-}
-function bump(t,tr){
-  if(!S.showBump) return 0;
-  const tS=trainStart(tr), tE=tS+trainDur(tr);
-  if(t<tS+0.25) return 0;
-  let h=INT[tr.int].h, neg=0;
-  if(tr.strength){ if(S.tissue==='muscle'){h*=0.35;neg=0.13;} else {h*=0.85;} }
-  let v = t<=tE+0.5 ? h*Math.min(1,(t-tS-0.25)/0.75)
-                    : h*Math.pow(0.5,(t-tE-0.5)/2.5);
-  if(neg) v-=neg*(t<=tE+0.5?1:Math.pow(0.5,(t-tE-0.5)/3.0));
-  return v;
-}
-function val(t,P,list){
-  let v=base(t,P,list);
-  (list||S.trainings).forEach(tr=>{ v+=bump(t,tr); });
-  return clamp(v,0.05,1.25);
-}
-const sigma=t=>{let s=0.055+t*0.0032; if(t>72)s+=(t-72)*0.010; return s;};
+const idxAt=(o,t)=>clamp(Math.round(t/o.dt),0,o.rate.length-1);
+const rateAt=(o,t)=>o.rate[idxAt(o,t)];
+const cumAt=(o,t)=>o.cum[idxAt(o,t)];
 
 /* ===== Sätze ===== */
-const ZONES=[
- [0,2,'Verdauung läuft noch. Insulin am Peak.'],
- [2,4,'Insulin fällt. Der Körper hört auf einzulagern.'],
- [4,6,'Umschaltpunkt: die Leber gibt jetzt Glukose ab, statt sie zu speichern.'],
- [6,8,'Glukagon übernimmt. Freie Fettsäuren steigen im Blut.'],
- [8,10,'Leberglykogen unter 70 %. Fettoxidation nimmt zu.'],
- [10,12,'mTORC1 sinkt spürbar. Die Bremse auf der Autophagie löst sich.'],
- [12,14,'Erste Ketone messbar. Klassische Fastengrenze überschritten.'],
- [14,16,'Wachstumshormon steigt — das schützt deine Muskulatur.'],
- [16,18,'Fett ist jetzt der Hauptbrennstoff.'],
- [18,21,'Leberglykogen unter 40 %. Gluconeogenese trägt den Rest.'],
- [21,24,'Ein Tag. Hier liegt die größte relative Veränderung — nicht später.'],
- [24,30,'Ketone um 1 mM. Reparaturmodus etabliert.'],
- [30,36,'Leberglykogen weitgehend leer.'],
- [36,48,'mTORC1 tief unten. Zweiter Tag.'],
- [48,60,'Ketone 2–4 mM. Das Gehirn läuft überwiegend auf Ketonen.'],
- [60,72,'Der einzige Bereich, in dem beim Menschen wirklich gemessen wurde (Vendelbo 2014).'],
- [72,96,'Jenseits der Datenlage. Ab hier extrapoliert das Modell.'],
- [96,1e9,'Keine Grundlage mehr. Nicht ohne ärztliche Begleitung.']
-];
-const sentence=t=>{for(const z of ZONES) if(t>=z[0]&&t<z[1]) return {s:z[2],warn:z[0]>=72};
-  return {s:ZONES[0][2],warn:false};};
+/* Stunden seit der letzten Mahlzeit VOR dem Bezugszeitpunkt — funktioniert
+   dadurch auch fuer geplante Zeitpunkte in der Zukunft. */
+function fastH(ms){
+  const p=S.meals.filter(m=>m.at<=ms);
+  return p.length?(ms-Math.max(...p.map(m=>m.at)))/3600000:null;
+}
+function sentence(o,t,refMs){
+  const r=rateAt(o,t), gl=o.Gl[idxAt(o,t)], fh=fastH(refMs);
+  const fut=refMs>Date.now()+60000;
+  const pre=PIN==null?'':(fut?'Prognose: ':'Rückblick: ');
+  if(!S.meals.length) return {s:'Keine Mahlzeit eingetragen. Ohne die Mahlzeit vor dem Fasten kennt das Modell den Ausgangszustand nicht — der Startwert für Glykogen trägt dann alles.',warn:true};
+  if(fh===null) return {s:pre+'Dieser Zeitpunkt liegt vor der ersten Mahlzeit — das Modell rechnet ab dort mit dem eingestellten Startglykogen.',warn:false};
+  if(fh>=72) return {s:`${pre}${fh.toFixed(0)} h ohne Nahrung. Ab hier gehören Elektrolyte und ärztliche Begleitung dazu — und beim Wiederessen Vorsicht vor dem Refeeding-Syndrom.`,warn:true};
+  if(r<0.28) return {s:`${pre}Verdauung läuft. mTORC1 ist aktiv und blockiert ULK1 an Ser757 — Autophagie auf Basalniveau.`,warn:false};
+  if(r<0.45) return {s:`${pre}Insulin und Leucin fallen, mTORC1 lässt los. Leberglykogen bei ${(gl*100).toFixed(0)} % — AMPK zieht noch nicht.`,warn:false};
+  if(r<0.62) return {s:`${pre}Leberglykogen bei ${(gl*100).toFixed(0)} %. Die AMPK-Schwelle ist erreicht, der Abbau zieht an.`,warn:false};
+  if(r<0.80) return {s:`${pre}Hoher Umsatz. Leberglykogen ${(gl*100).toFixed(0)} %, Gluconeogenese trägt zunehmend.`,warn:false};
+  return {s:`${pre}Speicher weitgehend leer, die Kurve läuft ins Plateau. Der weitere Anstieg kommt nur noch aus dem Kapazitätsaufbau.`,warn:false};
+}
 
 /* ===== Chart ===== */
-const W=360,H=176,PL=8,PR=8,PT=10,PB=20;
-const sx=t=>PL+Math.pow(clamp(t,0,TMAX)/TMAX,0.7)*(W-PL-PR);
-const sy=v=>PT+(1-clamp(v,0,1.3)/1.3)*(H-PT-PB);
+let W=360,H=176,PL=8,PR=8,PT=10,PB=20,FS=8.5,FSR=9,LWR=2.1;
+/* Zwei Zeichenziele: kompakt in der Kopfzeile, groß im Vollbild. */
+function setGeom(full){
+  if(full){W=680;H=330;PL=16;PR=16;PT=20;PB=40;FS=14;FSR=16;LWR=3.2;}
+  else     {W=360;H=176;PL=8; PR=8; PT=10;PB=20;FS=8.5;FSR=9;LWR=2.1;}
+}
+let VW={t0:0,t1:48};
+const sx=t=>PL+((t-VW.t0)/Math.max(1e-6,VW.t1-VW.t0))*(W-PL-PR);
+const sy=v=>PT+(1-clamp(v,0,1.05)/1.05)*(H-PT-PB);
+const syC=(v,mx)=>PT+(1-clamp(v,0,mx)/mx)*(H-PT-PB);
 
-function draw(){
-  const P=params(), now=nowH();
-  const past=S.trainings.filter(t=>!isFuture(t));
-  const future=S.trainings.filter(isFuture);
+/* Teilstriche ab Start — das Fenster ist am Startzeitpunkt verankert. */
+function ticks(){
+  const sp=VW.t1-VW.t0;
+  const step=sp<=10?2:sp<=30?6:sp<=80?12:sp<=180?24:sp<=360?48:sp<=560?96:120;
+  const out=[];
+  for(let t=0;t<=VW.t1+1e-6;t+=step) out.push(t);
+  out.step=step;
+  return out;
+}
+
+function chartSVG(o,now,full){
+  setGeom(full);
+  const tmax=VW.t1;
+  const clockMode=S.xMode==='clock';
   let g='';
-  const clockMode = S.xMode==='clock';
-  if(clockMode){
-    // Mitternachtslinien als Tagesgrenzen
-    const d0=new Date(S.start.getTime()); d0.setHours(24,0,0,0);
-    for(let ms=d0.getTime(); ms<=S.start.getTime()+TMAX*3600000; ms+=86400000){
-      const t=(ms-S.start.getTime())/3600000;
-      if(t<1||t>TMAX-1) continue;
-      g+=`<line x1="${sx(t)}" y1="${PT}" x2="${sx(t)}" y2="${H-PB}" stroke="#2b3547"
-          stroke-dasharray="1 3"/>`;
-    }
-  }
-  [6,12,24,48,72,96].forEach(t=>{
+
+  const TK=ticks(), useDays=TK.step>=24;
+  TK.forEach(t=>{
     g+=`<line x1="${sx(t)}" y1="${PT}" x2="${sx(t)}" y2="${H-PB}" stroke="#1e2735"/>`;
-    let lab=t+'h';
-    if(clockMode){
-      const d=new Date(S.start.getTime()+t*3600000);
-      lab=WD[d.getDay()]+' '+String(d.getHours()).padStart(2,'0');
-    }
-    g+=`<text x="${sx(t)}" y="${H-7}" fill="#5d6b7d" font-size="8.5" text-anchor="middle"
+    let lab;
+    if(clockMode){const dt=new Date(S.start.getTime()+t*3600000);
+      lab=S.days<=3?WD[dt.getDay()]+' '+dt.getHours()+'h'
+        :String(dt.getDate()).padStart(2,'0')+'.'+String(dt.getMonth()+1).padStart(2,'0')+'.';}
+    else lab=useDays?(t/24).toFixed(0)+'d':t.toFixed(0)+'h';
+    const lx=clamp(sx(t),PL+FS*1.4,W-PR-FS*1.4);
+    g+=`<text x="${lx}" y="${H-PB+FS*1.2}" fill="#5d6b7d" font-size="${FS}" text-anchor="middle"
         font-family="sans-serif">${lab}</text>`;
   });
   g+=`<line x1="${PL}" y1="${H-PB}" x2="${W-PR}" y2="${H-PB}" stroke="#26303f"/>`;
 
-  let up='',dn='';
-  for(let t=0;t<=TMAX;t+=1){
-    const v=val(t,P),s=sigma(t);
-    up+=(t?'L':'M')+sx(t).toFixed(1)+','+sy(v+s).toFixed(1);
-    dn=`L${sx(t).toFixed(1)},${sy(v-s).toFixed(1)}`+dn;
-  }
-  g+=`<path d="${up+dn}Z" fill="#2b3a4d" opacity=".45"/>`;
+  const cumOn=S.cumMode!=='off';
+  let cmax=100;
+  if(cumOn&&S.cumMode==='total') cmax=Math.max(1,Math.ceil(Math.max(...o.cum)*1.15));
 
-  if(S.trainings.length){
-    const t0=Math.min(...S.trainings.map(trainStart));
-    let ref='',ft='',fb='';
-    for(let t=Math.floor(t0);t<=TMAX;t+=0.5){
-      const tt=Math.max(t0,t), r=val(tt,P,[]), v=val(tt,P);
-      ref+=(ref?'L':'M')+sx(tt).toFixed(1)+','+sy(r).toFixed(1);
-      ft+=(ft?'L':'M')+sx(tt).toFixed(1)+','+sy(v).toFixed(1);
-      fb=`L${sx(tt).toFixed(1)},${sy(r).toFixed(1)}`+fb;
-    }
-    g+=`<path d="${ft+fb}Z" fill="#7aa2f7" opacity=".22"/>`;
-    g+=`<path d="${ref}" fill="none" stroke="#8b9bb0" stroke-width="1.3"
-        stroke-dasharray="3 3" opacity=".9"/>`;
-    const shift=tau(TMAX,P,null)-TMAX;
-    const tEnd=Math.max(...S.trainings.map(tr=>trainStart(tr)+trainDur(tr)));
-    const tR=clamp(tEnd+shift+10,tEnd+shift+2,TMAX-2), tM=tR-shift;
-    if(shift>0.15 && tM>t0 && tR<=TMAX){
-      const y=sy(val(tR,P,[])), x1=sx(tM), x2=sx(tR);
-      g+=`<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="#f7c46c" stroke-width="1.4"/>`;
-      [[x1,1],[x2,-1]].forEach(([x,d])=>{
-        g+=`<path d="M${x},${y} l${4*d},-3 l0,6 Z" fill="#f7c46c"/>`;});
-      g+=`<text x="${(x1+x2)/2}" y="${y-6}" fill="#f7c46c" font-size="9.5"
-          text-anchor="middle" font-family="sans-serif" font-weight="600">−${shift.toFixed(1)} h</text>`;
-      g+=`<circle cx="${x1}" cy="${y}" r="2" fill="#f7c46c"/>`;
-      g+=`<circle cx="${x2}" cy="${y}" r="2" fill="none" stroke="#f7c46c" stroke-width="1.2"/>`;
-    }
+  if(cumOn){
+    [0.5,1].forEach(fr=>{
+      const y=syC(cmax*fr,cmax);
+      g+=`<line x1="${PL}" y1="${y}" x2="${W-PR}" y2="${y}" stroke="var(--cum)"
+          stroke-width=".8" stroke-dasharray="1 5" opacity=".26"/>`;
+      const lab=S.cumMode==='total'?(cmax*fr).toFixed(1):(cmax*fr).toFixed(0)+'%';
+      g+=`<text x="${W-PR-1}" y="${y+(fr===1?8:-2.5)}" fill="var(--cum)" font-size="${(FS*0.88).toFixed(1)}"
+          text-anchor="end" font-family="sans-serif" opacity=".65">${lab}</text>`;
+    });
   }
 
-  let mp='';
-  for(let t=0;t<=TMAX;t+=0.5) mp+=(t?'L':'M')+sx(t).toFixed(1)+','+sy(val(t,P)).toFixed(1);
-  g+=`<path d="${mp}" fill="none" stroke="#4dd0b1" stroke-width="2.1" stroke-linejoin="round"/>`;
+  const stride=Math.max(1,Math.round(o.rate.length/340));
+  let rp='',cp='',up='';
+  for(let i=0;i<o.rate.length;i+=stride){
+    const x=sx(o.t[i]).toFixed(1);
+    rp+=(rp?'L':'M')+x+','+sy(o.rate[i]).toFixed(1);
+    cp+=(cp?'L':'M')+x+','+sy(o.cap[i]).toFixed(1);
+    if(cumOn) up+=(up?'L':'M')+x+','+syC(o.cum[i],cmax).toFixed(1);
+  }
+  if(cumOn){
+      /* up beginnt mit einem eigenen "M" — ohne das hier stuende ein verwaister
+       moveto am Anfang, und Z schloesse die Flaeche zum Kurvenanfang statt zur
+       Grundlinie: schraege Unterkante. Deshalb das M durch ein L ersetzen. */
+    g+=`<path d="M${sx(0).toFixed(1)},${H-PB} L${up.slice(1)} L${sx(o.t[o.t.length-1]).toFixed(1)},${H-PB} Z"
+        fill="var(--cum)" opacity=".08"/>`;
+  }
+  g+=`<path d="${cp}" fill="none" stroke="var(--cap)" stroke-width="1.1"
+      stroke-dasharray="3 3" opacity=".7"/>`;
+  g+=`<path d="${rp}" fill="none" stroke="var(--acc)" stroke-width="${LWR}"
+      stroke-linejoin="round"/>`;
+  if(cumOn) g+=`<path d="${up}" fill="none" stroke="var(--cum)" stroke-width="1.8"/>`;
 
+  S.meals.forEach(m=>{
+    const t=relH(m); if(t<0||t>tmax) return;
+    const fut=isFuture(m);
+    g+=`<line x1="${sx(t)}" y1="${PT}" x2="${sx(t)}" y2="${H-PB}" stroke="var(--meal)"
+        stroke-width="1.2" opacity="${fut?'.42':'.75'}" ${fut?'stroke-dasharray="2 3"':''}/>`;
+    g+=`<circle cx="${sx(t)}" cy="${sy(rateAt(o,t))}" r="2.6"
+        fill="${fut?'#141922':'var(--meal)'}" stroke="var(--meal)" stroke-width="1.3"/>`;
+  });
   S.trainings.forEach(tr=>{
-    const tS=trainStart(tr); if(tS>TMAX) return;
-    const f=isFuture(tr);
-    g+=`<line x1="${sx(tS)}" y1="${H-PB}" x2="${sx(tS)}" y2="${PT}" stroke="#7aa2f7"
-        stroke-width="1" opacity="${f?'.4':'.18'}" ${f?'stroke-dasharray="2 3"':''}/>`;
-    g+=`<circle cx="${sx(tS)}" cy="${sy(val(tS,P))}" r="2.8" fill="${f?'#141922':'#7aa2f7'}"
-        stroke="#7aa2f7" stroke-width="1.4"/>`;
+    const t=relH(tr); if(t<0||t>tmax) return;
+    const fut=isFuture(tr);
+    g+=`<line x1="${sx(t)}" y1="${H-PB}" x2="${sx(t)}" y2="${H-PB-14}" stroke="var(--train)"
+        stroke-width="1.6" opacity="${fut?'.5':'.9'}"/>`;
+    g+=`<circle cx="${sx(t)}" cy="${sy(rateAt(o,t))}" r="2.6"
+        fill="${fut?'#141922':'var(--train)'}" stroke="var(--train)" stroke-width="1.3"/>`;
   });
 
-  if(now<=TMAX){
-    const y=sy(val(now,P));
-    g+=`<line x1="${sx(now)}" y1="${PT}" x2="${sx(now)}" y2="${H-PB}" stroke="#f0a35e"
+  if(now>=0&&now<=tmax){
+    const y=sy(rateAt(o,now));
+    g+=`<line x1="${sx(now)}" y1="${PT}" x2="${sx(now)}" y2="${H-PB}" stroke="var(--acc2)"
         stroke-width="1.3" opacity=".8"/>`;
-    g+=`<circle cx="${sx(now)}" cy="${y}" r="6" fill="#f0a35e" opacity=".22"/>`;
-    g+=`<circle cx="${sx(now)}" cy="${y}" r="3.6" fill="#f0a35e"/>`;
-  } else {
-    g+=`<text x="${W-PR-2}" y="${PT+10}" fill="#f0a35e" font-size="9" text-anchor="end"
-        font-family="sans-serif">&gt; 96 h</text>`;
+    g+=`<circle cx="${sx(now)}" cy="${y}" r="6" fill="var(--acc2)" opacity=".22"/>`;
+    g+=`<circle cx="${sx(now)}" cy="${y}" r="3.6" fill="var(--acc2)"/>`;
   }
-  document.getElementById('chart').innerHTML=g;
+  if(PIN!=null){
+    const y=sy(rateAt(o,PIN));
+    g+=`<line x1="${sx(PIN)}" y1="${PT}" x2="${sx(PIN)}" y2="${H-PB}" stroke="#e6edf3"
+        stroke-width="1.2" opacity=".85"/>`;
+    g+=`<circle cx="${sx(PIN)}" cy="${y}" r="6" fill="#e6edf3" opacity=".2"/>`;
+    g+=`<circle cx="${sx(PIN)}" cy="${y}" r="3.4" fill="#e6edf3"/>`;
+    if(cumOn) g+=`<circle cx="${sx(PIN)}" cy="${syC(cumAt(o,PIN),cmax)}" r="2.8"
+        fill="#e6edf3"/>`;
+  }
+  const rt=PIN!=null?PIN:Math.min(now,tmax);
+  const nr=rateAt(o,rt), nc=cumAt(o,rt);
+  g+=`<text x="${PL+2}" y="${PT+FSR}" font-size="${FSR}" font-family="sans-serif" font-weight="600">`
+   +(PIN!=null?`<tspan fill="#e6edf3">◆ </tspan>`:'')
+   +`<tspan fill="var(--acc)">Abbau ${(nr*100).toFixed(0)}</tspan>`
+   +(cumOn?`<tspan fill="#5d6b7d"> · </tspan><tspan fill="var(--cum)">`
+     +(S.cumMode==='total'?nc.toFixed(2)+' d':nc.toFixed(1)+' %')+`</tspan>`:'')
+   +`</text>`;
+  return g;
+}
 
-  let L=`<span><i style="background:var(--acc)"></i>Modell</span>`;
-  if(S.trainings.length) L+=`<span><i style="background:#8b9bb0"></i>ohne Training</span>`
-    +`<span><i style="background:#f7c46c"></i>Zeitvorsprung</span>`;
-  L+=`<span><i style="background:var(--train)"></i>Training (○ = geplant)</span>`
-   + `<span><i style="background:#2b3a4d;height:7px"></i>Unsicherheit</span>`;
+function draw(){
+  syncStart();
+  VW=bounds();
+  if(PIN!=null && (PIN<0||PIN>VW.t1)) PIN=null;
+  const o=simulate(), now=nowH(), tmax=VW.t1;
+  const el=document.getElementById('chart');
+  el.innerHTML=chartSVG(o,now,false);
+  el.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  if(FULL){
+    const fe=document.getElementById('fchart');
+    fe.innerHTML=chartSVG(o,now,true);
+    fe.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    setGeom(false);
+  }
+  const cumOn=S.cumMode!=='off';
+  const rt=PIN!=null?PIN:Math.min(now,VW.t1);
+  const nr=rateAt(o,rt);
+
+  const dash=c=>`repeating-linear-gradient(90deg,${c} 0 3px,transparent 3px 6px)`;
+  const lg=(bg,txt)=>`<span><i style="background:${bg}"></i>${txt}</span>`;
+  let L=lg('var(--acc)','Abbau/h')+lg(dash('var(--cap)'),'Kapazität');
+  if(cumOn) L+=lg('var(--cum)',S.cumMode==='total'?'Total (Tage)':'Reinigungsgrad');
+  if(S.meals.length) L+=lg('var(--meal)','Mahlzeit');
+  if(S.trainings.length) L+=lg('var(--train)','Training');
+  if(PIN!=null) L+=lg('#e6edf3','Marker');
   document.getElementById('legend').innerHTML=L;
+  if(FULL) document.getElementById('flegend').innerHTML=L;
 
-  const hh=Math.floor(now), mm=Math.floor((now-hh)*60);
-  document.getElementById('clock').innerHTML=
-    `${hh}<small>h</small> ${String(mm).padStart(2,'0')}<small>m</small>`;
-  const sen=sentence(now), el=document.getElementById('statusMsg');
-  el.textContent=sen.s; el.className=sen.warn?'warn':'';
+  /* Kopfzeile — bei gesetztem Marker gilt dessen Zeitpunkt */
+  const refMs=PIN!=null?pinMs():Date.now();
+  const fh=fastH(refMs);
+  document.getElementById('clock').innerHTML = fh===null?'–<small>h</small>'
+    :`${Math.floor(fh)}<small>h</small> ${String(Math.floor((fh-Math.floor(fh))*60)).padStart(2,'0')}<small>m</small>`;
+  document.getElementById('clockLbl').textContent = PIN==null
+    ? 'seit letzter Mahlzeit'
+    : `bei ${fmtAt(refMs)} Uhr`;
+  document.getElementById('pinClear').style.display=PIN==null?'none':'block';
+  const sen=sentence(o,rt,refMs), el2=document.getElementById('statusMsg');
+  el2.textContent=sen.s; el2.className=sen.warn?'warn':'';
+  if(FULL){
+    const cumTxt=cumOn?(S.cumMode==='total'
+      ? ` · gesammelt <b>${cumAt(o,rt).toFixed(2)} Tage</b>`
+      : ` · Reinigungsgrad <b>${cumAt(o,rt).toFixed(1)} %</b>`):'';
+    document.getElementById('ftxt').innerHTML=
+      `${fh===null?'–':Math.floor(fh)+' h '+String(Math.floor((fh-Math.floor(fh))*60)).padStart(2,'0')+' m'}`
+      +` seit der letzten Mahlzeit · Abbau <b>${(nr*100).toFixed(0)} %</b>${cumTxt}<br>`
+      +`<span style="color:var(--dim);font-size:13px">${sen.s}</span>`;
+    document.getElementById('fpinClear').style.visibility=PIN==null?'hidden':'visible';
+  }
   document.getElementById('miniVal').textContent=
-    `Autophagie ${(val(now,P)*100).toFixed(0)} % · ${S.tissue==='liver'?'Leber':'Muskel'}`;
+    `Abbau ${(nr*100).toFixed(0)} % · ${S.tissue==='liver'?'Leber':'Muskel'}`;
 
-  const pn=document.getElementById('planNote'), dw=document.getElementById('deltaWrap');
-  if(future.length){
-    const pts=[]; let bestD=0,bestT=now;
-    for(let t=now;t<=TMAX;t+=0.5){
-      const d=val(t,P)-val(t,P,past); pts.push([t,d]);
-      if(d>bestD){bestD=d;bestT=t;}
-    }
-    const end=Math.max(...future.map(f=>trainStart(f)+trainDur(f)));
-    const t24=Math.min(TMAX,end+24);
-    const d24=val(t24,P)-val(t24,P,past);
-    const gain=tau(TMAX,P,null)-tau(TMAX,P,past);
-    const lo=Math.min(0,...pts.map(p=>p[1])), hi=Math.max(0.001,...pts.map(p=>p[1]));
-    const dy=v=>4+(1-(v-lo)/(hi-lo))*32;
-    let dp='';
-    pts.forEach(([t,v],i)=>{ dp+=(i?'L':'M')+sx(t).toFixed(1)+','+dy(v).toFixed(1); });
-    const df=`M${sx(pts[0][0]).toFixed(1)},${dy(0).toFixed(1)}`+dp.slice(1)
-      +`L${sx(pts[pts.length-1][0]).toFixed(1)},${dy(0).toFixed(1)}Z`;
-    let dg=`<line x1="${PL}" y1="${dy(0)}" x2="${W-PR}" y2="${dy(0)}" stroke="#26303f"/>`;
-    dg+=`<path d="${df}" fill="#7aa2f7" opacity=".22"/>`;
-    dg+=`<path d="${dp}" fill="none" stroke="#7aa2f7" stroke-width="1.6"/>`;
-    dg+=`<line x1="${sx(bestT)}" y1="4" x2="${sx(bestT)}" y2="36" stroke="#7aa2f7"
-         stroke-width="1" opacity=".4" stroke-dasharray="2 2"/>`;
-    document.getElementById('delta').innerHTML=dg;
-    document.getElementById('deltaMax').textContent=
-      `Peak +${(bestD*100).toFixed(1)} · nach 24 h +${(d24*100).toFixed(1)} %-Pkt.`;
-    dw.style.display='block'; pn.style.display='block';
-    pn.innerHTML=`Geplantes Training: <b>${gain.toFixed(1)} h Zeitvorsprung</b> auf der `
-      +`Entleerungs-Uhr — dauerhaft. Größter Wertunterschied bei Fastenstunde `
-      +`${bestT.toFixed(1)} (+${(bestD*100).toFixed(0)} %-Pkt.).`;
-  } else { pn.style.display='none'; dw.style.display='none'; }
-
-  document.getElementById('circNote').textContent = P.circ>0
-    ? `Später Start (${S.start.getHours()}:00 Uhr) — Insulin bleibt abends länger oben. +${P.circ.toFixed(1)} h Offset.`
-    : 'Uhrzeit im neutralen Bereich. Kein Zirkadian-Offset.';
-  const tk=pastKcal();
-  document.getElementById('kcalSplit').innerHTML=
-    `davon absolvierte Trainings: <b>${tk}</b> → Alltag: <b>${Math.round(P.alltag)}</b> kcal.`;
+  /* Notizen in den Einstellungen */
+  document.getElementById('cumNote').innerHTML = S.cumMode==='total'
+    ? 'Monoton aufsummierter Abbau über Basalniveau. Einheit: Tage, die bei theoretischem Maximalfluss dasselbe geleistet hätten. Kein Zerfall, kein Deckel.'
+    : S.cumMode==='stock'
+    ? 'Bestand statt Summe: Abbau lädt auf, neue Schäden entladen. 100 % = Gleichgewicht bei Dauer-Maximalfluss, praktisch unerreichbar. Trennt Essmuster deutlich, hängt aber ganz an der Halbwertszeit unten.'
+    : 'Nur Abbaurate und Kapazität.';
   const St=stores();
   document.getElementById('storeNote').innerHTML=
     `<b>Speicher:</b> Leber ${St.liver.toFixed(0)} kcal · arbeitende Muskulatur `
@@ -827,247 +1017,370 @@ function draw(){
   const w=S.waist;
   document.getElementById('waistNote').innerHTML=
     w<94?'Unauffällig (&lt;94 cm).':w<=102?'Erhöht (94–102 cm).':'Deutlich erhöht (&gt;102 cm).';
-  document.getElementById('sleepNote').textContent = S.sleep<7
-    ? 'Unter 7 h — reduziert die Insulinsensitivität, verlangsamt die Kurve.'
-    : 'Ausreichend. Kein Abschlag auf die Steilheit.';
+  document.getElementById('sleepNote').textContent=S.sleep<7
+    ? 'Unter 7 h — reduziert die Insulinsensitivität, Insulin fällt träger.'
+    : 'Ausreichend. Kein Abschlag.';
+
+  document.getElementById('mealWarn').innerHTML = S.meals.length ? ''
+    : `<div class="warnbox">Ohne Mahlzeit ist der Ausgangszustand geraten. Trag mindestens die Mahlzeit vor dem Fasten ein.</div>`;
+  document.getElementById('startNote').innerHTML=
+    `Nullpunkt der Rechnung: <b>${fmtAt(S.start.getTime())} Uhr</b> `
+    +`(${S.meals.length?'früheste Mahlzeit':'kein Eintrag — 18 h zurück'}). `
+    +`Angezeigt werden die letzten ${S.days} ${S.days===1?'Tag':'Tage'} bis jetzt.`;
 }
 const update=()=>{draw();scheduleSave();};
 
-/* ===== UI ===== */
+/* ===== UI-Gerüst ===== */
 document.querySelectorAll('.ib').forEach(b=>{
-  b.onclick=e=>{e.stopPropagation();
-    const sec=b.closest('.sec');
-    sec.classList.toggle('open');
-    if(sec.classList.contains('open')) sec.classList.add('exp');  // eingeklappte mit aufklappen
-  };
-});
+  b.onclick=e=>{e.stopPropagation();b.closest('.sec').classList.toggle('open');};});
 document.querySelectorAll('.cb').forEach(b=>{
-  b.onclick=e=>{e.stopPropagation();b.closest('.sec').classList.toggle('exp');};
-});
+  b.onclick=e=>{e.stopPropagation();b.closest('.sec').classList.toggle('exp');};});
 document.getElementById('collapseBtn').onclick=()=>
   document.getElementById('top').classList.toggle('collapsed');
 
-function markCustom(){ activePreset=null; if(psel) psel.value=''; }
-const psel=document.getElementById('presetSel');
-psel.innerHTML='<option value="">eigene Einstellung</option>'
-  +Object.keys(PRESETS).map(n=>`<option value="${n}">${n}</option>`).join('');
-document.getElementById('applyPreset').onclick=()=>{
-  const n=psel.value;
-  if(!n){ return; }
-  loadPreset(n); syncAll(); update();
-};
-const fc=document.getElementById('fitChips');
-FIT.forEach((f,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=f;
-  b.onclick=()=>{S.fitness=i;syncChips();markCustom();update();};fc.appendChild(b);});
-const tsel=document.getElementById('tissueSel');
-tsel.onchange=()=>{S.tissue=tsel.value;markCustom();renderTr();update();};
-const xsel=document.getElementById('xSel');
-xsel.onchange=()=>{S.xMode=xsel.value;markCustom();update();};
-
-function syncChips(){
-  [...fc.children].forEach((b,i)=>b.classList.toggle('on',i===S.fitness));
-  tsel.value=S.tissue;
-  xsel.value=S.xMode||'hours';
-  psel.value=(activePreset&&PRESETS[activePreset])?activePreset:'';
+/* ---- Tap/Wischen auf dem Diagramm setzt den Marker ---- */
+function setPin(t){
+  PIN = t==null ? null : clamp(t,0,VW.t1);
+  draw();
 }
-const pt=document.getElementById('prevTog');
-pt.onclick=()=>{S.usePrev=!S.usePrev;syncPrev();markCustom();update();};
-function syncPrev(){
-  pt.classList.toggle('on',S.usePrev);
-  document.getElementById('prevRow').style.opacity=S.usePrev?'1':'.35';
-  document.getElementById('carbsPrev').disabled=!S.usePrev;
+/* Im Vollbild ist die Buehne im Hochformat um 90 Grad gedreht — dadurch
+   entspricht die horizontale Achse des Diagramms der vertikalen des Fingers. */
+function scrub(box,rotated){
+  const tFromPt=(cx,cy)=>{
+    const r=box.getBoundingClientRect();
+    if(!r.width||!r.height) return null;
+    const frac = rotated&&rotated() ? (cy-r.top)/r.height : (cx-r.left)/r.width;
+    return VW.t0+(frac*(W_VIEW()) - PL_VIEW())/(W_VIEW()-PL_VIEW()-PR_VIEW())*(VW.t1-VW.t0);
+  };
+  let down=false;
+  const go=e=>{const t=tFromPt(
+    e.clientX!=null?e.clientX:(e.touches&&e.touches[0]?e.touches[0].clientX:null),
+    e.clientY!=null?e.clientY:(e.touches&&e.touches[0]?e.touches[0].clientY:null));
+    if(t!=null) setPin(t);};
+  box.addEventListener('pointerdown',e=>{down=true;
+    box.setPointerCapture&&box.setPointerCapture(e.pointerId);go(e);e.preventDefault();});
+  box.addEventListener('pointermove',e=>{if(down)go(e);});
+  box.addEventListener('pointerup',()=>{down=false;});
+  box.addEventListener('pointercancel',()=>{down=false;});
+  box.addEventListener('click',go);
 }
-const bt=document.getElementById('bumpTog');
-bt.onclick=()=>{S.showBump=!S.showBump;bt.classList.toggle('on',S.showBump);markCustom();update();};
-const si=document.getElementById('startIn');
-si.addEventListener('change',()=>{const d=new Date(si.value);if(!isNaN(d))S.start=d;renderTr();update();});
-document.getElementById('resetBtn').onclick=async()=>{
-  S.start=defaultStart(); loadPreset('Ich (Standardtag)');
-  si.value=toLocal(S.start); syncAll(); update();
-};
-document.getElementById('saveBtn').onclick=()=>{clearTimeout(saveTimer);doSave();};
-document.getElementById('loadBtn').onclick=async()=>{
-  const ok=await restore(); if(ok){syncAll();draw();}
-};
+/* Randmasse des jeweils aktiven Ziels — sx() rechnet in dessen Koordinaten. */
+const W_VIEW=()=>FULL?680:360, PL_VIEW=()=>FULL?16:8, PR_VIEW=()=>FULL?16:8;
+scrub(document.querySelector('.svgbox.main'),()=>false);
+scrub(document.getElementById('fwrap'),
+  ()=>window.matchMedia('(orientation:portrait)').matches);
 
+const KEYDEF=[
+ ['var(--acc)','solid','Abbau pro Stunde',
+  'Wie viel Zellmüll gerade abgeräumt wird. 100 % wäre theoretisches Maximum, 15 % ist der Grundumsatz, der immer läuft. Das ist die Hauptkurve.'],
+ ['var(--cap)','dash','Kapazität',
+  'Wie viel Abräum-Maschinerie die Zelle inzwischen aufgebaut hat — Lysosomen und ATG-Proteine. Der Fuhrpark. Er wächst über Stunden bis Tage und schrumpft langsam. Ein voller Fuhrpark räumt aber nichts ab, solange niemand den Zündschlüssel dreht: deshalb liegt die grüne Kurve oft unter der gestrichelten.'],
+ ['var(--cum)','solid','Reinigungsgrad',
+  'Das Aufsummierte. Abräumen lädt auf, neue Schäden entladen wieder — wie ein Akku mit Leck. Im Modus „Total" stattdessen eine reine Summe ohne Leck.'],
+ ['var(--meal)','solid','Mahlzeit',
+  'Senkrechte Linie. Danach steigt mTORC1, ULK1 wird blockiert, der Abbau bricht ein. Wie tief und wie lange hängt an Kohlenhydraten und Protein — Fett kaum.'],
+ ['var(--train)','solid','Training',
+  'Kurzer Strich unten. Zieht Glykogen aus den Speichern und aktiviert AMPK über die Muskelkontraktion. Beim Muskel stark, bei der Leber fast nur über den Speicherverlust.'],
+ ['var(--acc2)','solid','Jetzt',
+  'Der aktuelle Zeitpunkt. Alles rechts davon ist Prognose.'],
+ ['#e6edf3','solid','Marker',
+  'Tippen oder Wischen setzt ihn. Kopfzeile und Text oben beziehen sich dann auf diesen Zeitpunkt statt auf jetzt.']
+];
+function renderKey(){
+  const dash=c=>`repeating-linear-gradient(90deg,${c} 0 4px,transparent 4px 8px)`;
+  document.getElementById('fkey').innerHTML='<h3>Was die Linien zeigen</h3>'
+    +KEYDEF.map(([c,st,t,d])=>`<div class="k"><i style="background:${st==='dash'?dash(c):c}"></i>`
+      +`<div><b>${t}</b><span>${d}</span></div></div>`).join('')
+    +`<div class="k"><i style="background:transparent"></i><div><span style="color:var(--dim2)">`
+    +`Antippen schließt diese Erklärung.</span></div></div>`;
+}
+function setFull(on){
+  FULL=on;
+  document.getElementById('full').classList.toggle('on',on);
+  document.getElementById('fkey').classList.remove('on');
+  if(on) renderKey();
+  draw();
+}
+document.getElementById('fullBtn').onclick=()=>setFull(true);
+document.getElementById('fclose').onclick=()=>setFull(false);
+document.getElementById('fkeyBtn').onclick=()=>
+  document.getElementById('fkey').classList.toggle('on');
+document.getElementById('fkey').onclick=()=>
+  document.getElementById('fkey').classList.remove('on');
+document.getElementById('fpinClear').onclick=e=>{e.stopPropagation();setPin(null);};
+window.addEventListener('keydown',e=>{if(e.key==='Escape'&&FULL)setFull(false);});
+document.getElementById('pinClear').onclick=e=>{e.stopPropagation();setPin(null);};
 
-/* --- Sicherungs-Code: unabhängig von jeder API --- */
-const cm=t=>{document.getElementById('codeMsg').textContent=t;};
-document.getElementById('expBtn').onclick=async()=>{
-  const code=btoa(unescape(encodeURIComponent(serialize())));
-  const ta=document.getElementById('codeBox'); ta.value=code; ta.select();
-  let copied=false;
-  try{ await navigator.clipboard.writeText(code); copied=true; }catch(e){}
-  cm(copied?'Code erzeugt und in die Zwischenablage kopiert. Irgendwo sichern.'
-           :'Code erzeugt — markieren und selbst kopieren.');
-};
-document.getElementById('impBtn').onclick=()=>{
-  const v=document.getElementById('codeBox').value.trim();
-  if(!v){cm('Kein Code eingefügt.');return;}
-  try{
-    const o=JSON.parse(decodeURIComponent(escape(atob(v))));
-    const st=new Date(o.start);
-    if(isNaN(st.getTime())) throw new Error('Startdatum unlesbar');
-    activePreset=o.preset||null;
-    delete o.preset; delete o.start;
-    S=Object.assign(mk({}),o);
-    S.start=st;
-    S.trainings=(o.trainings||[]).map(x=>Object.assign({},x));
-    normTrainings();
-    syncAll(); draw();
-    cm('Wiederhergestellt · Start '+st.toLocaleString('de-DE'));
-  }catch(e){ cm('Code unlesbar: '+(e&&e.message?e.message:e)); }
-};
-/* Zusätzlich beim Verlassen/Ausblenden sichern — der Debounce kann sonst verfallen */
-['pagehide','blur'].forEach(ev=>window.addEventListener(ev,()=>{clearTimeout(saveTimer);doSave();}));
-document.addEventListener('visibilitychange',()=>{
-  if(document.visibilityState==='hidden'){clearTimeout(saveTimer);doSave();}
-});
+const dsel=document.getElementById('daysSel');
+dsel.innerHTML=DAYOPT.map(d=>`<option value="${d}">${d} ${d===1?'Tag':'Tage'}</option>`).join('');
+dsel.onchange=e=>{S.days=parseInt(e.target.value,10);update();};
+document.getElementById('tissueSel').onchange=e=>{S.tissue=e.target.value;update();};
+document.getElementById('xSel').onchange=e=>{S.xMode=e.target.value;update();};
 
-/* ---- Trainings ---- */
-const hrMax=()=>Math.round(208-0.7*S.age);
-const hrRange=i=>`${Math.round(hrMax()*INT[i].r[0])}–${Math.round(hrMax()*INT[i].r[1])}`;
-/* Stuendliche Auswahl: von Fastenstart bis jetzt+72 h, als echte Zeitpunkte */
-function timeOptions(sel){
+/* Auswahl reicht 28 Tage zurueck und bis ans Ende des Zeitfensters.
+   Das sind bis zu ~1350 Optionen — deshalb werden sie nur fuer die gerade
+   geoeffnete Karte gebaut, nicht fuer alle 20 gleichzeitig. */
+function timeOptions(sel,build){
+  if(!build) return `<option value="${sel}" selected>${fmtAt(sel)}</option>`;
   const st=S.start.getTime(), nowMs=Date.now();
-  const from=0, to=Math.ceil((nowMs-st)/3600000)+72;
-  let o='', seen=false;
-  for(let h=from;h<=to;h++){
-    const ms=st+h*3600000;
-    const v=Math.round(ms/3600000);
-    if(v===sel) seen=true;
-    const fut=ms>nowMs;
-    o+=`<option value="${v}" ${v===sel?'selected':''}>`
-      +`${fmtAt(ms)} · ${relTxt(ms)}${fut?' · geplant':''}</option>`;
+  const d0=new Date(Math.min(st,nowMs-28*86400000)); d0.setMinutes(0,0,0);
+  /* Vorwaerts immer 7 Tage ueber das letzte Ereignis hinaus — sonst haengt die
+     Planbarkeit an der zufaellig gewaehlten Fensterlaenge. */
+  const ev=S.meals.concat(S.trainings);
+  const last=ev.length?Math.max(nowMs,...ev.map(x=>x.at)):nowMs;
+  const end=last+7*86400000;
+  let out='',seen=false;
+  for(let ms=d0.getTime();ms<=end;ms+=3600000){
+    if(ms===sel) seen=true;
+    out+=`<option value="${ms}" ${ms===sel?'selected':''}>`
+      +`${fmtAt(ms)} · ${relTxt(ms)}</option>`;
   }
-  if(!seen) o=`<option value="${sel}" selected>${fmtAt(sel*3600000)} · ${relTxt(sel*3600000)}</option>`+o;
-  return o;
+  if(!seen) out=`<option value="${sel}" selected>${fmtAt(sel)} · ${relTxt(sel)}</option>`+out;
+  return out;
 }
 
-function renderTr(){
-  const L=document.getElementById('trList'); L.innerHTML='';
-  const P=params();
-  document.getElementById('trCount').textContent=`${S.trainings.length}/${MAXTR}`;
-  document.getElementById('addTr').disabled=S.trainings.length>=MAXTR;
-
-  S.trainings.forEach((t,idx)=>{
-    const fut=isFuture(t), dur=trainDur(t), lbl=t.strength?'Kraft':INT[t.int].n;
-    const adv=advance(t,P);
-    const selH=Math.round(t.at/3600000);
+/* ===== Mahlzeiten ===== */
+function renderMeals(){
+  syncStart();
+  const L=document.getElementById('mList'); L.innerHTML='';
+  document.getElementById('mCount').textContent=`${S.meals.length}/${MAXM}`;
+  document.getElementById('addMeal').disabled=S.meals.length>=MAXM;
+  S.meals.slice().sort((a,b)=>a.at-b.at).forEach(m=>{
+    const idx=S.meals.indexOf(m), fut=isFuture(m), mc=macros(m);
     const d=document.createElement('div');
-    d.className='tr'+(t._open?' open':'')+(fut?' future':'');
+    d.className='itm'+(m._open?' open':'')+(fut?' future':'');
     d.innerHTML=`
-      <div class="tr-head">
-        <span>${t.strength?'🏋️':'🏃'}</span>
-        <span class="txt">${fmtAt(t.at)} · ${lbl} · ${t.kcal} kcal
-          <em>(~${dur<1?Math.round(dur*60)+' min':dur.toFixed(1)+' h'})</em></span>
+      <div class="itm-head">
+        <span class="dot g" style="background:var(--meal)"></span>
+        <span class="txt">${fmtAt(m.at)} <em>· ${m.kcal} kcal · ${m.pctC}/${m.pctP}</em></span>
         ${fut?'<span class="badge">geplant</span>':''}
         <span class="del">×</span>
       </div>
-      <div class="tr-body">
-        <div class="gain">Zeitvorsprung auf der ${S.tissue==='liver'?'Leber':'Muskel'}-Uhr:
-          <b>${adv.toFixed(1)} h</b> — bleibt danach konstant.</div>
-        <div class="row">
-          <div class="lbl"><span>Zeitpunkt</span>
-            <span class="val">Fastenstunde ${trainStart(t).toFixed(0)}</span></div>
-          <select class="ta ${fut?'fut':''}">${timeOptions(selH)}</select>
+      <div class="itm-body">
+        <div class="row"><div class="lbl"><span>Zeitpunkt</span></div>
+          <select class="mTime ${fut?'fut':''}">${timeOptions(m.at,m._open)}</select></div>
+        <div class="row"><div class="lbl"><span>Energie</span></div>
+          <div class="nin"><input type="number" class="mKcal ${fut?'fut':''}" min="0" max="5000"
+            step="10" inputmode="numeric" value="${m.kcal}"><span class="unit">kcal</span></div></div>
+        <div class="row duo">
+          <div><div class="lbl"><span>Kohlenhydrate</span></div>
+            <div class="nin"><input type="number" class="mC ${fut?'fut':''}" min="0" max="100"
+              step="1" inputmode="numeric" value="${m.pctC}"><span class="unit">%</span></div></div>
+          <div><div class="lbl"><span>Protein</span></div>
+            <div class="nin"><input type="number" class="mP ${fut?'fut':''}" min="0" max="100"
+              step="1" inputmode="numeric" value="${m.pctP}"><span class="unit">%</span></div></div>
         </div>
-        <div class="row">
-          <div class="lbl"><span>Krafttraining</span></div>
-          <div class="toggle ${t.strength?'on':''} ts">
-            <span style="font-size:12.5px;color:var(--dim)">Mechanische Last statt HR-Zonen</span>
-            <span class="sw"></span></div>
-        </div>
-        <div class="row" style="${t.strength?'display:none':''}">
-          <div class="lbl"><span>Intensität (HRmax ${hrMax()} bpm)</span></div>
-          <div class="chips">${INT.map((I,i)=>
-            `<button class="chip ic ${i===t.int?'on':''}" data-i="${i}">${I.n}
-              <small>${hrRange(i)} bpm</small></button>`).join('')}</div>
-          <div class="note">${INT[t.int].d}. KH-Anteil ${(INT[t.int].cf*100).toFixed(0)} %.</div>
-        </div>
-        <div class="row" style="${t.strength?'':'display:none'}">
-          <div class="note" style="margin-top:0">Krafttraining aktiviert AMPK <i>und</i>
-            mTORC1 gleichzeitig. Im Skelettmuskel überwiegt danach mehrere Stunden das
-            anabole Signal → die Muskelkurve wird gedämpft. Auf die Leberkurve wirkt es
-            neutral bis leicht fördernd.</div>
-        </div>
-        <div class="row">
-          <div class="lbl"><span>Verbrannte kcal</span></div>
-          <input type="number" class="tk" inputmode="numeric" value="${t.kcal}">
-        </div>
+        <div class="macro">→ <b>${mc.c.toFixed(0)} g</b> KH · <b>${mc.p.toFixed(0)} g</b> Protein
+          · <b>${mc.f.toFixed(0)} g</b> Fett (${Math.max(0,100-m.pctC-m.pctP)} %)</div>
+        <div class="note">${mc.p>=25?'Leucin-Schwelle für die maximale mTORC1-Antwort gedeckt (~25–30 g).'
+          :mc.p>=10?'Protein unterhalb der Leucin-Sättigung — mTORC1 wird nur teilweise aktiviert.'
+          :'Kaum Leucin-Reiz.'}
+          ${mc.c>=60?' Genug Kohlenhydrate, um die Glykogenspeicher spürbar nachzufüllen.'
+          :mc.c>=20?' Wenig Kohlenhydrate — Glykogen füllt sich nur geringfügig.'
+          :' Praktisch keine Glykogen-Wiederauffüllung.'}</div>
       </div>`;
-    d.querySelector('.tr-head').onclick=e=>{
-      if(e.target.classList.contains('del')){
-        S.trainings.splice(idx,1);markCustom();renderTr();update();return;}
-      t._open=!t._open; renderTr();
+    d.querySelector('.itm-head').onclick=e=>{
+      if(e.target.classList.contains('del')){S.meals.splice(idx,1);renderMeals();update();return;}
+      m._open=!m._open;renderMeals();};
+    d.querySelector('.mTime').onchange=e=>{
+      m.at=parseInt(e.target.value,10);renderMeals();update();};
+    /* Beim Tippen nur Zahlen und Diagramm auffrischen — ein Voll-Rerender
+       wuerde das Feld neu aufbauen und den Fokus zerstoeren. */
+    const live=()=>{
+      const mm=macros(m);
+      d.querySelector('.macro').innerHTML=`→ <b>${mm.c.toFixed(0)} g</b> KH · `
+        +`<b>${mm.p.toFixed(0)} g</b> Protein · <b>${mm.f.toFixed(0)} g</b> Fett `
+        +`(${Math.max(0,100-m.pctC-m.pctP)} %)`;
+      d.querySelector('.txt').innerHTML=`${fmtAt(m.at)} <em>· ${m.kcal} kcal · ${m.pctC}/${m.pctP}</em>`;
+      update();
     };
-    d.querySelector('.ta').addEventListener('change',e=>{
-      t.at=parseInt(e.target.value)*3600000; t._open=true;
-      markCustom(); renderTr(); update();
-    });
-    d.querySelector('.ts').onclick=()=>{t.strength=!t.strength;markCustom();renderTr();update();};
-    d.querySelectorAll('.ic').forEach(b=>b.onclick=()=>{
-      t.int=+b.dataset.i;markCustom();renderTr();update();});
-    d.querySelector('.tk').addEventListener('input',e=>{
-      t.kcal=clamp(parseInt(e.target.value)||0,0,3000);markCustom();update();});
-    d.querySelector('.tk').addEventListener('blur',()=>renderTr());
+    bindNum(d.querySelector('.mKcal'),0,5000,v=>{m.kcal=v;},done=>done?renderMeals():live());
+    bindNum(d.querySelector('.mC'),0,100,v=>{
+      m.pctC=v; if(m.pctC+m.pctP>100){m.pctP=Math.max(0,100-m.pctC);
+        d.querySelector('.mP').value=m.pctP;}},done=>done?renderMeals():live());
+    bindNum(d.querySelector('.mP'),0,100,v=>{
+      m.pctP=v; if(m.pctC+m.pctP>100){m.pctC=Math.max(0,100-m.pctP);
+        d.querySelector('.mC').value=m.pctC;}},done=>done?renderMeals():live());
     L.appendChild(d);
   });
 }
-document.getElementById('addTr').onclick=()=>{
-  if(S.trainings.length>=MAXTR) return;
-  const at=Math.round((Date.now()+2*3600000)/3600000)*3600000;
-  S.trainings.push({at,int:1,kcal:350,strength:false,_open:true});
-  markCustom(); renderTr(); update();
-};
+document.getElementById('addMeal').onclick=()=>{
+  if(S.meals.length>=MAXM) return;
+  S.meals.push({at:Math.round(Date.now()/3600000)*3600000,kcal:600,pctC:45,pctP:20,_open:true});
+  renderMeals();update();};
 
-/* ---- Sync ---- */
-function bindSlider(id,key,fmt,valId,extra){
-  document.getElementById(id).addEventListener('input',e=>{
-    S[key]=parseFloat(e.target.value);
-    document.getElementById(valId).textContent=fmt(S[key]);
-    markCustom(); if(extra)extra(); update();
+/* ===== Trainings ===== */
+function renderTr(){
+  syncStart();
+  const L=document.getElementById('tList'); L.innerHTML='';
+  document.getElementById('tCount').textContent=`${S.trainings.length}/${MAXT}`;
+  document.getElementById('addTr').disabled=S.trainings.length>=MAXT;
+  S.trainings.slice().sort((a,b)=>a.at-b.at).forEach(tr=>{
+    const idx=S.trainings.indexOf(tr), fut=isFuture(tr);
+    const I0=INT[clamp(tr.int|0,0,3)];
+    const dur=Math.max(0.1,(+tr.kcal||0)/(tr.strength?400:I0.kph));
+    const d=document.createElement('div');
+    d.className='itm'+(tr._open?' open':'')+(fut?' future':'');
+    d.innerHTML=`
+      <div class="itm-head">
+        <span class="dot y"></span>
+        <span class="txt">${fmtAt(tr.at)} <em>· ${tr.strength?'Kraft':I0.n} · ${tr.kcal} kcal</em></span>
+        ${fut?'<span class="badge">geplant</span>':''}
+        <span class="del">×</span>
+      </div>
+      <div class="itm-body">
+        <div class="row"><div class="lbl"><span>Zeitpunkt</span></div>
+          <select class="tTime ${fut?'fut':''}">${timeOptions(tr.at,tr._open)}</select></div>
+        <div class="row"><div class="lbl"><span>Intensität</span></div>
+          <div class="chips tInt">${INT.map((x,i)=>
+            `<button class="chip ${!tr.strength&&tr.int===i?'on':''}" data-i="${i}">${x.n}<small>${x.hr}</small></button>`).join('')
+            +`<button class="chip ${tr.strength?'on':''}" data-i="k">Kraft<small>intermittierend</small></button>`}</div></div>
+        <div class="row"><div class="lbl"><span>Verbrannte kcal</span></div>
+          <div class="nin"><input type="number" class="tKcal ${fut?'fut':''}" min="0" max="4000"
+            step="10" inputmode="numeric" value="${tr.kcal}"><span class="unit">kcal</span></div></div>
+        <div class="macro">→ Dauer ≈ <b>${dur.toFixed(1)} h</b> · Glykogen-Abfluss
+          <b>${((tr.kcal)*(tr.strength?0.70:I0.cf)).toFixed(0)} kcal</b>
+          (85 % Muskel / 15 % Leber)</div>
+        <div class="note">${tr.strength?'Krafttraining: intermittierend, hoher KH-Anteil, moderater AMPK-Puls.':I0.d}</div>
+      </div>`;
+    d.querySelector('.itm-head').onclick=e=>{
+      if(e.target.classList.contains('del')){S.trainings.splice(idx,1);renderTr();update();return;}
+      tr._open=!tr._open;renderTr();};
+    d.querySelector('.tTime').onchange=e=>{
+      tr.at=parseInt(e.target.value,10);renderTr();update();};
+    bindNum(d.querySelector('.tKcal'),0,4000,v=>{tr.kcal=v;},done=>{
+      if(done){renderTr();return;}
+      d.querySelector('.txt').innerHTML=
+        `${fmtAt(tr.at)} <em>· ${tr.strength?'Kraft':I0.n} · ${tr.kcal} kcal</em>`;
+      update();});
+    d.querySelectorAll('.tInt .chip').forEach(b=>{b.onclick=()=>{
+      if(b.dataset.i==='k'){tr.strength=true;}
+      else{tr.strength=false;tr.int=parseInt(b.dataset.i,10);}
+      renderTr();update();};});
+    L.appendChild(d);
   });
 }
-const musTxt=()=>S.musclePct.toFixed(1)+' % → '+stores().skel.toFixed(1)+' kg Skelettmuskel';
-function syncAll(){
-  const set=(id,v,vid,txt)=>{document.getElementById(id).value=v;
-    document.getElementById(vid).textContent=txt;};
-  si.value=toLocal(S.start);
-  set('carbsLast',S.carbsLast,'vCarb',S.carbsLast+' g');
-  set('proteinLast',S.proteinLast,'vProt',S.proteinLast+' g');
-  set('carbsPrev',S.carbsPrev,'vCarbP',S.carbsPrev+' g');
-  set('activeKcal',S.activeKcal,'vKcal',S.activeKcal+' kcal');
-  set('waist',S.waist,'vWaist',S.waist+' cm');
-  set('sleep',S.sleep,'vSleep',S.sleep.toFixed(1)+' h');
-  set('weight',S.weight,'vWeight',S.weight+' kg');
-  set('musclePct',S.musclePct,'vMus',musTxt());
-  set('age',S.age,'vAge',S.age+' J.');
-  bt.classList.toggle('on',S.showBump!==false);
-  syncChips(); syncPrev(); renderTr();
+/* ===== Abweichende Aktivitätstage ===== */
+const MAXA=20;
+const dayLabel=ms=>{const d=new Date(ms);
+  return WD[d.getDay()]+' '+String(d.getDate()).padStart(2,'0')+'.'
+    +String(d.getMonth()+1).padStart(2,'0')+'.';};
+function dayOptions(sel){
+  const st=new Date(Math.min(S.start.getTime(),Date.now()-28*86400000));
+  st.setHours(0,0,0,0);
+  const end=Math.max(Date.now(),S.start.getTime()+S.days*24*3600000)+7*86400000;
+  let out='',seen=false;
+  for(let ms=st.getTime();ms<=end;ms+=86400000){
+    if(ms===sel) seen=true;
+    out+=`<option value="${ms}" ${ms===sel?'selected':''}>${dayLabel(ms)}</option>`;
+  }
+  if(!seen) out=`<option value="${sel}" selected>${dayLabel(sel)}</option>`+out;
+  return out;
 }
-bindSlider('carbsLast','carbsLast',v=>v+' g','vCarb');
-bindSlider('proteinLast','proteinLast',v=>v+' g','vProt');
-bindSlider('carbsPrev','carbsPrev',v=>v+' g','vCarbP');
-bindSlider('activeKcal','activeKcal',v=>v+' kcal','vKcal');
-bindSlider('waist','waist',v=>v+' cm','vWaist');
-bindSlider('sleep','sleep',v=>v.toFixed(1)+' h','vSleep');
-bindSlider('weight','weight',v=>v+' kg','vWeight',()=>{
-  document.getElementById('vMus').textContent=musTxt(); renderTr();});
-bindSlider('age','age',v=>v+' J.','vAge',renderTr);
-document.getElementById('musclePct').addEventListener('input',e=>{
-  S.musclePct=parseFloat(e.target.value);
-  document.getElementById('vMus').textContent=musTxt();
-  markCustom(); renderTr(); update();
-});
+function renderAct(){
+  const L=gid('aList'); if(!L) return;
+  L.innerHTML='';
+  gid('aCount').textContent=`${S.actDays.length}/${MAXA}`;
+  gid('addAct').disabled=S.actDays.length>=MAXA;
+  S.actDays.slice().sort((a,b)=>a.day-b.day).forEach(a=>{
+    const idx=S.actDays.indexOf(a);
+    const d=document.createElement('div');
+    d.className='itm';
+    d.innerHTML=`<div class="itm-head" style="cursor:default">
+        <span class="dot y"></span>
+        <select class="aDay" style="flex:1;min-width:0">${dayOptions(a.day)}</select>
+        <div class="nin" style="flex:0 0 118px"><input type="number" class="aKcal"
+          min="0" max="3000" step="25" inputmode="numeric" value="${a.kcal}"
+          ><span class="unit">kcal</span></div>
+        <span class="del">×</span></div>`;
+    d.querySelector('.del').onclick=()=>{S.actDays.splice(idx,1);renderAct();update();};
+    d.querySelector('.aDay').onchange=e=>{
+      a.day=parseInt(e.target.value,10);renderAct();update();};
+    bindNum(d.querySelector('.aKcal'),0,3000,v=>{a.kcal=v;},done=>{
+      if(done)renderAct(); else update();});
+    L.appendChild(d);
+  });
+}
+document.getElementById('addAct').onclick=()=>{
+  if(S.actDays.length>=MAXA) return;
+  const d=new Date(); d.setHours(0,0,0,0);
+  const used=new Set(S.actDays.map(a=>a.day));
+  let ms=d.getTime(); while(used.has(ms)) ms+=86400000;
+  S.actDays.push({day:ms,kcal:S.activeKcal});
+  renderAct();update();};
 
-/* ---- Start ---- */
+document.getElementById('addTr').onclick=()=>{
+  if(S.trainings.length>=MAXT) return;
+  S.trainings.push({at:Math.round(Date.now()/3600000)*3600000,int:1,kcal:450,strength:false,_open:true});
+  renderTr();update();};
+
+/* ===== Einstellungs-Regler ===== */
+/* Zahlenfeld anbinden. Waehrend des Tippens wird nur uebernommen, was im
+   gueltigen Bereich liegt; beim Verlassen wird geklemmt und zurueckgeschrieben,
+   damit nie ein unmoeglicher Wert stehen bleibt. */
+function bindNum(el,mn,mx,apply,after){
+  if(!el) return;
+  const box=el.closest('.nin');
+  el.addEventListener('input',()=>{
+    const v=parseFloat(el.value), ok=isFinite(v)&&v>=mn&&v<=mx;
+    if(box) box.classList.toggle('bad',el.value!==''&&!ok);
+    if(ok){apply(v); if(after)after(false);}
+  });
+  const fix=()=>{
+    let v=parseFloat(el.value);
+    if(!isFinite(v)) v=mn;
+    v=clamp(v,mn,mx);
+    el.value=v; if(box) box.classList.remove('bad');
+    apply(v); if(after)after(true);
+  };
+  el.addEventListener('change',fix);
+  el.addEventListener('blur',fix);
+}
+const musTxt=()=>S.musclePct.toFixed(1)+' % fettfrei → '+stores().skel.toFixed(1)+' kg Skelettmuskel';
+const gid=id=>document.getElementById(id);
+bindNum(gid('activeKcal'),0,1600,v=>{S.activeKcal=v;},()=>update());
+bindNum(gid('waist'),70,140,v=>{S.waist=v;},()=>update());
+bindNum(gid('sleep'),3,10,v=>{S.sleep=v;},()=>update());
+bindNum(gid('weight'),45,160,v=>{S.weight=v;},()=>update());
+bindNum(gid('tauCap'),0,6,v=>{S.tauCap=v;},()=>update());
+bindNum(gid('tauDec'),1,28,v=>{S.tauDecay=v;},()=>update());
+bindNum(gid('fbLiver'),0,95,v=>{S.fbLiver=v/100;},()=>update());
+bindNum(gid('gly0'),0,100,v=>{S.gly0=v/100;},()=>update());
+bindNum(gid('musclePct'),45,90,v=>{S.musclePct=v;},()=>{
+  gid('vMus').textContent=musTxt(); update();});
+document.getElementById('cumSel').onchange=e=>{S.cumMode=e.target.value;update();};
+document.getElementById('resetBtn').onclick=()=>{
+  const st=defaultStart();
+  S=DEF(); S.start=st; S.meals=[{at:st.getTime(),kcal:700,pctC:45,pctP:20}];
+  syncAll(); update();};
+
+function syncChips(){
+  const c=document.getElementById('fitChips');
+  c.innerHTML=FIT.map((n,i)=>`<button class="chip ${S.fitness===i?'on':''}" data-i="${i}">${n}</button>`).join('');
+  c.querySelectorAll('.chip').forEach(b=>{b.onclick=()=>{
+    S.fitness=parseInt(b.dataset.i,10);syncChips();update();};});
+}
+function syncAll(){
+  const set=(id,v)=>{const e=gid(id);if(e)e.value=v;};
+  dsel.value=S.days;
+  gid('tissueSel').value=S.tissue;
+  gid('xSel').value=S.xMode;
+  gid('cumSel').value=S.cumMode;
+  set('gly0',Math.round(S.gly0*100)); set('activeKcal',S.activeKcal);
+  set('waist',S.waist); set('sleep',S.sleep); set('weight',S.weight);
+  set('musclePct',S.musclePct);
+  set('tauCap',S.tauCap); set('tauDec',S.tauDecay);
+  set('fbLiver',Math.round(S.fbLiver*100));
+  gid('vMus').textContent=musTxt();
+  syncChips(); renderMeals(); renderTr(); renderAct();
+}
+
+/* ===== Start ===== */
 (async()=>{
-  syncAll(); draw(); diag();          // sofort anzeigen, nicht auf Storage warten
+  syncAll(); draw(); diag();
   const ok=await restore();
-  if(ok){ syncAll(); draw(); }
-  else { doSave(); }
-  setInterval(()=>{renderTr();draw();},60000);
+  if(ok){syncAll();draw();} else {doSave();}
+  setInterval(()=>{renderMeals();renderTr();draw();},60000);
 })();
 </script>
 </body>
