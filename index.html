@@ -10,7 +10,8 @@
 :root{--bg:#0b0e13;--panel:#141922;--panel2:#1b2230;--line:#26303f;--txt:#e6edf3;
  --dim:#8b98a9;--dim2:#5d6b7d;--acc:#4dd0b1;--acc2:#f0a35e;--train:#7aa2f7;
  --meal:#e06c75;--cap:#bb9af7;--cum:#9ece6a;
- --ev-g:#3fb950;--ev-y:#d29922;--ev-x:#6e7681}
+ --ev-g:#3fb950;--ev-y:#d29922;--ev-x:#6e7681;
+ --fat:#efc75e;--wst:#4fb8cf;--wsw:#8bd5e8}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -354,6 +355,26 @@ details .inner{padding-top:12px}
               inputmode="decimal"><span class="unit">% fettfrei</span></div>
             <div class="note" id="vMus"></div>
           </div>
+          <div class="row duo">
+            <div><div class="lbl"><span>Alter</span></div>
+              <div class="nin"><input type="number" id="age" min="16" max="99" step="1"
+                inputmode="numeric"><span class="unit">J.</span></div></div>
+            <div><div class="lbl"><span>Größe</span></div>
+              <div class="nin"><input type="number" id="height" min="140" max="215" step="1"
+                inputmode="numeric"><span class="unit">cm</span></div></div>
+          </div>
+          <div class="row">
+            <div class="lbl"><span>Geschlecht</span></div>
+            <select id="sexSel">
+              <option value="m">männlich</option>
+              <option value="w">weiblich</option>
+            </select>
+            <div class="note" id="bodyNote"></div>
+          </div>
+          <div class="note"><b>Alter, Größe und Geschlecht wirken nur auf den
+            Grundumsatz und den Bauchumfang</b> — auf die Autophagie-Kurve haben sie
+            keinen Einfluss. Sie sind neu, weil ohne sie kein Energieumsatz zu rechnen
+            ist: Mifflin-St Jeor braucht genau diese drei plus Gewicht.</div>
           <div class="note"><b>Der Muskelanteil wirkt nur in der Muskel-Ansicht.</b> In der
             Leber-Ansicht ändert er gar nichts — er bemisst allein den Muskelspeicher.<br><br>
             Beides bestimmt nur eins: wie groß die Zuckerspeicher sind.
@@ -539,6 +560,77 @@ details .inner{padding-top:12px}
       </details>
 
       <details>
+        <summary>Fettabbau &amp; Bauchumfang</summary>
+        <div class="inner">
+          <div class="row">
+            <div class="lbl"><span>Zusatzlinien</span></div>
+            <select id="fatSel">
+              <option value="all">Fett + Bauch (nüchtern &amp; mit Wasser)</option>
+              <option value="both">Fett + Bauch nüchtern</option>
+              <option value="fat">nur Fettabbau</option>
+              <option value="waist">nur Bauchumfang (beide)</option>
+              <option value="off">aus</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="lbl"><span>Grundumsatz-Formel</span></div>
+            <select id="rmrSel">
+              <option value="mifflin">Mifflin-St Jeor (Gewicht/Größe/Alter)</option>
+              <option value="cunningham">Cunningham 1991 (fettfreie Masse)</option>
+              <option value="mean">Mittelwert beider</option>
+            </select>
+            <div class="note" id="rmrNote"></div>
+          </div>
+          <div class="row">
+            <div class="lbl"><span>Bauchanteil der Fettänderung</span></div>
+            <div class="nin"><input type="number" id="fAbd" min="20" max="90" step="5"
+              inputmode="numeric"><span class="unit">%</span></div>
+            <div class="note" id="fAbdNote"></div>
+          </div>
+
+          <div class="note" style="margin-top:14px"><b>Bilanz statt Substratrechnung.</b>
+            Energie kann nicht verschwinden: <i>Zufuhr − Verbrauch − Glykogenänderung</i>
+            ist der Rest, der aus Fett und Magermasse kommen muss. Glykogen kennt das
+            Modell schon in kcal — deshalb braucht die Fettlinie nur noch einen
+            Verbrauch.<br><br>
+            <b>Verbrauch</b> = Grundumsatz + Nahrungsthermogenese (25 % Protein, 8 %
+            Kohlenhydrate, 2 % Fett) + Alltagsbewegung + Training. Die Thermogenese fällt
+            im Fasten automatisch weg — genau das erklärt die real gemessenen
+            8–11 % niedrigeren 24-h-Umsätze im Fasten (Andriessen et al.,
+            <i>Clin Nutr</i> 2023).<br><br>
+            <b>Aufteilung Fett/Magermasse</b> nach Forbes: je weniger Fettmasse, desto
+            mehr Magermasse geht mit. Bei viel Fett gehen ~94 % des Defizits auf das
+            Fettkonto, bei einer schlanken Person nur ~80 %.</div>
+
+          <div class="note"><b>Der Bauchumfang ist Geometrie, keine Regression.</b>
+            Der Bauch wird als Zylinder von 17 % der Körpergröße gerechnet; eine
+            Volumenänderung darin ergibt direkt eine Umfangsänderung.<br><br>
+            <b>Zwei Linien, weil zwei verschiedene Dinge gemeint sein können:</b><br>
+            <b>Durchgezogen — nüchtern.</b> Ausschließlich Fett. Startet exakt beim
+            eingetragenen Wert und bewegt sich mit rund 1,2 cm je Kilo Fett. Das ist die
+            Größe, die du morgens misst und die über Wochen etwas aussagt.<br>
+            <b>Gestrichelt — mit Wasser.</b> Zusätzlich das schnelle Volumen: 1 g
+            Leberglykogen bindet ~3 g Wasser, die volle Leber wiegt dadurch ~400 g mehr
+            als die leere; dazu der noch nicht resorbierte Mageninhalt. Diese Linie fällt
+            im Fasten binnen eines Tages um 1–2 cm und ist nach der ersten
+            Kohlenhydratmahlzeit wieder oben.<br><br>
+            <b>Der Abstand der beiden ist die eigentliche Aussage:</b> er ist der Teil des
+            schnellen Erfolgs, der kein Fett ist. Muskelglykogen bleibt bewusst draußen —
+            es steht auf der Waage, aber nicht am Bandmaß, weil es über den ganzen Körper
+            verteilt liegt und nicht im gemessenen Bauchsegment.</div>
+
+          <div class="warnbox"><b>Fehlerbudget, ehrlich:</b> Grundumsatz ±10 %,
+            Watch-Kalorien ±20–30 %, geschätzte Mahlzeiten-kcal ±20 %. Zusammen rund
+            ±300–400 kcal/Tag — das sind ±35–45 g Fett pro Tag oder ±1,2 kg im Monat.
+            Die Fettlinie sieht präziser aus, als sie ist. Zwei weitere bekannte
+            Schwächen: beim <b>akuten Totalfasten</b> verliert der Körper mehr Eiweiß, als
+            Forbes vorhersagt — die Fettlinie ist dort etwa 10 % zu optimistisch. Und eine
+            <b>echte Stoffwechseladaptation</b> (Leibel 1995) ist nicht abgebildet; der
+            Grundumsatz sinkt hier nur so weit, wie die Masse sinkt.</div>
+        </div>
+      </details>
+
+      <details>
         <summary>Daten &amp; Speicher</summary>
         <div class="inner">
           <div class="note" id="diagBox"></div>
@@ -592,12 +684,22 @@ const K={
      auch in nicht-kontraktilen Geweben aus der BCL2-Bindung loest. Wirkt neben
      mTORC1/AMPK — deshalb auch bei leeren Speichern. */
   MYO_MUS:1.4, MYO_LIV:0.9, TAU_MYO:3.0,
-  MFAC_A:2.282, MFAC_B:0.717, LFAC_A:1.000, LFAC_B:0.451
+  MFAC_A:2.282, MFAC_B:0.717, LFAC_A:1.000, LFAC_B:0.451,
+  /* Energiebilanz (neu). Nahrungsthermogenese je Makro, Energiedichten nach
+     Hall (9400 kcal/kg Fettmasse, 1816 kcal/kg fettfreie Masse) und die
+     Forbes-Konstante fuer die Aufteilung Fett/Magermasse (dFFM/dFM = C/FM).
+     GUT_MASS: Faktor von noch nicht resorbierten Makro-Gramm auf Mageninhalt
+     samt Wasser. SEG_H: Hoehe des Bauchzylinders als Anteil der Koerpergroesse.
+     Ein Gramm Glykogen bindet ~3 g Wasser -> 1 kcal Glykogen ~ 1 g Masse. */
+  TEF_C:0.08, TEF_P:0.25, TEF_F:0.02,
+  E_FAT:9400, E_FFM:1816, FORBES_C:10.4,
+  GUT_MASS:3.0, SEG_H:0.17, RHO_FAT:0.90
 };
 
 /* ===== Zustand ===== */
 const DEF=()=>({
   weight:97, musclePct:68.7, waist:102, fitness:1, sleep:6,
+  age:43, sex:'m', height:180, rmrMode:'mifflin', fAbd:55, fatLine:'all',
   activeKcal:450, tissue:'liver', gly0:0.65,
   tauCap:2.0, tauDecay:7, fbLiver:0.95, cumMode:'stock',
   days:2, xMode:'hours',
@@ -698,6 +800,17 @@ function stores(){
   const lean=S.weight*S.musclePct/100, skel=lean*0.55, active=skel*0.55;
   return {liver:400*(S.weight/80), muscle:active*60, lean, skel, active};
 }
+/* Grundumsatz. Mifflin-St Jeor braucht Gewicht/Groesse/Alter/Geschlecht und
+   ist an der Allgemeinbevoelkerung validiert; Cunningham 1991 braucht nur die
+   fettfreie Masse und trifft Trainierte besser, unterschaetzt aber in der
+   Allgemeinbevoelkerung systematisch. Beide stehen zur Wahl, weil keiner von
+   beiden hier ueberlegen ist. */
+function rmrOf(w,lean){
+  const mif=10*w+6.25*S.height-5*S.age+(S.sex==='m'?5:-161);
+  const cun=370+21.6*lean;
+  return S.rmrMode==='cunningham'?cun:S.rmrMode==='mean'?(mif+cun)/2:mif;
+}
+const rmrDay=()=>rmrOf(S.weight,S.weight*S.musclePct/100);
 function insSens(){
   let s=1.0;
   s+=Math.max(0,S.waist-94)*0.006;
@@ -722,7 +835,7 @@ function simulate(){
     const dur=Math.max(0.1,(+x.kcal||0)/(x.strength?400:I0.kph));
     const ck=(+x.kcal||0)*(x.strength?0.70:I0.cf);
     return {t0:relH(x), t1:relH(x)+dur, dur,
-            mR:ck*0.85/dur, lR:ck*0.15/dur,
+            mR:ck*0.85/dur, lR:ck*0.15/dur, eR:(+x.kcal||0)/dur,
             pR:(x.strength?0.14:I0.h)*Math.min(1,dur/0.75)/dur};
   }).sort((a,b)=>a.t0-b.t0);
   const tauDec=S.tauDecay*24;
@@ -738,7 +851,13 @@ function simulate(){
   let dayMs=d0.getTime();
   const actOf=()=>OV[dayMs]!=null?OV[dayMs]:S.activeKcal;
   let alltag=1+(actOf()-400)/2000;
-  const o={dt,t:[],rate:[],cum:[],cap:[],Gl:[],Gm:[],mTOR:[],AMPK:[],aa:[]};
+  /* Energiebilanz: Bezugszustand ist der Nullpunkt mit leerem Magen. */
+  const FM0=Math.max(1,S.weight*(1-S.musclePct/100)), LM0=St.lean;
+  const segH=K.SEG_H*S.height, Gl0=Gl, Gm0=Gm;
+  const kVol=2*Math.PI*1000/(segH*S.waist), kFat=kVol*(S.fAbd/100)/K.RHO_FAT;
+  let dFM=0, dFFM=0, TEEs=0, INs=0;
+  const o={dt,t:[],rate:[],cum:[],cap:[],Gl:[],Gm:[],mTOR:[],AMPK:[],aa:[],
+           fat:[],waist:[],waistW:[],wt:[],fRate:[]};
 
   for(let i=0;i<=N;i++){
     const t=i*dt;
@@ -746,15 +865,18 @@ function simulate(){
     const absMs=S.start.getTime()+t*3600000;
     while(absMs>=dayMs+86400000){dayMs+=86400000;alltag=1+(actOf()-400)/2000;}
     while(mi<M.length && M[mi].t<=t){Ag+=M[mi].c;Ap+=M[mi].p;Af+=M[mi].f;mi++;}
+    /* Referenz VOR dem Trainingsabfluss — sonst faellt das im Training
+       verbrannte Glykogen aus der Energiebilanz heraus. */
+    const GlA=Gl, GmA=Gm; let trKcal=0;
     for(let k=0;k<T.length;k++){
       const tr=T[k]; if(t<tr.t0||t>=tr.t1) continue;
       Gm=Math.max(0,Gm-tr.mR*dt); Gl=Math.max(0,Gl-tr.lR*dt);
-      pulse+=tr.pR*dt; myo+=tr.pR*dt;
+      pulse+=tr.pR*dt; myo+=tr.pR*dt; trKcal+=tr.eR;
     }
     const tauC=K.TAU_C0+Ag/K.TAU_C_CARB+Af/K.TAU_FAT;
     const tauP=K.TAU_P0+Af/K.TAU_FAT;
-    const Ra=Ag/tauC, Rp=Ap/tauP;
-    Ag-=Ra*dt; Ap-=Rp*dt; Af-=Af/2.5*dt;
+    const Ra=Ag/tauC, Rp=Ap/tauP, Rf=Af/2.5;
+    Ag-=Ra*dt; Ap-=Rp*dt; Af-=Rf*dt;
 
     const insDrive=(Ra+K.INS_FROM_PROT*Rp)*sens;
     const I=insDrive/(insDrive+K.KM_INS);
@@ -773,6 +895,34 @@ function simulate(){
     const fillM=Math.min(Math.max(0,avail-fillL),K.MRATE*mFac)*wM;
     Gl=clamp(Gl+(fillL-drainL)*dt,0,Glmax);
     Gm=clamp(Gm+(fillM-drainM)*dt,0,Gmmax);
+
+    /* ===== Energiebilanz -> Fettmasse -> Bauchumfang =====
+       Was weder gegessen noch als Glykogen zwischengelagert wird, muss aus
+       Fett und Magermasse kommen. Der Grundumsatz folgt der schrumpfenden
+       Masse; eine darueber hinausgehende Adaptation ist NICHT abgebildet. */
+    const inH=Ra*4+Rp*4+Rf*9;
+    const tefH=K.TEF_C*Ra*4+K.TEF_P*Rp*4+K.TEF_F*Rf*9;
+    const teeH=rmrOf(S.weight+dFM+dFFM,LM0+dFFM)/24+tefH+actOf()/24+trKcal;
+    const dGly=((Gl-GlA)+(Gm-GmA))/dt;
+    const R=inH-teeH-dGly;
+    const ratio=K.FORBES_C/Math.max(0.5,FM0+dFM);
+    const pL=(ratio*K.E_FFM)/(ratio*K.E_FFM+K.E_FAT);
+    const dFMh=R*(1-pL)/K.E_FAT;
+    dFM+=dFMh*dt; dFFM+=ratio*dFMh*dt; TEEs+=teeH*dt; INs+=inH*dt;
+    /* Zwei getrennte Bauchlinien. Die erste ist der Nuechternwert und haengt
+       AUSSCHLIESSLICH an der Fettmasse — das ist die Groesse, die morgens
+       gemessen wird und ueber Wochen etwas aussagt. Die zweite legt das
+       schnelle Volumen obendrauf: Leberglykogen samt gebundenem Wasser plus
+       Mageninhalt. Muskelglykogen bleibt draussen: es steht auf der Waage,
+       aber nicht am Bandmass, weil es ueber den ganzen Koerper verteilt liegt
+       und nicht im gemessenen Bauchsegment. */
+    const gut=(Ag+Ap+Af)*K.GUT_MASS/1000;
+    const wFat=S.waist+kFat*dFM;
+    o.fat.push(dFM);
+    o.waist.push(wFat);
+    o.waistW.push(wFat+kVol*((Gl-Gl0)/1000+gut));
+    o.wt.push(dFM+dFFM+((Gl-Gl0)+(Gm-Gm0))/1000);
+    o.fRate.push(dFMh*24000);
 
     pulse=Math.max(0,pulse-pulse/K.TAU_PULSE*dt);
     const gFrac=S.tissue==='liver'?Gl/Glmax:Gm/Gmmax;
@@ -802,6 +952,8 @@ function simulate(){
     o.t.push(t);o.rate.push(rate);o.cum.push(Sc);o.cap.push(C1);
     o.Gl.push(Gl/Glmax);o.Gm.push(Gm/Gmmax);o.mTOR.push(mTOR);o.AMPK.push(AMPK);o.aa.push(AA);
   }
+  o.TEEs=TEEs; o.INs=INs; o.dFM=dFM; o.dFFM=dFFM;
+  o.dGlyKcal=(Gl-Gl0)+(Gm-Gm0);
   return o;
 }
 const idxAt=(o,t)=>clamp(Math.round(t/o.dt),0,o.rate.length-1);
@@ -907,6 +1059,49 @@ function chartSVG(o,now,full){
       stroke-linejoin="round"/>`;
   if(cumOn) g+=`<path d="${up}" fill="none" stroke="var(--cum)" stroke-width="1.8"/>`;
 
+  /* ===== Zusatzlinien: Fettabbau und Bauchumfang =====
+     Beide haben eine eigene, automatisch skalierte Achse — sie teilen sich
+     keine Einheit mit der Abbaurate. Statt einer dritten Achsenbeschriftung
+     steht der Zahlenwert in der Kopfzeile des Diagramms; die gepunktete Linie
+     markiert jeweils den Bezugswert (0 kg bzw. der eingetragene Umfang). */
+  const showFat=S.fatLine==='all'||S.fatLine==='both'||S.fatLine==='fat';
+  const showW1=S.fatLine==='all'||S.fatLine==='both'||S.fatLine==='waist';
+  const showW2=S.fatLine==='all'||S.fatLine==='waist';
+  /* Symmetrische Achse in festen Stufen statt Autozoom auf die Datenspanne:
+     sonst fuellt eine Aenderung von 100 g die ganze Bildhoehe und sieht nach
+     viel aus. Der Bezugswert liegt dadurch immer in der Mitte. */
+  const halfOf=(arrs,anchor,steps)=>{
+    let m=0;
+    for(let k=0;k<arrs.length;k++){const a=arrs[k];
+      for(let i=0;i<a.length;i++){const v=Math.abs(a[i]-anchor); if(v>m)m=v;}}
+    m*=1.15;
+    for(let i=0;i<steps.length;i++) if(steps[i]>=m) return steps[i];
+    return steps[steps.length-1];};
+  const syR=(v,a,h)=>PT+(1-clamp((v-a+h)/(2*h),0,1))*(H-PT-PB);
+  /* Mehrere Serien auf EINER Achse — sonst waeren die beiden Bauchlinien
+     nicht vergleichbar, und genau ihr Abstand ist die Aussage. */
+  const drawExtra=(arrs,anchor,steps,cols,dsh,wds)=>{
+    const hf=halfOf(arrs,anchor,steps), y0=syR(anchor,anchor,hf);
+    let out=`<line x1="${PL}" y1="${y0}" x2="${W-PR}" y2="${y0}"`
+      +` stroke="${cols[cols.length-1]}" stroke-width=".8" stroke-dasharray="1 6"`
+      +` opacity=".28"/>`;
+    arrs.forEach((a,k)=>{
+      let d='';
+      for(let i=0;i<a.length;i+=stride)
+        d+=(d?'L':'M')+sx(o.t[i]).toFixed(1)+','+syR(a[i],anchor,hf).toFixed(1);
+      out+=`<path d="${d}" fill="none" stroke="${cols[k]}" stroke-width="${wds[k]}"`
+        +(dsh[k]?` stroke-dasharray="${dsh[k]}"`:'')
+        +` stroke-linejoin="round" opacity="${dsh[k]?'.75':'.9'}"/>`;});
+    return out;};
+  if(showFat) g+=drawExtra([o.fat],0,[0.25,0.5,1,2,3,5,8,12,20],
+    ['var(--fat)'],[''],[1.35]);
+  if(showW1||showW2){
+    const A=[],C=[],D=[],Wd=[];
+    if(showW2){A.push(o.waistW);C.push('var(--wsw)');D.push('2.5 2');Wd.push(1.1);}
+    if(showW1){A.push(o.waist);C.push('var(--wst)');D.push('');Wd.push(1.35);}
+    g+=drawExtra(A,S.waist,[0.5,1,2,3,5,8,12,20],C,D,Wd);
+  }
+
   S.meals.forEach(m=>{
     const t=relH(m); if(t<0||t>tmax) return;
     const fut=isFuture(m);
@@ -948,6 +1143,19 @@ function chartSVG(o,now,full){
    +(cumOn?`<tspan fill="#5d6b7d"> · </tspan><tspan fill="var(--cum)">`
      +(S.cumMode==='total'?nc.toFixed(2)+' d':nc.toFixed(1)+' %')+`</tspan>`:'')
    +`</text>`;
+  if(showFat||showW1||showW2){
+    const i2=idxAt(o,rt), de=x=>x.replace('.',','), parts=[];
+    const fv=o.fat[i2];
+    if(showFat) parts.push(`<tspan fill="var(--fat)">Fett ${fv<0?'−':'+'}`
+      +`${de(Math.abs(fv).toFixed(2))} kg</tspan>`);
+    if(showW1) parts.push(`<tspan fill="var(--wst)">Bauch `
+      +`${de(o.waist[i2].toFixed(1))} cm</tspan>`);
+    if(showW2) parts.push(`<tspan fill="var(--wsw)">akt. `
+      +`${de(o.waistW[i2].toFixed(1))}</tspan>`);
+    g+=`<text x="${PL+2}" y="${(PT+FSR*2.2).toFixed(1)}" font-size="${(FSR*0.9).toFixed(1)}"`
+     +` font-family="sans-serif" font-weight="600">`
+     +parts.join(`<tspan fill="#5d6b7d"> · </tspan>`)+`</text>`;
+  }
   return g;
 }
 
@@ -975,6 +1183,11 @@ function draw(){
   if(cumOn) L+=lg('var(--cum)',S.cumMode==='total'?'Total (Tage)':'Reinigungsgrad');
   if(S.meals.length) L+=lg('var(--meal)','Mahlzeit');
   if(S.trainings.length) L+=lg('var(--train)','Training');
+  if(S.fatLine==='all'||S.fatLine==='both'||S.fatLine==='fat') L+=lg('var(--fat)','Fett');
+  if(S.fatLine==='all'||S.fatLine==='both'||S.fatLine==='waist')
+    L+=lg('var(--wst)','Bauch nüchtern');
+  if(S.fatLine==='all'||S.fatLine==='waist')
+    L+=lg(dash('var(--wsw)'),'Bauch mit Wasser');
   if(PIN!=null) L+=lg('#e6edf3','Marker');
   document.getElementById('legend').innerHTML=L;
   if(FULL) document.getElementById('flegend').innerHTML=L;
@@ -1017,6 +1230,30 @@ function draw(){
   const w=S.waist;
   document.getElementById('waistNote').innerHTML=
     w<94?'Unauffällig (&lt;94 cm).':w<=102?'Erhöht (94–102 cm).':'Deutlich erhöht (&gt;102 cm).';
+  /* Notizen der neuen Felder */
+  const lean0=St.lean, fm0=S.weight-lean0;
+  const mif=10*S.weight+6.25*S.height-5*S.age+(S.sex==='m'?5:-161);
+  const cun=370+21.6*lean0, rmrU=rmrDay();
+  const bmi=S.weight/Math.pow(S.height/100,2);
+  document.getElementById('bodyNote').innerHTML=
+    `BMI <b>${bmi.toFixed(1)}</b> · Fettmasse <b>${fm0.toFixed(1)} kg</b> `
+    +`(${(100*fm0/S.weight).toFixed(1)} %) · Taille/Größe `
+    +`<b>${(S.waist/S.height).toFixed(2)}</b>${S.waist/S.height>=0.5?' — über 0,50':''}`;
+  document.getElementById('rmrNote').innerHTML=
+    `Mifflin <b>${mif.toFixed(0)}</b> · Cunningham <b>${cun.toFixed(0)}</b> kcal/Tag. `
+    +`Verwendet: <b>${rmrU.toFixed(0)}</b>. Mit ${S.activeKcal} kcal Alltag und ohne `
+    +`Training ergibt das rund <b>${(rmrU+S.activeKcal).toFixed(0)} kcal/Tag</b> `
+    +`Verbrauch im Fasten; mit Essen kommt die Thermogenese dazu.`
+    +(Math.abs(mif-cun)>200?'<br><b>Die beiden weichen um über 200 kcal ab</b> — dann '
+      +'steht und fällt die Fettlinie mit dieser Wahl.':'');
+  const kV=2*Math.PI*1000/(K.SEG_H*S.height*S.waist);
+  document.getElementById('fAbdNote').innerHTML=
+    `Anteil der Fettänderung, der im gemessenen Bauchsegment liegt. Daraus folgt `
+    +`<b>${(kV*(S.fAbd/100)/K.RHO_FAT).toFixed(2)} cm je kg Fett</b> und `
+    +`<b>${kV.toFixed(2)} cm je kg</b> Wasser oder Mageninhalt. `
+    +`Der Vorgabewert 55 % trifft die ~1,1 cm je kg Gewichtsverlust aus der `
+    +`Metaanalyse von Jayedi et al. (116 RCTs) und entspricht dem Rumpfanteil `
+    +`der Fettmasse beim Mann.`;
   document.getElementById('sleepNote').textContent=S.sleep<7
     ? 'Unter 7 h — reduziert die Insulinsensitivität, Insulin fällt träger.'
     : 'Ausreichend. Kein Abschlag.';
@@ -1081,6 +1318,12 @@ const KEYDEF=[
   'Senkrechte Linie. Danach steigt mTORC1, ULK1 wird blockiert, der Abbau bricht ein. Wie tief und wie lange hängt an Kohlenhydraten und Protein — Fett kaum.'],
  ['var(--train)','solid','Training',
   'Kurzer Strich unten. Zieht Glykogen aus den Speichern und aktiviert AMPK über die Muskelkontraktion. Beim Muskel stark, bei der Leber fast nur über den Speicherverlust.'],
+ ['var(--fat)','solid','Fettabbau',
+  'Veränderung der Fettmasse in kg seit dem Nullpunkt, unten negativ. Kommt nicht aus der Autophagie-Kurve, sondern aus der Energiebilanz: Zufuhr minus Verbrauch minus das, was das Glykogen abgepuffert hat. Die gepunktete Linie ist die Null.'],
+ ['var(--wst)','solid','Bauch nüchtern',
+  'Der Umfang, den das Bandmaß morgens nüchtern zeigen sollte. Hängt allein an der Fettmasse und ändert sich deshalb langsam — rund 1,2 cm je Kilo Fett. Das ist die Linie, an der sich ein Fortschritt ablesen lässt.'],
+ ['var(--wsw)','dash','Bauch mit Wasser',
+  'Derselbe Umfang, aber mit dem schnellen Volumen: Leberglykogen samt gebundenem Wasser und dem, was gerade im Magen steht. Fällt im Fasten binnen eines Tages um 1–2 cm und ist nach der ersten Kohlenhydratmahlzeit wieder da. Der Abstand zur durchgezogenen Linie ist genau der Teil, der nichts mit Fett zu tun hat.'],
  ['var(--acc2)','solid','Jetzt',
   'Der aktuelle Zeitpunkt. Alles rechts davon ist Prognose.'],
  ['#e6edf3','solid','Marker',
@@ -1346,6 +1589,12 @@ bindNum(gid('tauCap'),0,6,v=>{S.tauCap=v;},()=>update());
 bindNum(gid('tauDec'),1,28,v=>{S.tauDecay=v;},()=>update());
 bindNum(gid('fbLiver'),0,95,v=>{S.fbLiver=v/100;},()=>update());
 bindNum(gid('gly0'),0,100,v=>{S.gly0=v/100;},()=>update());
+bindNum(gid('age'),16,99,v=>{S.age=v;},()=>update());
+bindNum(gid('height'),140,215,v=>{S.height=v;},()=>update());
+bindNum(gid('fAbd'),20,90,v=>{S.fAbd=v;},()=>update());
+gid('sexSel').onchange=e=>{S.sex=e.target.value;update();};
+gid('rmrSel').onchange=e=>{S.rmrMode=e.target.value;update();};
+gid('fatSel').onchange=e=>{S.fatLine=e.target.value;update();};
 bindNum(gid('musclePct'),45,90,v=>{S.musclePct=v;},()=>{
   gid('vMus').textContent=musTxt(); update();});
 document.getElementById('cumSel').onchange=e=>{S.cumMode=e.target.value;update();};
@@ -1369,6 +1618,9 @@ function syncAll(){
   set('gly0',Math.round(S.gly0*100)); set('activeKcal',S.activeKcal);
   set('waist',S.waist); set('sleep',S.sleep); set('weight',S.weight);
   set('musclePct',S.musclePct);
+  set('age',S.age); set('height',S.height); set('fAbd',S.fAbd);
+  gid('sexSel').value=S.sex; gid('rmrSel').value=S.rmrMode;
+  gid('fatSel').value=S.fatLine;
   set('tauCap',S.tauCap); set('tauDec',S.tauDecay);
   set('fbLiver',Math.round(S.fbLiver*100));
   gid('vMus').textContent=musTxt();
